@@ -1,0 +1,141 @@
+.cmp-form-group {
+  .cmp-form-label {
+    display: block;
+    position: relative;
+    .icon-form-tooltip {
+      color: @pinegreen1;
+      font-size: 160%;
+      display: inline-block;
+      margin-bottom: -8px;
+      overflow: hidden;
+    }
+  }
+  .cmp-texbox-group--container {
+    display: flex;
+    align-items: flex-end;
+
+    .cmp-button {
+      margin-left: 8px;
+    }
+  }
+
+  .cmp-texbox-group {
+    position: relative;
+    line-height: 44px;
+    @inputgap: 16px;
+    @inputfixwidth: 40px;
+    width: 100%;
+
+    input[type="text"] {
+      width: 100%;
+      outline: none;
+      box-sizing: border-box;
+      transition: 0.2s;
+      border: 1px solid @pinegreen6;
+      box-sizing: border-box;
+      border-radius: 8px;
+      line-height: 44px;
+      font-weight: 600;
+      padding: 0 @inputgap;
+      &::placeholder {
+        font-weight: 400;
+        color: @steelgrey;
+      }
+      &:active,
+      &:focus,
+      &:hover {
+        border-color: @pinegreen;
+      }
+      &:disabled {
+        cursor: default;
+        pointer-events: none;
+        border-color: @stonegrey;
+      }
+    }
+    .prefix ~ input[type="text"] {
+      padding-left: @inputfixwidth;
+    }
+    .suffix ~ input[type="text"] {
+      padding-right: @inputfixwidth;
+    }
+    .prefix,
+    .suffix {
+      position: absolute;
+      top: 2px;
+      color: @slategrey;
+      transition: 0.3s;
+    }
+    .prefix {
+      left: 0;
+      padding-left: @inputgap;
+    }
+    .suffix {
+      right: 0;
+      padding-right: @inputgap;
+    }
+  }
+  .cmp-form-caption {
+    font-style: italic;
+    color: @steelgrey;
+    display: block;
+  }
+  & > * {
+    padding-bottom: 4px;
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+  &--error {
+    .cmp-texbox-group {
+      input[type="text"] {
+        border: 1px solid @errorlava;
+        &:focus,
+        &:hover {
+          border-color: @errorlava;
+        }
+      }
+    }
+    .cmp-form-caption {
+      color: @errorlava;
+    }
+  }
+
+  &--success {
+    .cmp-texbox-group {
+      input[type="text"] {
+        border: 1px solid @successlava;
+      }
+    }
+    .cmp-form-caption {
+      color: @successlava;
+    }
+  }
+
+  &--disabled {
+    .cmp-texbox-group {
+      input[type="text"] {
+        border: 1px solid @stonegrey;
+        background-color: @smokegrey;
+        color: @steelgrey;
+        cursor: no-drop;
+      }
+    }
+    .cmp-form-caption {
+      color: @steelgrey;
+    }
+  }
+
+  &--readonly {
+    .cmp-texbox-group {
+      input[type="text"] {
+        border: 1px solid @stonegrey;
+        background-color: @smokegrey;
+        color: @carbonblack;
+        cursor: no-drop;
+      }
+    }
+    .cmp-form-caption {
+      color: @steelgrey;
+    }
+  }
+}

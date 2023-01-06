@@ -1,0 +1,315 @@
+@import (once) "base/Foundation.less";
+@import (once) "media.less";
+
+// Commonly used components in Forms and Calculators
+@import (once) "components/PageLoader.less";
+@import (once) "components/ComponentLoader.less";
+@import (once) "components/Separator.less";
+@import (once) "components/List.less";
+@import (once) "components/Button.less";
+@import (once) "components/DropdownButton.less";
+@import (once) "components/Tooltips.less";
+@import (once) "components/SectionHeader.less";
+@import (once) "components/InformationSnippet.less";
+@import (once) "components/SummaryRow.less";
+@import (once) "components/DashboardCardElement.less";
+@import (once) "components/Alerts.less";
+@import (once) "components/cards/ClickableCard.less";
+@import (once) "components/cards/ContentCard.less";
+@import (once) "components/Breadcrumb.less";
+@import (once) "components/SocialSharingBar.less";
+@import (once) "components/ResultsSummary.less";
+@import (once) "components/RelatedResources.less";
+@import (once) "components/Modals.less";
+
+// Form elements
+@import (once) "components/form_elements/FormElement.less";
+@import (once) "components/form_elements/SelectionMenu.less";
+@import (once) "components/form_elements/DropdownSelector.less";
+@import (once) "components/form_elements/Selection.less";
+@import (once) "components/form_elements/FormSelection.less";
+@import (once) "components/form_elements/Inputs.less";
+@import (once) "components/form_elements/FormCard.less";
+@import (once) "components/form_elements/TextFieldOptional.less";
+@import (once) "components/form_elements/DatePicker.less";
+
+// Generic styling for calculators
+body {
+    background-color: #fafafa;
+}
+
+@media(min-width:768px) {
+    .container {
+        margin-right: auto;
+        margin-left: auto;
+        padding-left: 0;
+        padding-right: 0
+    }
+}
+
+@media(min-width:768px) {
+    .container {
+        width: 720px
+    }
+}
+
+@media(min-width:992px) {
+    .container {
+        width: 940px
+    }
+}
+
+@media(min-width:1200px) {
+    .container {
+        width: 1140px
+    }
+}
+
+.webf-page--content .responsivegrid {
+    padding: 0;
+    max-width: 100%;
+    margin: 0;
+    width: 100%;
+
+    @media only screen and (max-width: 991px) {
+        div[class*='aem-GridColumn--offset--default--'] {
+            margin: 0 !important;
+        }
+    }
+
+    // Added for calculator
+    .cmp-spacer--8 {
+        width: 100%;
+        height: 8px;
+
+        @media (max-width: 991px) {
+            display: none;
+        }
+    }
+
+    .formHeader {
+        background-color: @pinegreen1;
+    }
+
+    .cta-bar {
+        background-color: @turquoise9;
+        border-radius: 0 0 8px 8px;
+
+        @media only screen and (max-width: 991px) {
+            padding: 32px 16px;
+        }
+
+        .cta-bar {
+            &--wrapper {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                column-gap: 24px;
+
+                @media only screen and (max-width: 991px) {
+                    flex-direction: column;
+                    row-gap: 16px;
+                    padding: 0;
+
+                    fieldset {
+                        width: 100%;
+                    }
+
+                    button {
+                        width: 100%;
+                    }
+                }
+            }
+
+            &--both {
+                justify-content: space-between;
+            }
+
+            &--right-only {
+                justify-content: flex-end;
+            }
+
+            &--left-only {
+                justify-content: flex-start;
+            }
+        }
+
+        &::before,
+        &::after {
+            content: none;
+        }
+
+        #coverCheckboxLbl {
+            margin: 0;
+
+            &.selected {
+                background-color: transparent;
+                border: 1px solid @pinegreen6;
+            }
+
+            &:hover {
+                background-color: transparent;
+                border: 1px solid @pinegreen2;
+            }
+        }
+
+        #coverStartBtn {
+            flex: none;
+        }
+    }
+
+
+    div[panel-name] {
+        @media (max-width: 767px) {
+            border-left-width: 0;
+            border-bottom-width: 0;
+            border-top-width: 0;
+            border-right-width: 0;
+            padding-top: 0;
+            background: #fff;
+        }
+
+        >.aem-Grid {
+            padding-left: 0;
+            padding-right: 0;
+
+            >.aem-GridColumn {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+    }
+
+    .coverPage {
+        color: #262626;
+        box-shadow: 0 4px 8px rgb(155 155 155 / 16%);
+        border-radius: 8px;
+        overflow: hidden;
+        background: @purewhite;
+
+        .cmp-form-options__field-label {
+            margin: 0;
+        }
+
+        .instructions-content {
+            background-color: @smokegrey;
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 0;
+        }
+
+        ul:last-child {
+            margin-bottom: 0;
+        }
+    }
+    div[panel-name=formPage] { 
+        .formPage {
+            border-radius: 8px;
+            background-color: @purewhite;
+        }
+
+        @media only screen and (max-width: 991px) {
+            .cta-bar--wrapper {
+                flex-direction: column-reverse;
+            }
+        }
+
+        @media only screen and (min-width: 768px)and (max-width: 991px) {
+            .aem-GridColumn--default--6.aem-GridColumn--offset--default--3 {
+                width: 66% !important;
+                margin-left: 16% !important;
+            }
+        }
+    }
+
+    .resultsPage {
+        background-color: @pinegreen1;
+        color: @purewhite;
+
+        .resultDetails {
+            background-color: @pinegreen9;
+            color: @carbonblack;
+
+            @media (max-width: 991px) {
+                .aem-Grid {
+                    padding-bottom: 0;
+                }
+            }
+
+            .result-category {
+                &__title {
+                    font-weight: 400 !important;
+                    margin-bottom: 24px;
+                }
+
+                &__desc {
+                    font-weight: 400 !important;
+                }
+
+            }
+
+            .db-card-wrapper {
+                @media (max-width: 767px) {
+                    background-color: @purewhite;
+                    padding-bottom: 16px;
+
+                    > .aem-GridColumn {
+                        padding: 0;
+
+                        > .db-card-group {
+                            box-shadow: none;
+                            padding: 0;
+                        }
+                    }
+                }
+
+                .db-card-group {
+                    background: @purewhite;
+                    border-radius: 8px;
+                    padding: 12px 18px;
+                    .elevation-2;
+                }
+            }
+
+        }
+
+        .resourcesSection {
+            background-color: @purewhite;
+            color: @carbonblack;
+        }
+
+        .resourcesSpacer {
+            background-color: @purewhite;
+        }
+    }
+
+    .no-padding {
+        padding: 0 !important;
+
+        &--s-size {
+            padding: 0 !important;
+        }
+    }
+
+    @media (max-width: 991px) {
+        .end-page-spacer {
+            >.aem-GridColumn {
+                padding: 0;
+                padding-top: 16px;
+            }
+        }
+
+        .remove-spacer--m-size {
+            display: none;
+        }
+    }
+}
+
+.cmp-form-group>* {
+    margin-bottom: 4px;
+}
+
+
+.hidden {
+    display: none;
+}

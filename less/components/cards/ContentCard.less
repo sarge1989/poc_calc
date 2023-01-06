@@ -1,0 +1,304 @@
+.cmp-action-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &>.cmp-button {
+        flex-direction: row !important;
+
+        span {
+            color: @pinegreen1;
+            margin-top: 0 !important;
+            margin-bottom: 0 !important;
+        }
+    }
+
+    &.cmp-action-card--standalone {
+        max-width: 1140px;
+
+        @media only screen and (min-width: 992px) {
+            .cmp-teaser__content {
+                max-width: ~"calc(65% + 48px)";
+            }
+        }
+    }
+
+    .cmp-button {
+        &--link {
+            padding: 12px 0;
+            width: 100%;
+
+            &:last-child:not(:first-child) {
+                margin-bottom: 8px;
+            }
+        }
+
+        &__reset-truncation {
+            overflow: visible;
+            text-overflow: unset;
+        }
+    }
+
+    .button-flex {
+        display: inline-flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+
+        .button {
+            margin-bottom: 16px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            .cmp-button {
+                width: 100%;
+                justify-content: unset;
+            }
+        }
+    }
+
+    .cmp-separator {
+        padding: 8px 0;
+    }
+
+    &--center {
+        text-align: center;
+
+        .button {
+            justify-content: center;
+        }
+
+        .button-flex {
+            .button {
+                .cmp-button {
+                    justify-content: center;
+                }
+            }
+        }
+
+        .cmp-action-card--outlink {
+            text-align: left;
+        }
+
+        &>.cmp-teaser {
+
+            &__pretitle,
+            &__description,
+            &__title {
+                text-align: center;
+            }
+
+            &__icon {
+                display: flex;
+                justify-content: center;
+            }
+
+            &__content {
+                &>.cmp-teaser__footer {
+                    margin-top: 16px;
+                    flex-direction: column;
+                    align-items: center;
+
+                    .icon-illustrative {
+                        width: 48px;
+                    }
+                }
+
+                &>.button>.cmp-button {
+                    margin: 0 auto;
+                    justify-content: center;
+
+                    span {
+                        flex: unset !important;
+                    }
+                }
+            }
+        }
+    }
+
+    .cmp-teaser {
+        height: 100%;
+        background: @purewhite;
+        border-radius: 8px;
+        width: 100%;
+        max-width: 100%;
+        transition: 0.2s;
+        border: 0;
+
+        .grey_text {
+            color: @steelgrey;
+        }
+
+        &__content {
+            padding: 24px !important;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            margin: 0 auto;
+
+            &>* {
+                margin-bottom: 16px;
+
+                &.button {
+                    flex-wrap: wrap;
+                }
+
+                &:last-child {
+                    padding-bottom: 0;
+                    margin-bottom: 0;
+                }
+            }
+
+            >.button {
+                display: block;
+
+                &>a {
+                    border: none;
+
+                    +a {
+                        display: flex;
+                    }
+                }
+            }
+
+            .cmp-button {
+                .icons_space {
+                    &::before {
+                        left: 0;
+                    }
+                }
+            }
+        }
+
+        &__pretitle {
+            .headline-6;
+            color: @carbonblack;
+            margin: 0;
+        }
+
+        &__title {
+            .font-size-4;
+        }
+
+        &__description {
+            ol {
+                margin: 0;
+            }
+        }
+
+        &__footer {
+            margin-top: 8px;
+        }
+
+        .cmp-update-time {
+            color: @steelgrey;
+        }
+
+        &.cmp-action-card {
+            &--highlight {
+                border-top: 8px solid @turquoise3 !important;
+            }
+
+            &--elevation-1 {
+                .elevation-1;
+            }
+
+            &--transparent {
+                background: transparent !important;
+                box-shadow: none !important;
+                border: none !important;
+
+                .cmp-teaser__content {
+                    padding: 0 !important;
+
+                    @media only screen and (max-width: 767px) {
+                        padding: 0 !important;
+                    }
+                }
+            }
+        }
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .cmp-card-footer {
+        display: flex;
+        padding-top: 10px;
+        padding-bottom: 20px;
+
+        .cmp-card-footer-icon {
+            padding-right: 10px;
+        }
+
+        .icon-illustrative {
+            &:before {
+                width: 48px;
+            }
+        }
+    }
+
+    .list-with-bullet {
+        li {
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 9.33px;
+                left: -17.92px;
+                width: 5px;
+                height: 5px;
+                border-radius: 50%;
+                background-color: @carbonblack;
+            }
+        }
+    }
+
+    .fit-width {
+        .cmp-button {
+            width: 100%;
+        }
+    }
+}
+
+.cmp-action-card--outlink {
+    max-width: 100%;
+    transition: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    .cmp-title {
+        .icons_space {
+            font-size: 24px;
+        }
+
+        &.headline-1 {
+            .icons_space {
+                width: 56px;
+            }
+        }
+
+        &.headline-2 {
+            .icons_space {
+                width: 48px;
+            }
+        }
+
+        &.headline-3 {
+            .icons_space {
+                width: 40px;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    &.cmp-action-card {
+        &--transparent {
+            background: transparent !important;
+            box-shadow: none !important;
+            padding: 0 !important;
+        }
+    }
+}

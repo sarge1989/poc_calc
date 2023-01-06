@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator template</title>
+
+    <link rel="stylesheet/less" type="text/css" href="./less/calculator_template.less" />
+
+    <!-- Base js to be included -- must be executed first-->
+    <script src="./js/index.js" type="module"></script>
+    <!-- <script src="./dist/index.bundle.js" type="module"></script> -->
+
+</head>
+
+<body class="webf-page--content">
+    <div class="root container responsivegrid">
+        <!-- To remove for prod -- using this to test the full template view -->
+        <div data-include="header/member-header" data-id="header-1"></div>
+        <!-- Remove up till here -->
+
+        <!-- Main content section to be inserted to AEM -->
+        <div class="container responsivegrid" id="mainPanel">
+            <!-- Cover page panel -->
+            <div panel-name="coverPage">
+                <div class="formHeader">
+                    <!-- Parent container -->
+                    <div class="aem-Grid aem-Grid--default--12">
+                        <!-- Child container -->
+                        <div class="aem-GridColumn aem-GridColumn--default--12">
+                            <!-- Breadcrumb -->
+                            <div class="cmp-breadcrumb--wrapper">
+                                <nav class="cmp-breadcrumb dark-mode">
+                                    <ol class="cmp-breadcrumb__list breadcrumb--default breadcrumb--desktop">
+                                        <li class="cmp-breadcrumb__item">
+                                            <a href="#!" class="cmp-button cmp-button--link">
+                                                <span class="cmp-button__text">Home</span>
+                                            </a>
+                                            <span class="icons_space icon-dls-arrow-right"></span>
+                                        </li>
+                                        <li class="cmp-breadcrumb__item">
+                                            <a href="#!" class="cmp-button cmp-button--link">
+                                                <span class="cmp-button__text">Tools and services</span>
+                                            </a>
+                                            <span class="icons_space icon-dls-arrow-right"></span>
+                                        </li>
+                                        <li class="cmp-breadcrumb__item">
+                                            <a href="#!" class="cmp-button cmp-button--link">
+                                                <span class="cmp-button__text">Calculators</span>
+                                            </a>
+                                            <span class="icons_space icon-dls-arrow-right"></span>
+                                        </li>
+                                        <li class="cmp-breadcrumb__item cmp-breadcrumb__item--active">
+                                            <span>Home Protection Scheme (HPS) Premium Calculator</span>
+                                        </li>
+                                    </ol>
+                                    <ol class="cmp-breadcrumb__list breadcrumb--phone">
+                                        <li class="cmp-breadcrumb__item">
+                                            <a href="#!" class="cmp-button cmp-button--link">
+                                                <span class="icons_space icon-dls-arrow-left"></span>
+                                                <span class="cmp-button__text">Calculators</span>
+                                            </a>
+                                        </li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="aem-Grid aem-Grid--default--12">
+                        <div class="aem-GridColumn aem-GridColumn--default--12">
+                            <div data-include="section_header" data-id="sh_1" data-render="true"
+                                data-overline="Name of related topic" data-headline-style="H2"
+                                data-headline="Name of form" data-headline-para="Form ID when applicable"
+                                data-class="dark-mode"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="aem-Grid aem-Grid--default--12">
+                    <div class="aem-GridColumn aem-GridColumn--default--12">
+                        <div class="container coverPage">
+                            <!-- Main content area -->
+                            <!-- Parent container - Equivalent of existing calculator's wrapper -->
+                            <div class="aem-Grid aem-Grid--default--12">
+                                <!-- Left container - not a child container (note: grid columns with no-padding are not child containers) -->
+                                <div class="aem-GridColumn aem-GridColumn--default--7 no-padding">
+                                    <!-- Child container - Introduction title (!! Ensure only 1 component is inside) -->
+                                    <div class="aem-GridColumn aem-GridColumn--default--12">
+                                        <h4 class="title__text--semi-bold">Insert your introduction title. Provide
+                                            context on what this calculator/form
+                                            is
+                                            for
+                                            and how it helps users. </h4>
+                                    </div>
+                                    <!-- Child container - Paragraph -->
+                                    <div class="aem-GridColumn aem-GridColumn--default--12">
+                                        <p>Insert paragraph to further inform users with elaborated details and
+                                            considerations
+                                            on how this calculator/form applies to them.</p>
+                                    </div>
+                                    <!-- Child container - Paragraph -->
+                                    <div class="aem-GridColumn aem-GridColumn--default--12">
+                                        <ul class="cmp-list no-margin">
+                                            <li>
+                                                You may add in bulleted list if it helps to better clarify pointers.
+                                            </li>
+                                            <li>
+                                                You may add in bulleted list if it helps to better clarify pointers.
+                                            </li>
+                                            <li>
+                                                You may add in bulleted list if it helps to better clarify pointers.
+                                            </li>
+                                            <li>
+                                                You may add in bulleted list if it helps to better clarify pointers.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- Child container - Important notes (!! Ensure only 1 component is inside) -->
+                                <div class="aem-GridColumn aem-GridColumn--default--5 ">
+                                    <div class="instructions-content">
+                                        <h5>Important notes</h5>
+                                        <ul class="cmp-list">
+                                            <li>
+                                                Advise users on what to expect and what they would be required to do for
+                                                next steps if they proceed with the task.
+                                            </li>
+                                            <li>
+                                                All fields are mandatory in this form and may take you approximately 10
+                                                minutes to complete.
+                                            </li>
+                                            <li>
+                                                You will require information on your housing loan and private insurance
+                                                policies to proceed.
+                                            </li>
+                                            <li>
+                                                The assessment of this calculator takes into account a maximum of 6
+                                                private
+                                                insurance policies. If you are using more than 6 policies, please write
+                                                to
+                                                us at cpf.gov.sg/writetous.
+                                            </li>
+                                            <li>
+                                                Please read and accept the <a rel="nofollow" target="_blank"
+                                                    href="https://www.cpf.gov.sg/member/terms-of-use#Disclaimer">Disclaimer</a>
+                                                before proceeding further.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- CTA bar -->
+                            <!-- Parent container - Equivalent of existing calculator's cta-bar -->
+                            <div class="aem-Grid aem-Grid--default--12 cta-bar">
+                                <!-- Child container - CTA bar -->
+                                <div class="aem-GridColumn cta-bar--wrapper cta-bar--both">
+                                    <fieldset class="cmp-form-options">
+                                        <label class="cmp-form-options__field-label" id="coverCheckboxLbl">
+                                            <input class="cmp-form-options__field cmp-form-options__field--checkbox"
+                                                name="coverCheckbox" id="coverCheckbox" type="checkbox" />
+                                            <div class="cmp-form-options__field-description">
+                                                <p>I have read and accepted the&nbsp;<a rel="nofollow" target="_blank"
+                                                        href="https://www.cpf.gov.sg/member/terms-of-use#Disclaimer">Disclaimer</a>.
+                                                </p>
+                                            </div>
+                                        </label>
+                                    </fieldset>
+                                    <button class="cmp-button cmp-button--primary" title="Text" disabled
+                                        id="coverStartBtn">
+                                        <span class="cmp-button__text">Start</span>
+                                        <span class="icons_space icon-dls-arrow-right"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- This is the spacer added at the end of the page to ensure that the gap between the CTA bar and the footer is 80px -->
+                <div class="aem-Grid aem-Grid--default--12 end-page-spacer">
+                    <div class="aem-GridColumn aem-GridColumn--default--12">
+                        <div class="cmp-separator">
+                            <hr class="cmp-separator__horizontal-rule cmp-spacer--8" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form panel -->
+            <div class="hidden" panel-name="formPage">
+                <div class="formHeader">
+                    <!-- Parent container -->
+                    <div class="aem-Grid aem-Grid--default--12">
+                        <!-- Child container -->
+                        <div class="aem-GridColumn aem-GridColumn--default--12">
+                            <!-- Breadcrumb -->
+                            <div class="cmp-breadcrumb--wrapper">
+                                <nav class="cmp-breadcrumb dark-mode">
+                                    <ol class="cmp-breadcrumb__list breadcrumb--default breadcrumb--desktop">
+                                        <li class="cmp-breadcrumb__item">
+                                            <a href="#!" class="cmp-button cmp-button--link">
+                                                <span class="cmp-button__text">Home</span>
+                                            </a>
+                                            <span class="icons_space icon-dls-arrow-right"></span>
+                                        </li>
+                                        <li class="cmp-breadcrumb__item">
+                                            <a href="#!" class="cmp-button cmp-button--link">
+                                                <span class="cmp-button__text">Tools and services</span>
+                                            </a>
+                                            <span class="icons_space icon-dls-arrow-right"></span>
+                                        </li>
+                                        <li class="cmp-breadcrumb__item">
+                                            <a href="#!" class="cmp-button cmp-button--link">
+                                                <span class="cmp-button__text">Calculators</span>
+                                            </a>
+                                            <span class="icons_space icon-dls-arrow-right"></span>
+                                        </li>
+                                        <li class="cmp-breadcrumb__item cmp-breadcrumb__item--active">
+                                            <span>Home Protection Scheme (HPS) Premium Calculator</span>
+                                        </li>
+                                    </ol>
+                                    <ol class="cmp-breadcrumb__list breadcrumb--phone">
+                                        <li class="cmp-breadcrumb__item">
+                                            <a href="#!" class="cmp-button cmp-button--link">
+                                                <span class="icons_space icon-dls-arrow-left"></span>
+                                                <span class="cmp-button__text">Calculators</span>
+                                            </a>
+                                        </li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="aem-Grid aem-Grid--default--12">
+                        <div class="aem-GridColumn aem-GridColumn--default--12">
+                            <!-- Either use section header or progress indicator -->
+                            <div data-include="section_header" data-id="sh_2" data-render="true"
+                                data-overline="Name of related topic" data-headline-style="H2"
+                                data-headline="Name of form" data-headline-para="Form ID when applicable"
+                                data-class="dark-mode"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="aem-Grid aem-Grid--default--12 formContent">
+                    <div class="aem-GridColumn aem-GridColumn--default--12 ">
+                        <!-- Step 1 -->
+                        <!-- Parent container -->
+                        <div class="aem-Grid aem-Grid--default--12 formPage" panel-name="step-1">
+                            <!-- Section header (Child container - ensure only 1 component is inside) -->
+                            <div class="aem-GridColumn aem-GridColumn--default--12">
+                                <!-- Child container wrapping one component -->
+                                <div data-include="section_header" data-id="step1_sh_1" data-render="true"
+                                    data-headline="Step 1 Section 1 headline"
+                                    data-headline-para="Some paragraph text with section 1 headline."> </div>
+                            </div>
+                            <!-- Date picker (Child container - ensure only 1 component is inside) -->
+                            <div class="aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--default--3">
+                                <!-- Child container wrapping one component -->
+                                <div data-include="single_date_picker" data-id="sdp_1" data-render="true"
+                                    data-field-id="single_date_picker_1" data-input-label="Date of birth"
+                                    data-caption="This is a help text for single day picker." data-datepicker-type="day"
+                                    data-default="5 June 2022"> </div>
+                            </div>
+                            <div class="aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--default--3">
+                                <!-- Child container wrapping one component -->
+                                <div data-include="single_date_picker" data-id="sdp_2" data-render="true"
+                                    data-field-id="single_date_picker_2" data-input-label="Date of birth"
+                                    data-caption="This is a help text for single day picker." data-datepicker-type="day"
+                                    data-default="5 June 2022"> </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <!-- Parent container -->
+                        <div class="aem-Grid aem-Grid--default--12 formPage hidden" panel-name="step-2">
+                            <!-- Section header (Child container - ensure only 1 component is inside) -->
+                            <div class="aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--default--3">
+                                <!-- Child container wrapping one component -->
+                                <div data-include="section_header" data-id="step2_sh_1" data-render="true"
+                                    data-headline="Step 2 Section 1 headline"
+                                    data-headline-para="Some paragraph text with section 1 headline."> </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <!-- Parent container -->
+                        <div class="aem-Grid aem-Grid--default--12 formPage hidden" panel-name="step-3">
+                            <!-- Section header (Child container - ensure only 1 component is inside) -->
+                            <div class="aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--default--3">
+                                <!-- Child container wrapping one component -->
+                                <div data-include="section_header" data-id="step3_sh_1" data-render="true"
+                                    data-headline="Step 3 Section 1 headline"
+                                    data-headline-para="Some paragraph text with section 1 headline."> </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <!-- Parent container -->
+                        <div class="aem-Grid aem-Grid--default--12 formPage hidden" panel-name="step-4">
+                            <!-- Section header (Child container - ensure only 1 component is inside) -->
+                            <div class="aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--default--3">
+                                <!-- Child container wrapping one component -->
+                                <div data-include="section_header" data-id="step4_sh_1" data-render="true"
+                                    data-headline="Step 4 Section 1 headline"
+                                    data-headline-para="Some paragraph text with section 1 headline."> </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 5 -->
+                        <!-- Parent container -->
+                        <div class="aem-Grid aem-Grid--default--12 formPage hidden" panel-name="step-5">
+                            <!-- Section header (Child container - ensure only 1 component is inside) -->
+                            <div class="aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--default--3">
+                                <!-- Child container wrapping one component -->
+                                <div data-include="section_header" data-id="step5_sh_1" data-render="true"
+                                    data-headline="Step 5 Section 1 headline"
+                                    data-headline-para="Some paragraph text with section 1 headline."> </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 6 -->
+                        <!-- Parent container -->
+                        <div class="aem-Grid aem-Grid--default--12 formPage hidden" panel-name="step-6">
+                            <!-- Section header (Child container - ensure only 1 component is inside) -->
+                            <div class="aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--default--3">
+                                <!-- Child container wrapping one component -->
+                                <div data-include="section_header" data-id="step6_sh_1" data-render="true"
+                                    data-headline="Step 6 Section 1 headline"
+                                    data-headline-para="Some paragraph text with section 1 headline."> </div>
+                            </div>
+                        </div>
+
+                        <!-- CTA bar -->
+                        <!-- Parent container -->
+                        <div class="aem-Grid aem-Grid--default--12 cta-bar">
+                            <!-- Child container - CTA bar -->
+                            <div class="aem-GridColumn cta-bar--wrapper cta-bar--both">
+                                <button class="cmp-button cmp-button--secondary" title="Text" id="backBtn">
+                                    <span class="cmp-button__text">Back</span>
+                                </button>
+                                <button class="cmp-button cmp-button--primary" title="Text" id="nextBtn">
+                                    <span class="cmp-button__text">Next</span>
+                                    <span class="icons_space icon-dls-arrow-right"></span>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- This is the spacer added at the end of the page to ensure that the gap between the CTA bar and the footer is 80px -->
+                <div class="aem-Grid aem-Grid--default--12 end-page-spacer">
+                    <div class="aem-GridColumn aem-GridColumn--default--12">
+                        <div class="cmp-separator">
+                            <hr class="cmp-separator__horizontal-rule cmp-spacer--8" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results panel -->
+            <div class="resultsPage hidden" panel-name="resultsPage">
+                <div class="formHeader">
+                    <!-- Parent container -->
+                    <div class="aem-Grid aem-Grid--default--12">
+                        <!-- Child container -->
+                        <div class="aem-GridColumn aem-GridColumn--default--12">
+                            <!-- Breadcrumb -->
+                            <div class="cmp-breadcrumb--wrapper">
+                                <nav class="cmp-breadcrumb dark-mode">
+                                    <ol class="cmp-breadcrumb__list breadcrumb--default breadcrumb--desktop">
+                                        <li class="cmp-breadcrumb__item">
+                                            <a href="#!" class="cmp-button cmp-button--link">
+                                                <span class="cmp-button__text">Home</span>
+                                            </a>
+                                            <span class="icons_space icon-dls-arrow-right"></span>
+                                        </li>
+                                        <li class="cmp-breadcrumb__item">
+                                            <a href="#!" class="cmp-button cmp-button--link">
+                                                <span class="cmp-button__text">Tools and services</span>
+                                            </a>
+                                            <span class="icons_space icon-dls-arrow-right"></span>
+                                        </li>
+                                        <li class="cmp-breadcrumb__item">
+                                            <a href="#!" class="cmp-button cmp-button--link">
+                                                <span class="cmp-button__text">Calculators</span>
+                                            </a>
+                                            <span class="icons_space icon-dls-arrow-right"></span>
+                                        </li>
+                                        <li class="cmp-breadcrumb__item cmp-breadcrumb__item--active">
+                                            <span>Home Protection Scheme (HPS) Premium Calculator</span>
+                                        </li>
+                                    </ol>
+                                    <ol class="cmp-breadcrumb__list breadcrumb--phone">
+                                        <li class="cmp-breadcrumb__item">
+                                            <a href="#!" class="cmp-button cmp-button--link">
+                                                <span class="icons_space icon-dls-arrow-left"></span>
+                                                <span class="cmp-button__text">Calculators</span>
+                                            </a>
+                                        </li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Results summary component -->
+                    <div class="aem-Grid aem-Grid--default--12">
+                        <!-- Results summary (Child container - ensure only 1 component is inside) -->
+                        <div class="aem-GridColumn aem-GridColumn--default--12 ">
+                            <!-- Child container wrapping one component -->
+                            <section class="cmp-results-summary">
+                                <!-- PDF & Print icon -->
+                                <section class="sharing-bar dark-mode">
+                                    <div class="social-sharing-bar">
+                                        <div class="icon-container social-sharing-list">
+                                            <ul class="icon-container-ul">
+                                                <li class="icon-default">
+                                                    <a class="cmp-button cmp-button--icon-button icon-social">
+                                                        <span class="icon-dls-pdf" alt="download"></span>
+                                                    </a>
+                                                </li>
+                                                <li class="icon-default">
+                                                    <a class="cmp-button cmp-button--icon-button icon-social">
+                                                        <span class="icon-dls-print" alt="print"></span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </section>
+                                <!-- Form header -->
+                                <section class="header-section">
+                                    <div class="headline-6">Results</div>
+                                    <h2>Headline</h2>
+                                    <p class="para">Date line if needed DD MMM YYYY</p>
+                                </section>
+                                <!-- Summary row -->
+                                <div class="cmp-summaryRow-demo-wrapper dark-mode">
+                                    <section class="cmp-summaryRow dark-mode undefined">
+                                        <article>
+                                            <h1 style="height: 24px;">
+                                                <div class="cmp-tooltip-demo-wrapper">
+                                                    <div class="cmp-tooltip">
+                                                        Top headline title
+                                                        <div class="cmp-tooltip-overlay-bg"></div>
+                                                        <div class="cmp-tooltip-wrapper">
+                                                            <i class="icon-dls-info-outline"></i>
+                                                            <div class="cmp-tooltip-wrapper-popup bottom">
+                                                                <a class="
+                                cmp-button cmp-button--secondary cmp-button--inverse
+                                cmp-tooltip-close
+                              ">
+                                                                    <span
+                                                                        class="icons_space icon-dls-close-outline"></span>
+                                                                </a>
+                                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                                Et
+                                                                neque sit amet in dolor mauris ante.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </h1>
+                                            <h2>$29,200.00</h2>
+                                            <h3>
+                                                <div class="cmp-tooltip-demo-wrapper">
+                                                    <div class="cmp-tooltip">
+                                                        Bottom headline title
+                                                        <div class="cmp-tooltip-overlay-bg"></div>
+                                                        <div class="cmp-tooltip-wrapper">
+                                                            <i class="icon-dls-info-outline"></i>
+                                                            <div class="cmp-tooltip-wrapper-popup left">
+                                                                <a class="
+                                cmp-button cmp-button--secondary cmp-button--inverse
+                                cmp-tooltip-close
+                              ">
+                                                                    <span
+                                                                        class="icons_space icon-dls-close-outline"></span>
+                                                                </a>
+                                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                                Et
+                                                                neque sit amet in dolor mauris ante.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </h3>
+                                            <p>Information caption</p>
+                                            <a class="cmp-text__link" href="#">Hyperlink</a>
+                                        </article>
+                                        <article>
+                                            <h1 style="height: 24px;">
+                                                <div class="cmp-tooltip-demo-wrapper">
+                                                    <div class="cmp-tooltip">
+                                                        Top headline title
+                                                        <div class="cmp-tooltip-overlay-bg"></div>
+                                                        <div class="cmp-tooltip-wrapper">
+                                                            <i class="icon-dls-info-outline"></i>
+                                                            <div class="cmp-tooltip-wrapper-popup bottom">
+                                                                <a class="
+                                cmp-button cmp-button--secondary cmp-button--inverse
+                                cmp-tooltip-close
+                              ">
+                                                                    <span
+                                                                        class="icons_space icon-dls-close-outline"></span>
+                                                                </a>
+                                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                                Et
+                                                                neque sit amet in dolor mauris ante.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </h1>
+                                            <h2>$29,200.00</h2>
+                                            <h3>
+                                                <div class="cmp-tooltip-demo-wrapper">
+                                                    <div class="cmp-tooltip">
+                                                        Bottom headline title
+                                                        <div class="cmp-tooltip-overlay-bg"></div>
+                                                        <div class="cmp-tooltip-wrapper">
+                                                            <i class="icon-dls-info-outline"></i>
+                                                            <div class="cmp-tooltip-wrapper-popup left">
+                                                                <a class="
+                                cmp-button cmp-button--secondary cmp-button--inverse
+                                cmp-tooltip-close
+                              ">
+                                                                    <span
+                                                                        class="icons_space icon-dls-close-outline"></span>
+                                                                </a>
+                                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                                Et
+                                                                neque sit amet in dolor mauris ante.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </h3>
+                                            <p>Information caption</p>
+                                            <a class="cmp-text__link" href="#">Hyperlink</a>
+                                        </article>
+                                        <article>
+                                            <h1 style="height: 24px;">
+                                                <div class="cmp-tooltip-demo-wrapper">
+                                                    <div class="cmp-tooltip">
+                                                        Top headline title
+                                                        <div class="cmp-tooltip-overlay-bg"></div>
+                                                        <div class="cmp-tooltip-wrapper">
+                                                            <i class="icon-dls-info-outline"></i>
+                                                            <div class="cmp-tooltip-wrapper-popup bottom">
+                                                                <a class="
+                                cmp-button cmp-button--secondary cmp-button--inverse
+                                cmp-tooltip-close
+                              ">
+                                                                    <span
+                                                                        class="icons_space icon-dls-close-outline"></span>
+                                                                </a>
+                                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                                Et
+                                                                neque sit amet in dolor mauris ante.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </h1>
+                                            <h2>$29,200.00</h2>
+                                            <h3>
+                                                <div class="cmp-tooltip-demo-wrapper">
+                                                    <div class="cmp-tooltip">
+                                                        Bottom headline title
+                                                        <div class="cmp-tooltip-overlay-bg"></div>
+                                                        <div class="cmp-tooltip-wrapper">
+                                                            <i class="icon-dls-info-outline"></i>
+                                                            <div class="cmp-tooltip-wrapper-popup left">
+                                                                <a class="
+                                cmp-button cmp-button--secondary cmp-button--inverse
+                                cmp-tooltip-close
+                              ">
+                                                                    <span
+                                                                        class="icons_space icon-dls-close-outline"></span>
+                                                                </a>
+                                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                                Et
+                                                                neque sit amet in dolor mauris ante.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </h3>
+                                            <p>Information caption</p>
+                                            <a class="cmp-text__link" href="#">Hyperlink</a>
+                                        </article>
+                                        <article>
+                                            <h1 style="height: 24px;">
+                                                <div class="cmp-tooltip-demo-wrapper">
+                                                    <div class="cmp-tooltip">
+                                                        Top headline title
+                                                        <div class="cmp-tooltip-overlay-bg"></div>
+                                                        <div class="cmp-tooltip-wrapper">
+                                                            <i class="icon-dls-info-outline"></i>
+                                                            <div class="cmp-tooltip-wrapper-popup bottom">
+                                                                <a class="
+                                cmp-button cmp-button--secondary cmp-button--inverse
+                                cmp-tooltip-close
+                              ">
+                                                                    <span
+                                                                        class="icons_space icon-dls-close-outline"></span>
+                                                                </a>
+                                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                                Et
+                                                                neque sit amet in dolor mauris ante.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </h1>
+                                            <h2>$29,200.00</h2>
+                                            <h3>
+                                                <div class="cmp-tooltip-demo-wrapper">
+                                                    <div class="cmp-tooltip">
+                                                        Bottom headline title
+                                                        <div class="cmp-tooltip-overlay-bg"></div>
+                                                        <div class="cmp-tooltip-wrapper">
+                                                            <i class="icon-dls-info-outline"></i>
+                                                            <div class="cmp-tooltip-wrapper-popup left">
+                                                                <a class="
+                                cmp-button cmp-button--secondary cmp-button--inverse
+                                cmp-tooltip-close
+                              ">
+                                                                    <span
+                                                                        class="icons_space icon-dls-close-outline"></span>
+                                                                </a>
+                                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                                Et
+                                                                neque sit amet in dolor mauris ante.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </h3>
+                                            <p>Information caption</p>
+                                            <a class="cmp-text__link" href="#">Hyperlink</a>
+                                        </article>
+                                    </section>
+                                </div>
+                                <!-- Body content and CTAs -->
+                                <section class="body-content">
+                                    <div class="headline-4--regular">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+                                        pellentesque, tellus in ultricies laoreet, ligula enim euismod sapien, at
+                                        malesuada ligula turpis ac arcu. Nullam dignissim massa nec congue
+                                        feugiat.
+                                    </div>
+                                    <p class="para">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+                                        pellentesque, tellus in ultricies laoreet, ligula enim euismod sapien, at
+                                        malesuada ligula turpis ac arcu. Nullam dignissim massa nec congue
+                                        feugiat.
+                                    </p>
+                                    <div class="action-buttons">
+                                        <div class="dark-theme">
+                                            <a class="cmp-button cmp-button--secondary cmp-button--inverse" title="Edit"
+                                                id="editBtn">
+                                                <span class="cmp-button__text">Edit</span>
+                                                <span class="icons_space icon-dls-edit"></span>
+                                            </a>
+                                        </div>
+                                        <div class="dark-theme">
+                                            <a class="cmp-button cmp-button--secondary cmp-button--inverse" title="New"
+                                                id="newBtn">
+                                                <span class="cmp-button__text">New</span>
+                                                <span class="icons_space icon-dls-forms"></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <p class="para">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+                                        pellentesque, tellus in ultricies laoreet, ligula enim euismod sapien, at
+                                        malesuada ligula turpis ac arcu. Nullam dignissim massa nec congue
+                                        feugiat.
+                                    </p>
+                                </section>
+                                <!-- Separator -->
+                                <div class="separator">
+                                    <div class="cmp-separator">
+                                        <hr class="cmp-separator__horizontal-rule cmp-separator--dotted" />
+                                    </div>
+                                </div>
+                                <!-- Information snippet -->
+                                <div class="information-snippet-row information-snippet-row--dark-theme">
+                                    <div class="
+                  information-snippet
+                  information-snippet--dark-theme
+                  information-snippet--border-left
+                  information-snippet--align-center
+                ">
+                                        <h5 class="title__text title__text--regular">Info label</h5>
+                                        <h5 class="title__text title__text--semi-bold">$4,200.00</h5>
+                                    </div>
+                                    <div class="
+                  information-snippet
+                  information-snippet--dark-theme
+                  information-snippet--border-left
+                  information-snippet--align-center
+                ">
+                                        <h5 class="title__text title__text--regular">Info label</h5>
+                                        <h5 class="title__text title__text--semi-bold">$4,200.00</h5>
+                                    </div>
+                                    <div class="
+                  information-snippet
+                  information-snippet--dark-theme
+                  information-snippet--border-left
+                  information-snippet--align-center
+                ">
+                                        <h5 class="title__text title__text--regular">Info label</h5>
+                                        <h5 class="title__text title__text--semi-bold">$4,200.00</h5>
+                                    </div>
+                                    <div class="
+                  information-snippet
+                  information-snippet--dark-theme
+                  information-snippet--border-left
+                  information-snippet--align-center
+                ">
+                                        <h5 class="title__text title__text--regular">Info label</h5>
+                                        <h5 class="title__text title__text--semi-bold">$4,200.00</h5>
+                                    </div>
+                                    <div class="
+                  information-snippet
+                  information-snippet--dark-theme
+                  information-snippet--border-left
+                  information-snippet--align-center
+                ">
+                                        <h5 class="title__text title__text--regular">Info label</h5>
+                                        <h5 class="title__text title__text--semi-bold">$4,200.00</h5>
+                                    </div>
+                                    <div class="
+                  information-snippet
+                  information-snippet--dark-theme
+                  information-snippet--border-left
+                  information-snippet--align-center
+                ">
+                                        <h5 class="title__text title__text--regular">Info label</h5>
+                                        <h5 class="title__text title__text--semi-bold">$4,200.00</h5>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Result details section -->
+                <div class="resultDetails">
+                    <div class="aem-Grid aem-Grid--default--12">
+                        <!-- Section header (Child container - ensure only 1 component is inside) -->
+                        <div class="aem-GridColumn aem-GridColumn--default--12 ">
+                            <!-- Child container wrapping one component -->
+                            <div data-include="section_header" data-id="sh_3" data-render="true"
+                                data-headline="Result details"
+                                data-headline-para="Lorem ipsum dolor sit amet, consectetur adipiscing eli"> </div>
+                        </div>
+
+                        <!-- Other cover page content (Child container - ensure only 1 component is inside) -->
+                        <div class="aem-GridColumn aem-GridColumn--default--4">
+                            <div class="aem-GridColumn aem-GridColumn--default--12 no-padding">
+                                <h4 class="result-category__title">Private insurance policy #1</h4>
+                                <h5 class="result-category__desc">MRTA/Decreasing term, 3.00% interest, joint life, sum
+                                    assured of $250,000.00 starting on 01 Jan 2021</h5>
+                            </div>
+                        </div>
+                        <div class="aem-GridColumn aem-GridColumn--default--8 result-category__list">
+                            <ul class="cmp-list no-margin">
+                                <li>
+                                    The sum assured of the policy is less than the outstanding loan amount.
+                                </li>
+                                <li>
+                                    The policy interest rate is lower than your loan interest rate.
+                                </li>
+                                <li>
+                                    The policy term ends earlier than your loan term or age 65.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="aem-GridColumn aem-GridColumn--default--12 ">
+                            <!-- Child container wrapping one component -->
+                            <div data-include="horizontal_separator" data-id="hs_l2_1" data-render="true"
+                                data-class="cmp-separator--dotted"></div>
+                        </div>
+                        <div class="aem-GridColumn aem-GridColumn--default--4">
+                            <div class="aem-GridColumn aem-GridColumn--default--12 no-padding">
+                                <h4 class="result-category__title">Private insurance policy #2</h4>
+                                <h5 class="result-category__desc">Level term/Endowment, sum assured of $100,000.00
+                                    starting on 01 Jan 2021</h5>
+                            </div>
+                        </div>
+                        <div class="aem-GridColumn aem-GridColumn--default--8 result-category__list">
+                            <ul class="cmp-list no-margin">
+                                <li>
+                                    The sum assured of the policy is less than the outstanding loan amount.
+                                </li>
+                                <li>
+                                    Your terminal illness coverage ends earlier than your loan duration or age 65.
+                                </li>
+                                <li>
+                                    Your total permanent disability coverage ends earlier than your loan duration or age
+                                    65.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="aem-GridColumn aem-GridColumn--default--12 remove-spacer--m-size">
+                            <!-- Child container wrapping one component -->
+                            <div data-include="horizontal_separator" data-id="hs_spacer_1" data-render="true"
+                                data-class="cmp-spacer"></div>
+                        </div>
+                    </div>
+                    <!-- Dashboard card elements example -->
+                    <div class="aem-Grid aem-Grid--default--12 db-card-wrapper">
+                        <div class="aem-GridColumn aem-GridColumn--default--12">
+                            <div class="db-card-group">
+                                <section class="dashboard-card-element">
+                                    <div class="line-item">
+                                        <div class="line-item--headline_row">
+                                            <div class="line-item--headline_row-icon">
+                                                <i class="icon-illustrative icon-healthcare-default"></i>
+                                            </div>
+                                            <div class="line-item--headline_row-info">
+                                                <div class="transaction-headline">
+                                                    <div class="transaction-headline--title">
+                                                        Transaction headline
+                                                        <div class="cmp-tooltip-demo-wrapper">
+                                                            <div class="cmp-tooltip">
+                                                                <div class="cmp-tooltip-overlay-bg"></div>
+                                                                <div class="cmp-tooltip-wrapper">
+                                                                    <i class="icon-dls-info-outline"></i>
+                                                                    <div class="cmp-tooltip-wrapper-popup bottom">
+                                                                        <a class="
+                                                          cmp-button cmp-button--secondary cmp-button--inverse
+                                                          cmp-tooltip-close
+                                                        ">
+                                                                            <span
+                                                                                class="icons_space icon-dls-close-outline"></span>
+                                                                        </a>
+                                                                        Lorem ipsum dolor sit amet, consectetur
+                                                                        adipiscing
+                                                                        elit. Et
+                                                                        neque sit amet in dolor mauris ante.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="total-amount show-desktop-only">$9,000,000.00</div>
+                                                </div>
+                                            </div>
+                                            <div class="line-item--headline_row-action">
+                                                <div class="total-amount show-mobile-only">$9,000,000.00</div>
+                                                <a class="
+                                              cmp-button
+                                              cmp-button--tertiary
+                                              cmp-button--medium
+                                              cmp-button--expand-accordion
+                                            " id="expandAccordion1">
+                                                    <span class="icons_space icon-dls-arrow-down"></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="line-item--accordion_container" id="accordionContainer1">
+                                            <span class="icon-placeholder"></span>
+                                            <div class="accordion_container">Expanded accordion content</div>
+                                        </div>
+                                    </div>
+                                </section>
+                                <div class="aem-GridColumn aem-GridColumn--default--12 ">
+                                    <!-- Child container wrapping one component -->
+                                    <div data-include="horizontal_separator" data-id="db_card_hs_1" data-render="true"
+                                        data-class="cmp-separator--dotted"></div>
+                                </div>
+                                <section class="dashboard-card-element">
+                                    <div class="line-item">
+                                        <div class="line-item--headline_row">
+                                            <div class="line-item--headline_row-icon">
+                                                <i class="icon-illustrative icon-healthcare-default"></i>
+                                            </div>
+                                            <div class="line-item--headline_row-info">
+                                                <div class="transaction-headline">
+                                                    <div class="transaction-headline--title">
+                                                        Transaction headline
+                                                        <div class="cmp-tooltip-demo-wrapper">
+                                                            <div class="cmp-tooltip">
+                                                                <div class="cmp-tooltip-overlay-bg"></div>
+                                                                <div class="cmp-tooltip-wrapper">
+                                                                    <i class="icon-dls-info-outline"></i>
+                                                                    <div class="cmp-tooltip-wrapper-popup bottom">
+                                                                        <a class="
+                                                          cmp-button cmp-button--secondary cmp-button--inverse
+                                                          cmp-tooltip-close
+                                                        ">
+                                                                            <span
+                                                                                class="icons_space icon-dls-close-outline"></span>
+                                                                        </a>
+                                                                        Lorem ipsum dolor sit amet, consectetur
+                                                                        adipiscing
+                                                                        elit. Et
+                                                                        neque sit amet in dolor mauris ante.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="total-amount show-desktop-only">$9,000,000.00</div>
+                                                </div>
+                                            </div>
+                                            <div class="line-item--headline_row-action">
+                                                <div class="total-amount show-mobile-only">$9,000,000.00</div>
+                                                <a class="
+                                              cmp-button
+                                              cmp-button--tertiary
+                                              cmp-button--medium
+                                              cmp-button--expand-accordion
+                                            " id="expandAccordion2">
+                                                    <span class="icons_space icon-dls-arrow-down"></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="line-item--accordion_container" id="accordionContainer2">
+                                            <span class="icon-placeholder"></span>
+                                            <div class="accordion_container">Expanded accordion content</div>
+                                        </div>
+                                    </div>
+                                </section>
+                                <div class="aem-GridColumn aem-GridColumn--default--12 ">
+                                    <!-- Child container wrapping one component -->
+                                    <div data-include="horizontal_separator" data-id="db_card_hs_2" data-render="true"
+                                        data-class="cmp-separator--dotted"></div>
+                                </div>
+                                <section class="dashboard-card-element">
+                                    <div class="line-item">
+                                        <div class="line-item--headline_row">
+                                            <div class="line-item--headline_row-icon">
+                                                <i class="icon-illustrative icon-healthcare-default"></i>
+                                            </div>
+                                            <div class="line-item--headline_row-info">
+                                                <div class="transaction-headline">
+                                                    <div class="transaction-headline--title">
+                                                        Transaction headline
+                                                        <div class="cmp-tooltip-demo-wrapper">
+                                                            <div class="cmp-tooltip">
+                                                                <div class="cmp-tooltip-overlay-bg"></div>
+                                                                <div class="cmp-tooltip-wrapper">
+                                                                    <i class="icon-dls-info-outline"></i>
+                                                                    <div class="cmp-tooltip-wrapper-popup bottom">
+                                                                        <a class="
+                                                          cmp-button cmp-button--secondary cmp-button--inverse
+                                                          cmp-tooltip-close
+                                                        ">
+                                                                            <span
+                                                                                class="icons_space icon-dls-close-outline"></span>
+                                                                        </a>
+                                                                        Lorem ipsum dolor sit amet, consectetur
+                                                                        adipiscing
+                                                                        elit. Et
+                                                                        neque sit amet in dolor mauris ante.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="total-amount show-desktop-only">$9,000,000.00</div>
+                                                </div>
+                                            </div>
+                                            <div class="line-item--headline_row-action">
+                                                <div class="total-amount show-mobile-only">$9,000,000.00</div>
+                                                <a class="
+                                              cmp-button
+                                              cmp-button--tertiary
+                                              cmp-button--medium
+                                              cmp-button--expand-accordion
+                                            " id="expandAccordion3">
+                                                    <span class="icons_space icon-dls-arrow-down"></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="line-item--accordion_container" id="accordionContainer3">
+                                            <span class="icon-placeholder"></span>
+                                            <div class="accordion_container">Expanded accordion content</div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- List example -->
+                    <div class="aem-Grid aem-Grid--default--12">
+                        <div class="aem-GridColumn aem-GridColumn--default--12">
+                            <ul class="cmp-list no-margin">
+                                <li>
+                                    The hospital bill will be paid by MediShield Life first before MediSave is withdrawn
+                                    to settle the balance. If MediShield Life and MediSave are not enough to pay for the
+                                    total bill, you will need to pay cash. The MediSave withdrawal and MediShield Life
+                                    claim cannot exceed the total bill.
+                                </li>
+                                <li>
+                                    You may refer to the <a href="#">MediShield Life claim limits</a> and <a
+                                        href="#">MediSave withdrawal limits</a> for more information. However, the
+                                    maximum amount of MediSave savings that can be withdrawn will be subjected to the
+                                    MediSave withdrawal limits for the bill.
+                                </li>
+                                <li>
+                                    MediShield Life benefits are designed to cover subsidised bills incurred by
+                                    Singapore Citizens and Permanent Residents at public hospitals. Hence,
+                                    non-subsidised bills are pro-rated before the claims under MediShield Life are
+                                    computed. Click for <a href="#">more information on the pro-ration factor</a>.
+                                </li>
+                                <li>
+                                    For a more accurate estimation of MediShield Life payout for your medical treatment,
+                                    please approach your medical institution for financial counselling.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="aem-GridColumn aem-GridColumn--default--12 remove-spacer--m-size">
+                            <!-- Child container wrapping one component -->
+                            <div data-include="horizontal_separator" data-id="rs_hs_1" data-render="true"
+                                data-class="cmp-spacer"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resources section -->
+                <div class="resourcesSection">
+                    <div class="aem-Grid aem-Grid--default--12">
+                        <!-- Section header (Child container - ensure only 1 component is inside) -->
+                        <div class="aem-GridColumn aem-GridColumn--default--12 ">
+                            <!-- Child container wrapping one component -->
+                            <div data-include="section_header" data-id="sh_4" data-render="true"
+                                data-headline="Resources"> </div>
+                        </div>
+
+                        <!-- Form resources -->
+                        <div class="aem-GridColumn aem-GridColumn--default--12 no-padding--s-size">
+                            <div class="form-resources carousel">
+                                <div class="form-resources-list row-items-3">
+                                    <div class="aem-Grid aem-Grid--default--12 base-print-flex no-padding--s-size">
+                                        <!-- Card 1 -->
+                                        <div class="individual-card aem-GridColumn aem-GridColumn--default--4">
+                                            <div class="teaser cmp-action-card cmp-action-card--wrapper-1">
+                                                <div class="cmp-teaser">
+                                                    <div class="cmp-teaser__content">
+                                                        <h4 class="cmp-teaser__title">View all forms</h4>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                            Lorem
+                                                            ipsum dolor sit amet, consectetur adipiscing elit. Lorem
+                                                            ipsum
+                                                            dolor sit amet, consectetur adipiscing elit.
+                                                        </p>
+                                                        <div class="separator">
+                                                            <div class="cmp-separator">
+                                                                <hr
+                                                                    class="cmp-separator__horizontal-rule cmp-separator--dotted" />
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="button-flex">
+                                                                <a class="cmp-button cmp-button--link">
+                                                                    <span class="cmp-button__text">Text link 1</span>
+                                                                    <span
+                                                                        class="icons_space icon-dls-arrow-right"></span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Card 2 -->
+                                        <div class="individual-card aem-GridColumn aem-GridColumn--default--4">
+                                            <div class="teaser cmp-action-card cmp-action-card--wrapper-1">
+                                                <div class="cmp-teaser">
+                                                    <div class="cmp-teaser__content">
+                                                        <h4 class="cmp-teaser__title">View all brochures</h4>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                            Lorem
+                                                            ipsum dolor sit amet, consectetur adipiscing elit. Lorem
+                                                            ipsum
+                                                            dolor sit amet, consectetur adipiscing elit.
+                                                        </p>
+                                                        <div class="separator">
+                                                            <div class="cmp-separator">
+                                                                <hr
+                                                                    class="cmp-separator__horizontal-rule cmp-separator--dotted" />
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="button-flex">
+                                                                <a class="cmp-button cmp-button--link">
+                                                                    <span class="cmp-button__text">Text link 1</span>
+                                                                    <span
+                                                                        class="icons_space icon-dls-arrow-right"></span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Card 3 -->
+                                        <div class="individual-card aem-GridColumn aem-GridColumn--default--4">
+                                            <div class="teaser cmp-action-card cmp-action-card--wrapper-1">
+                                                <div class="cmp-teaser">
+                                                    <div class="cmp-teaser__content">
+                                                        <h4 class="cmp-teaser__title">View all videos</h4>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                            Lorem
+                                                            ipsum dolor sit amet, consectetur adipiscing elit. Lorem
+                                                            ipsum
+                                                            dolor sit amet, consectetur adipiscing elit.
+                                                        </p>
+                                                        <div class="separator">
+                                                            <div class="cmp-separator">
+                                                                <hr
+                                                                    class="cmp-separator__horizontal-rule cmp-separator--dotted" />
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="button-flex">
+                                                                <a class="cmp-button cmp-button--link">
+                                                                    <span class="cmp-button__text">Text link 1</span>
+                                                                    <span
+                                                                        class="icons_space icon-dls-arrow-right"></span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Card 4 hidden by default -->
+                                        <div class="individual-card aem-GridColumn aem-GridColumn--default--4 hidden">
+                                            <div class="teaser cmp-action-card cmp-action-card--wrapper-1">
+                                                <div class="cmp-teaser">
+                                                    <div class="cmp-teaser__content">
+                                                        <h4 class="cmp-teaser__title">View all forms</h4>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                            Lorem
+                                                            ipsum dolor sit amet, consectetur adipiscing elit. Lorem
+                                                            ipsum
+                                                            dolor sit amet, consectetur adipiscing elit.
+                                                        </p>
+                                                        <div class="separator">
+                                                            <div class="cmp-separator">
+                                                                <hr
+                                                                    class="cmp-separator__horizontal-rule cmp-separator--dotted" />
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="button-flex">
+                                                                <a class="cmp-button cmp-button--link">
+                                                                    <span class="cmp-button__text">Text link 1</span>
+                                                                    <span
+                                                                        class="icons_space icon-dls-arrow-right"></span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Card 5 hidden by default -->
+                                        <div class="individual-card aem-GridColumn aem-GridColumn--default--4 hidden">
+                                            <div class="teaser cmp-action-card cmp-action-card--wrapper-1">
+                                                <div class="cmp-teaser">
+                                                    <div class="cmp-teaser__content">
+                                                        <h4 class="cmp-teaser__title">View all brochures</h4>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                            Lorem
+                                                            ipsum dolor sit amet, consectetur adipiscing elit. Lorem
+                                                            ipsum
+                                                            dolor sit amet, consectetur adipiscing elit.
+                                                        </p>
+                                                        <div class="separator">
+                                                            <div class="cmp-separator">
+                                                                <hr
+                                                                    class="cmp-separator__horizontal-rule cmp-separator--dotted" />
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="button-flex">
+                                                                <a class="cmp-button cmp-button--link">
+                                                                    <span class="cmp-button__text">Text link 1</span>
+                                                                    <span
+                                                                        class="icons_space icon-dls-arrow-right"></span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Show more button -->
+                                        <div class="aem-GridColumn aem-GridColumn--default--12 show-more-button">
+                                            <button class="action-card-btn show-more-btn cmp-button cmp-button--primary"
+                                                title="Text">
+                                                <span class="cmp-button__text" data-show-all="Show all"
+                                                    data-show-less="Show less">
+                                                    Show all
+                                                </span>
+                                                <span class="icons_space icon-dls-arrow-down"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End form resources -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- This is the spacer added at the end of the page to ensure that the gap between the CTA bar and the footer is 80px -->
+                <div class="resourcesSpacer">
+                    <div class="aem-Grid aem-Grid--default--12 end-page-spacer">
+                        <div class="aem-GridColumn aem-GridColumn--default--12">
+                            <div class="cmp-separator">
+                                <hr class="cmp-separator__horizontal-rule cmp-spacer--8" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- To remove for prod -- using this to test the full template view  -->
+        <div data-include="footer/compact-footer"></div>
+    </div>
+</body>
+
+</html>

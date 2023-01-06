@@ -1,0 +1,47 @@
+
+.cmp-input-caption {
+  position: relative;
+  color: @steelgrey;
+  font-style: italic;
+  
+  &.success {
+    color: @successlava;
+    padding-left: 28px;
+    &:before {
+      position: absolute;
+      font-family: "icomoon";
+      left: 0px;
+      top: 0;
+      content: "\e935";
+      min-width: 24px;
+      max-height: 24px;
+      font-size: 24px;
+      font-style: normal;
+      background: transparent;
+    }
+  }
+  &.error {
+    color: @errorlava;
+    padding-left: 28px;
+    &:before {
+      position: absolute;
+      font-family: "icomoon";
+      left: 0px;
+      top: 0;
+      content: "\e92b";
+      min-width: 24px;
+      max-height: 24px;
+      font-size: 24px;
+      font-style: normal;
+      background: transparent;
+    }
+  }
+
+  &.disabled {
+    color: @steelgrey;
+  }
+
+  &.readonly {
+    color: @steelgrey;
+  }
+}

@@ -1,0 +1,115 @@
+.cmp-action-card {
+    box-sizing: border-box;
+
+    &.cmp-action-card--outlink {
+        background: @purewhite;
+        border: 1px solid @pinegreen6;
+        box-shadow: 0px 4px 8px rgba(155, 155, 155, 0.16);
+        border-radius: 10px;
+        height: 100%;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        transition: all @duration-short @timing-ease-out;
+
+        &>a {
+            text-decoration: none;
+            color: inherit;
+            margin: 0;
+            padding: 24px;
+            height: 100%;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+
+            &>* {
+                margin-bottom: 16px;
+
+                &:last-child {
+                    margin-bottom: 0 !important;
+                }
+            }
+        }
+
+        &:hover {
+            background-color: @pinegreen9;
+
+            .cmp-separator--solid--light {
+                border-bottom-color: @stonegrey;
+            }
+        }
+
+        .icons_space {
+            color: @pinegreen1;
+            margin-left: auto;
+            line-height: inherit;
+            align-self: flex-start;
+        }
+
+        .cmp-inner-card-link__link {
+            width: 100%;
+        }
+
+        .cmp-title {
+            color: @pinegreen1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .cmp-action-card__icon:before {
+            content: "\e913" !important;
+            font-family: "icomoon" !important;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+            padding: 0 5px;
+        }
+
+        .cmp-button__text {
+            max-width: ~"calc(100% - 14px)";
+        }
+
+        .cmp-separator--no-padding {
+            padding: 0;
+        }
+
+        .cmp-teaser__footer {
+            &--clickable-card {
+                margin-top: 0;
+
+                .cmp-teaser__footer--content {
+                    margin-top: 12px;
+                }
+            }
+        }
+    }
+
+    &>* {
+        margin-bottom: 16px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.cmp-teaser__footer {
+    display: flex;
+    flex-direction: row;
+
+    .icon-illustrative {
+        width: 48px;
+        min-width: 48px;
+        margin-right: 8px;
+        height: 48px;
+
+        &:before {
+            width: 48px;
+        }
+    }
+
+    &__para {
+        flex: 1;
+    }
+}

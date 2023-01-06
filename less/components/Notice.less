@@ -1,0 +1,21 @@
+.notice--container {
+    background-color: #e7edf6;
+
+    p {
+        padding-top: 16px;
+    }
+
+    @media only screen and (min-width: 767px) {
+        margin-bottom: 20px;
+    }
+
+    &__content {
+        justify-content: flex-start;
+
+        .notice--content {
+            @media only screen and (min-width: 992px) {
+                max-width: 741px;
+            }
+        }
+    }
+}

@@ -1,0 +1,97 @@
+.component-loader--container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    box-sizing: border-box;
+
+    &-large {
+        padding: 112px;
+    }
+
+    &-dark {
+        background-color: @pinegreen1;
+    }
+
+    &-subsequent_loading {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        background: rgba(247, 247, 247, 0.8);
+        display: block;
+
+        .component-loader {
+            margin: 80px auto;
+        }
+    }
+}
+
+.component-loader {
+    width: 40px;
+    height: 40px;
+    position: relative;
+
+    &--dots {
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background-color: @pinegreen2;
+        border-radius: 50%;
+    }
+
+    .dot-1 {
+        left: 5%;
+        top: 45%;
+        animation: componentLoaderDots 1s linear infinite forwards;
+    }
+
+    .dot-2 {
+        left: 40%;
+        top: 45%;
+        animation: componentLoaderDots 1s linear 0.1s infinite forwards;
+    }
+
+    .dot-3 {
+        left: 75%;
+        top: 45%;
+        animation: componentLoaderDots 1s linear 0.3s infinite forwards;
+    }
+
+    &--large {
+        width: 64px;
+        height: 64px;
+
+        .component-loader--dots {
+            width: 12.8px;
+            height: 12.8px;
+        }
+    }
+
+    &--dark {
+        .component-loader--dots {
+            background-color: @purewhite;
+        }
+    }
+}
+
+@keyframes componentLoaderDots {
+    0% {
+        top: 45%;
+        opacity: 1;
+    }
+
+    50% {
+        top: 72.5%;
+        opacity: 0;
+    }
+
+    100% {
+        top: 45%;
+        opacity: 1;
+    }
+}

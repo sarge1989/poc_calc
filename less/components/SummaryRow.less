@@ -1,0 +1,472 @@
+.cmp-summaryRow {
+  width: 100%;
+  display: flex;
+  align-items: start;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  background-color: @smokegrey;
+  box-sizing: border-box;
+
+  // M and below
+  @media only screen and (max-width: 991px) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  // Elements
+  article {
+    position: relative;
+    text-align: center;
+    width: 25%;
+
+    &:not(:last-child) {
+      margin-right: 24px;
+    }
+
+    // As there are max 4 items, each item should have a 25% width
+    // For the case where there're four items, the width of the items
+    // need to account for the 3x24px gap between each article
+    &:first-child:nth-last-child(4),
+    &:first-child:nth-last-child(4) ~ article {
+      width: ~"calc(25% - 18px)"; // 3 x 24 / 4 = 18px
+    }
+
+    > h1 {
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 700;
+      letter-spacing: -0.25px;
+      color: @warningginger;
+      text-transform: none;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    > h2 {
+      font-size: 24px;
+      line-height: 32px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: @carbonblack;
+      margin-top: 2px;
+    }
+
+    > h3 {
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 700;
+      letter-spacing: -0.25px;
+      color: @warningginger;
+      margin-top: 2px;
+    }
+
+    > p {
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 400;
+      color: @slategrey;
+    }
+
+    // M and below
+    // when M and below it should all be 100%
+    @media only screen and (max-width: 991px) {
+      width: 100%;
+
+      &:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 40px;
+      }
+
+      // On mobile, article width should always be 100%
+      &:first-child:nth-last-child(4),
+      &:first-child:nth-last-child(4) ~ article {
+        width: 100%;
+      }
+    }
+
+    // Overwrite style only in summary row
+    .cmp-tooltip {
+      &-wrapper {
+        > .icon-dls-info-outline {
+          color: @warningginger;
+        }
+        .tooltip-icon {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &-grouped-article {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    flex: 0 0 100%;
+
+    // Element
+    &-header {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      background-image: url("data:image/svg+xml,%3Csvg width='7' height='2' viewBox='0 0 7 2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0)'%3E%3Cpath d='M-35.9 1L372.136 0.99996' stroke='%23b7760d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' stroke-dasharray='1.5 6' /%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0'%3E%3Crect width='7' height='2' fill='white'/%3E%3ClinearGradient id='linear' x1='0%25' y1='0%25' x2='40%25' y2='0%25'%3E%3Cstop offset='0%25' style='stop-color:rgb(155, 186, 184);stop-opacity:1' /%3E%3C/linearGradient%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+      background-repeat: repeat-x;
+      background-position: center center;
+
+      // M and below
+      @media only screen and (max-width: 991px) {
+        background-image: none;
+      }
+
+      > h1 {
+        width: 100%;
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 700;
+        letter-spacing: -0.25px;
+        color: @warningginger;
+        text-transform: none;
+        padding: 0px 32px;
+        box-sizing: border-box;
+
+        > span {
+          display: inline-block;
+          background-color: @smokegrey;
+          padding: 0 16px;
+        }
+
+        .cmp-tooltip {
+          background-color: @smokegrey;
+          padding: 0 16px;
+
+          .icon-dls-info-outline {
+            color: @warningginger;
+          }
+        }
+
+        > .cmp-tooltip-demo-wrapper {
+          display: inline-block;
+        }
+
+        // M and below
+        @media only screen and (max-width: 991px) {
+          padding: 0px;
+
+          > span {
+            background-color: transparent;
+          }
+
+          .cmp-tooltip {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+
+    &-body {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      justify-content: center;
+      width: 100%;
+      article {
+        width: 25%;
+      }
+    }
+
+    // Modifier for how many items are grouped
+    // --[grouped number]-[ungrouped number]
+    // Example: --2-1
+    // Answer : 2 in a group and 1 that's ungrouped. total 3 items on screen.
+    &--2-1 {
+      flex: 0 0 ~"calc(75% - 12px)";
+      article {
+        // Article width inside the grouped article for [2]
+        width: ~"calc(100% / 2)";
+      }
+
+      ~ article {
+        //This is to target the article beside grouped
+        width: ~"calc(25% - 12px)";
+      }
+    }
+
+    &--2-2 {
+      flex: 0 0 ~"calc(50% - 12px)";
+      article {
+        // Article width inside the grouped article for [2]
+        width: ~"calc(100% / 2)";
+      }
+
+      &:first-child {
+        margin-right: 12px;
+      }
+
+      &:last-child {
+        margin-left: 12px;
+      }
+    }
+
+    &--3-1 {
+      flex: 0 0 ~"calc(75% - 12px)";
+      article {
+        // Article width inside the grouped article for [3]
+        width: ~"calc(100% / 3)";
+      }
+
+      ~ article {
+        //This is to target the article beside grouped
+        width: ~"calc(25% - 12px)";
+      }
+    }
+
+    // M and below
+    @media only screen and (max-width: 991px) {
+      flex-direction: column;
+
+      &-body {
+        flex-direction: column;
+        margin-bottom: 40px;
+
+        article {
+          width: 100%;
+        }  
+      }
+
+      &--2-1 {
+        flex: 0 0 100%;
+        article {
+          width: 100%;
+        }
+
+        ~ article {
+          width: 100%;
+        }
+      }
+
+      &--2-2 {
+        flex: 0 0 100%;
+        article {
+          width: 100%;
+        }
+
+        ~ article {
+          width: 100%;
+        }
+
+        &:first-child {
+          margin-right: 0;
+        }
+
+        &:last-child {
+          margin-left: 0;
+        }
+      }
+
+      &--3-1 {
+        flex: 0 0 100%;
+        article {
+          width: 100%;
+        }
+
+        ~ article {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  // Dark theme purely color change
+  &.dark-mode {
+    background-color: transparent;
+
+    article {
+      > h1 {
+        color: @gold2;
+      }
+
+      > h2 {
+        color: @purewhite;
+      }
+
+      > h3 {
+        color: @gold2;
+      }
+
+      > p {
+        color: @purewhite;
+      }
+
+      > a {
+        color: @purewhite;
+        &:hover {
+          color: @pinegreen8;
+        }
+      }
+
+      .cmp-tooltip {
+        &-wrapper {
+          > .icon-dls-info-outline {
+            color: @gold2;
+          }
+        }
+      }
+    }
+
+    .cmp-summaryRow-grouped-article {
+      &-header {
+        background-image: url("data:image/svg+xml,%3Csvg width='7' height='2' viewBox='0 0 7 2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0)'%3E%3Cpath d='M-35.9 1L372.136 0.99996' stroke='%23F6D594' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' stroke-dasharray='1.5 6' /%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0'%3E%3Crect width='7' height='2' fill='white'/%3E%3ClinearGradient id='linear' x1='0%25' y1='0%25' x2='40%25' y2='0%25'%3E%3Cstop offset='0%25' style='stop-color:rgb(155, 186, 184);stop-opacity:1' /%3E%3C/linearGradient%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+        > h1 {
+          color: @gold2;
+
+          > span {
+            padding: 0 16px;
+            display: inline-block;
+            background-color: @pinegreen1;
+          }
+
+          .cmp-tooltip {
+            background-color: @pinegreen1;
+            padding: 0 16px;
+            &-wrapper {
+              > .icon-dls-info-outline {
+                color: @gold2;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  //Vertically stacked text for Single Summary Row
+  &.vertically-stacked {
+    flex-direction: column;
+    align-items: center;
+
+    article {
+      width: 100%;
+      max-width: 741px;
+
+      &:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 40px;
+      }
+
+      &:first-child:nth-last-child(4),
+      &:first-child:nth-last-child(4) ~ article {
+        width: 100%;
+      }
+    }   
+  }
+
+  //Vertically stacked text for Grouped Summary Row
+  &.vertically-stacked-grouped {
+    flex-direction: column;
+    align-items: center;
+
+    article {
+      max-width: 741px;
+      width: 100%;
+
+      &:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 40px;
+      }
+    } 
+
+    .cmp-summaryRow-grouped-article {
+      align-items: center;
+      flex-direction: column;
+      
+      &-header {
+        background-image: none;
+      }
+
+      &-body {
+        flex-direction: column;
+        margin-bottom: 40px;
+
+        article {
+          width: 100%;
+          max-width: 741px;
+        }
+
+        &:not(:last-child) {
+          margin-right: 0;
+        }
+      }
+
+      &--2-1 {
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: 741px;
+
+        article {
+          width: 100%;
+        }
+
+        ~ article {
+          width: 100%;
+        }
+
+        &:last-child {
+          margin-left: 0;
+        }
+      }
+
+      &--2-2 {
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: 741px;
+
+        article {
+          width: 100%;
+        }
+
+        ~ article {
+          width: 100%;
+        }
+
+        &:first-child {
+          margin-right: 0;
+        }
+
+        &:last-child {
+          margin-left: 0;
+        }
+      }
+
+      &--3-1 {
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: 741px;
+
+        article {
+          width: 100%;
+        }
+
+        ~ article {
+          width: 100%;
+        }
+
+        &:last-child {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
+
+// Not to be included in production and only for demo purposes
+.cmp-summaryRow-demo-wrapper {
+  width: 100%;
+  max-width: 1140px;
+  margin: auto;
+}

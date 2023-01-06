@@ -1,0 +1,61 @@
+.content-resources-list,
+.form-resources-list {
+    .aem-Grid {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .individual-card {
+        height: auto;
+
+        &.hidden {
+            display: none;
+        }
+    }
+
+    .cmp-action-card,
+    .cmp-action-card.cmp-action-card--outlink {
+        box-sizing: border-box;
+        margin: 0;
+        min-height: 100%;
+    }
+}
+
+.content-resources-list {
+    &>.cmp-action-card {
+        height: auto;
+    }
+}
+
+.aem-GridColum {
+
+    &>.teaser,
+    &>.article-card {
+        height: 100%;
+    }
+}
+
+@media only screen and (min-width: 767px) and (max-width: 991px) {
+    .row-items-3 {
+        .aem-GridColumn--default--4 {
+            width: 50% !important;
+            height: auto !important;
+        }
+    }
+}
+
+.show-more-button {
+    justify-content: center;
+    display: flex;
+    padding: 0 !important;
+
+    &.hidden {
+        display: none;
+    }
+
+    .cmp-button {
+        margin: 12px 0;
+    }
+}

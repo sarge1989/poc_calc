@@ -1,0 +1,34 @@
+.form-card {
+  &--container {
+    padding: 24px;
+    background: @purewhite;
+    box-shadow: 0px 4px 8px rgba(155, 155, 155, 0.16);
+    border-radius: 8px;
+  }
+  
+  &--header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    &-info {
+      &_title {
+        font-weight: bold;
+      }
+    }
+  }
+  
+  &--info-snippet {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+
+    .information-snippet {
+      width: ~"calc(50% - 12px)";
+      padding: 8px 8px 8px 0;
+
+      @media only screen and (max-width: 767px) {
+        width: 100%;
+      }
+    }
+  }
+}

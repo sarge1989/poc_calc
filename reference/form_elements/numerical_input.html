@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Numerical input</title>
+
+    <link rel="stylesheet/less" type="text/css" href="../../less/references.less" />
+
+    <!-- Only 1 js is included -> All imports done in this file -->
+    <script src="../../js/references/r_numerical_input.js" type="module"></script>
+</head>
+
+<body class="webf-page--content">
+    <div class="root container responsivegrid">
+        <!-- Main content section -->
+        <div class="container responsivegrid">
+            <div class="aem-Grid aem-Grid--default--12">
+                <!-- Test insert and render using js -->
+                <h4 class="title__text title__text--semibold" style="margin-bottom: 16px;">Numerical input</h4>
+                <h5 class="title__text title__text--regular">You can include the following attributes when using the
+                    component. Note that those marked with * are compulsory:
+                </h5>
+                <ul class="cmp-list">
+                    <li><b>data-include*:</b> Name of html file of component</li>
+                    <li><b>data-id*:</b> ID of component when inserting to html</li>
+                    <li><b>data-render:</b> Set value to "true" if the component requires rendering. Most component
+                        requires rendering to set the class. </li>
+                    <li><b>data-field-id*:</b> ID of input field (note: this is different from data-id)</li>
+                    <li><b>data-name*:</b> Name of component for retrieving form data</li>
+                    <li><b>data-input-label*:</b> Input field label</li>
+                    <li><b>data-tooltip-content:</b> Tooltip content. Exclude this attribute if tooltip is not required.
+                    </li>
+                    <li><b>data-caption*:</b> Caption for displaying help text or error messages</li>
+                    <li><b>data-placeholder*:</b> Placeholder text</li>
+                    <li><b>data-default-value*:</b> Default value</li>
+                    <li><b>data-step*:</b> Step increment </li>
+                    <li><b>data-prefix:</b> Prefix value. Exclude this attribute if
+                        prefix is not required.</li>
+                    <li><b>data-suffix:</b> Suffix value. Exclude this attribute if
+                        suffix is not required.</li>
+                    <li><b>data-is-decimal*:</b> Set value to "true" if value is in decimal. Exclude this attribute if
+                        value is a whole number.</li>
+                </ul>
+
+                <div data-include="horizontal_separator" data-id="hs_l3_1" data-render="true"
+                    data-class="cmp-separator--solid--light"></div>
+
+                <h5 style="margin-bottom: 8px; margin-top: 16px;"> JS</h5>
+                <p>Include the <b>codes in bold</b> in <b>index.js</b> when using this component. </p>
+                <pre style="margin-top: 8px; margin-bottom: 32px; border: 1px solid darkgray; padding: 12px; ">
+<b>import "./components/form-elements/numerical-input.js";</b>
+
+// Example
+const init = function () {
+    $.fn.globalHeader();
+    $.fn.DropDownMenu();
+
+    <b>$(".cmp-inputs").NumericalInput();</b>
+};</pre>
+
+                <div data-include="horizontal_separator" data-comp-root="../../" data-id="hs_l3_2" data-render="true"
+                    data-class="cmp-separator--solid--light"></div>
+
+                <h5 style="margin-bottom: 8px; margin-top: 16px;"> Examples:</h5>
+
+                <!-- Currency input -->
+                <p style="margin-bottom: 8px;">&lt;!-- Currency input --&gt;</p>
+                <div data-include="numerical_input" data-comp-root="../../" data-id="ni_1" data-render="true" data-name="numerical_input_1"
+                    data-input-label="Currency input" data-field-id="numerical_input_1"
+                    data-tooltip-content="Some sample content in the tooltip for currency input."
+                    data-caption="This is a help text for currency input." data-placeholder="00.00"
+                    data-default-value="" data-step="0.01" data-prefix="$" data-suffix="month(s)"
+                    data-is-decimal="true">
+                </div>
+                <p style="margin-top: 8px; margin-bottom: 32px; border: 1px solid darkgray; padding: 12px; ">
+                    &lt;div data-include="numerical_input" data-id="ni_1" data-render="true"
+                    data-name="numerical_input_1"
+                    data-input-label="Currency input" data-field-id="numerical_input_1"
+                    data-tooltip-content="Some sample content in the tooltip for currency input."
+                    data-caption="This is a help text for currency input." data-placeholder="00.00"
+                    data-default-value=""
+                    data-step="0.01" data-prefix="$" data-suffix="month(s)" data-is-decimal="true"&gt;
+                    &lt;/div&gt;
+                </p>
+
+                <!-- Value input - decimal -->
+                <p style="margin-bottom: 8px;">&lt;!-- Value input - decimal --&gt;</p>
+                <div data-include="numerical_input" data-comp-root="../../" data-id="ni_2" data-render="true" data-name="numerical_input_2"
+                    data-input-label="Value variant - decimal" data-field-id="numerical_input_2"
+                    data-tooltip-content="Some sample content in the tooltip for value input with decimal input."
+                    data-caption="This is a help text for value input wth decimal input." data-placeholder="00.00"
+                    data-default-value="" data-step="0.01" data-prefix="$" data-is-decimal="true">
+                </div>
+                <p style="margin-top: 8px; margin-bottom: 32px; border: 1px solid darkgray; padding: 12px; ">
+                    &lt;div data-include="numerical_input" data-id="ni_2" data-render="true"
+                    data-name="numerical_input_2"
+                    data-input-label="Value variant - decimal" data-field-id="numerical_input_2"
+                    data-tooltip-content="Some sample content in the tooltip for value input with decimal input."
+                    data-caption="This is a help text for value input wth decimal input." data-placeholder="00.00"
+                    data-default-value="" data-step="0.01" data-prefix="$"
+                    data-is-decimal="true"&gt;
+                    &lt;/div&gt;
+                </p>
+
+                <!-- Value input - whole number -->
+                <p style="margin-bottom: 8px;">&lt;!-- Value input - whole number --&gt;</p>
+                <div data-include="numerical_input" data-comp-root="../../" data-id="ni_3" data-render="true" data-name="numerical_input_3"
+                    data-input-label="Value variant - whole number" data-field-id="numerical_input_3"
+                    data-tooltip-content="Some sample content in the tooltip for value input with whole number input."
+                    data-caption="This is a help text for value input wth whole number input." data-placeholder="0"
+                    data-default-value="" data-suffix="/ month">
+                </div>
+                <p style="margin-top: 8px; margin-bottom: 32px; border: 1px solid darkgray; padding: 12px; ">
+                    &lt;div data-include="numerical_input" data-id="ni_3" data-render="true"
+                    data-name="numerical_input_3"
+                    data-input-label="Value variant - whole number" data-field-id="numerical_input_3"
+                    data-tooltip-content="Some sample content in the tooltip for value input with whole number input."
+                    data-caption="This is a help text for value input wth whole number input." data-placeholder="0"
+                    data-default-value="" data-suffix="/ month"&gt;
+                    &lt;/div&gt;
+                </p>
+
+                <!-- Value input - no prefix and suffix -->
+                <p style="margin-bottom: 8px;">&lt;!-- Value input - no prefix and suffix --&gt;</p>
+                <div data-include="numerical_input" data-comp-root="../../" data-id="ni_4" data-render="true" data-name="numerical_input_4"
+                    data-input-label="Value variant - whole number" data-field-id="numerical_input_4"
+                    data-tooltip-content="Some sample content in the tooltip for value input with no prefix and suffix."
+                    data-caption="This is a help text for value input wth whole number input." data-placeholder="0"
+                    data-default-value="">
+                </div>
+                <p style="margin-top: 8px; margin-bottom: 32px; border: 1px solid darkgray; padding: 12px; ">
+                    &lt;div data-include="numerical_input" data-id="ni_4" data-render="true"
+                    data-name="numerical_input_4"
+                    data-input-label="Value variant - whole number" data-field-id="numerical_input_4"
+                    data-tooltip-content="Some sample content in the tooltip for value input with no prefix and suffix."
+                    data-caption="This is a help text for value input wth whole number input." data-placeholder="0"
+                    data-default-value=""&gt;
+                    &lt;/div&gt;
+                </p>
+
+                <!-- ====== -->
+            </div>
+            <div class="aem-Grid aem-Grid--default--12">
+                <div data-include="standard_button" data-comp-root="../../" data-class="cmp-button--secondary cmp-button--medium"
+                    data-btntext="Back to reference list" data-id="back_btn" data-render="true"
+                    data-href="/reference/index.html"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

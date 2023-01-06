@@ -1,0 +1,128 @@
+@import (once) "grid_base.less";
+
+@max_col: 12; /* maximum amount of grid cells */
+
+/* default breakpoint */
+.aem-Grid {
+  .generate-grid(default, @max_col); 
+  padding: 12px 18px; 
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box; 
+  .aem-GridColumn{
+    padding: 12px;
+    position: relative; 
+    box-sizing: border-box;
+    .grid-child{
+      padding: 0;
+      margin:-12px;
+      width: ~"calc(100% + 24px)"; 
+    }
+  } 
+  [class*="aem-GridColumn--default--12"] {
+    height:auto !important;
+  } 
+  
+}
+
+.grid-list{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  & > div{
+    flex: 0 0 50%;
+  } 
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) { 
+  .aem-Grid { 
+    .generate-grid(default, @max_col); 
+    padding: 12px 4px;  
+  } 
+}
+
+/* tablet breakpoint */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  
+  .aem-Grid { 
+    .generate-grid(tablet, @max_col); 
+    padding: 16px 16px;  
+    .aem-GridColumn{
+      padding: 16px 8px; 
+    }
+  }
+  .aem-Grid.aem-Grid--default--12 {
+    .aem-GridColumn.aem-GridColumn--default {
+      &--12, &--11, &--10, &--9, &--8, &--7{  
+        width: 100%;
+      }
+      &--6, &--5, &--4 { 
+        width: 100%; 
+      } 
+      &--3, &--2{ 
+        width: 50%; 
+      }
+    }
+  }
+}
+
+
+
+/* Phone breakpoint */
+@media only screen and (max-width: 767px)  {
+  .aem-Grid { 
+    .generate-grid(phone, @max_col); 
+    padding: 16px 8px;  
+    & > .aem-GridColumn{
+      padding: 16px 8px; 
+      width: 100% !important;  
+      box-sizing: border-box;
+    }
+  }
+  .aem-Grid.aem-Grid--default--12{
+    & > .aem-GridColumn { 
+      width: 100% !important;  
+    }
+  }
+  .grid-list{ 
+    & > div{
+      flex: 1 0 100%;
+    } 
+  }
+}
+
+.fluid-container{
+  max-width: 100% !important;
+  width: 100% !important;
+}
+@media only screen and (max-width: 991px)  {
+  .img-flex{
+    flex: none !important;
+    width: 100% !important;
+  }
+}
+
+
+.aem-GridColumn{
+  & > .teaser.ribbon-card{
+    height:100%;
+  }
+}
+
+.aem-GridColumn {
+  & + .separator,
+  & + .cmp-separator{    
+    width: 100%;
+    padding: 12px;
+    position: relative; 
+    box-sizing: border-box;
+  }
+  
+  & + .separator > .cmp-separator{
+    padding: 0 ;
+  }
+}
+
+
+
+

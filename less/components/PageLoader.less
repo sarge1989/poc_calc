@@ -1,0 +1,236 @@
+.loader-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+
+    .page-loader {
+        position: relative;
+        height: 100%;
+
+        .animation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            height: 100%;
+            text-align: center;
+
+            .animation-child {
+                position: relative;
+
+                .icons {
+                    margin-left: -15px; //half of margin caused by the circle animation
+                }
+
+                p {
+                    font-weight: 600;
+                    display: flex;
+                    justify-content: flex-end;
+                }
+
+                .icons {
+                    width: 100px;
+                    height: 100px;
+                    background-repeat: no-repeat;
+                    background-size: 100px 100px;
+                    position: absolute;
+                    top: 12px;
+                    left: ~"calc(50% - 36px)";
+                }
+
+                .icon-0 {
+                    // For normal import in html, use this path
+                    background-image: url("../Assets/PageLoader/member/icon0.svg");
+
+                    // For bundling, use this path
+                    // background-image: url("../../Assets/PageLoader/member/icon0.svg");
+                    opacity: 1;
+                    animation: pageLoaderIconFade 8s linear infinite forwards;
+                }
+
+                .icon-1 {
+                    // For normal import in html, use this path
+                    background-image: url("../Assets/PageLoader/member/icon1.svg");
+
+                    // For bundling, use this path
+                    // background-image: url("../../Assets/PageLoader/member/icon1.svg");
+                    opacity: 0;
+                    animation: pageLoaderIconFade 8s linear 2s infinite forwards;
+                }
+
+                .icon-2 {
+                    // For normal import in html, use this path
+                    background-image: url("../Assets/PageLoader/member/icon2.svg");
+
+                    // For bundling, use this path
+                    // background-image: url("../../Assets/PageLoader/member/icon2.svg");
+                    opacity: 0;
+                    animation: pageLoaderIconFade 8s linear 4s infinite forwards;
+                }
+
+                .icon-3 {
+                    // For normal import in html, use this path
+                    background-image: url("../Assets/PageLoader/member/icon3.svg");
+
+                    // For bundling, use this path
+                    // background-image: url("../../Assets/PageLoader/member/icon3.svg");
+                    opacity: 0;
+                    animation: pageLoaderIconFade 8s linear 6s infinite forwards;
+                }
+
+                .employer-icon.icon-0 {
+                    // For normal import in html, use this path
+                    background-image: url("../Assets/PageLoader/employer/icon0.svg");
+
+                    // For bundling, use this path
+                    // background-image: url("../../Assets/PageLoader/employer/icon0.svg");
+                }
+
+                .employer-icon.icon-1 {
+                    // For normal import in html, use this path
+                    background-image: url("../Assets/PageLoader/employer/icon1.svg");
+
+                    // For bundling, use this path
+                    // background-image: url("../../Assets/PageLoader/employer/icon1.svg");
+                }
+
+                .employer-icon.icon-2 {
+                    // For normal import in html, use this path
+                    background-image: url("../Assets/PageLoader/employer/icon2.svg");
+
+                    // For bundling, use this path
+                    // background-image: url("../../Assets/PageLoader/employer/icon2.svg");
+                }
+
+                .employer-icon.icon-3 {
+                    // For normal import in html, use this path
+                    background-image: url("../Assets/PageLoader/employer/icon3.svg");
+
+                    // For bundling, use this path
+                    // background-image: url("../../Assets/PageLoader/employer/icon3.svg");
+                }
+
+                .color {
+                    width: 125px;
+                    height: 125px;
+                    position: relative;
+                    margin: 0 auto;
+
+                    &.member-color {
+
+                        .big-circle-container,
+                        .small-circle-container {
+                            .circle {
+                                animation: memberColor 8s linear infinite forwards;
+                            }
+                        }
+                    }
+                }
+
+                .big-circle-container {
+                    position: absolute;
+                    animation-name: circleSpin;
+                    animation-duration: 2000ms;
+                    animation-iteration-count: infinite;
+                    animation-timing-function: linear;
+                }
+
+                .big-circle {
+                    margin: 0 60px 90px 30px;
+                    transition: background-color 0.6s linear;
+                    background-color: @orange;
+                    width: 36px;
+                    height: 36px;
+                    border-radius: 18px;
+                    opacity: 0.5;
+                }
+
+                .small-circle-container {
+                    position: absolute;
+                    animation-name: circleSpin;
+                    animation-duration: 1500ms;
+                    animation-iteration-count: infinite;
+                    animation-timing-function: linear;
+                }
+
+                .small-circle {
+                    margin: 72px 60px 0 36px;
+                    transition: background-color 0.6s linear;
+                    background-color: @orange;
+                    width: 24px;
+                    height: 24px;
+                    border-radius: 12px;
+                    opacity: 0.5;
+                }
+
+                .hidden {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+/** Animation **/
+@keyframes circleSpin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pageLoaderIconFade {
+    00% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes memberColor {
+    00% {
+        background-color: @coingrey1;
+    }
+
+    25% {
+        background-color: @coingrey1;
+    }
+
+    26% {
+        background-color: @joyfulpink1;
+    }
+
+    50% {
+        background-color: @joyfulpink1;
+    }
+
+    51% {
+        background-color: @cosyorange1;
+    }
+
+    75% {
+        background-color: @cosyorange1;
+    }
+
+    76% {
+        background-color: @freshsheetsblue1;
+    }
+
+    99% {
+        background-color: @freshsheetsblue1;
+    }
+
+    100% {
+        background-color: @coingrey1;
+    }
+}

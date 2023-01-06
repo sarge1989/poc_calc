@@ -1,0 +1,1 @@
+function onTextChange(e) { var cmpInputChar = e.target.parentNode.parentNode.querySelector(".cmp-input-char"); cmpInputChar && (cmpInputChar.innerText = "".concat(e.target.value.length, "/400")) }

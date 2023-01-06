@@ -1,0 +1,18 @@
+<svg width="2" height="7" viewBox="0 0 2 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0)">
+<g clip-path="url(#clip1)">
+<path d="M0.999991 -35.9L1.00003 372.136" stroke="url(#linear)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1.5 6"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0">
+<rect width="2" height="7" fill="white"/>
+</clipPath>
+<clipPath id="clip1">
+<rect width="7" height="2" fill="white" transform="translate(2) rotate(90)"/>
+<linearGradient id="linear" x1="0%" y1="0%" x2="40%" y2="0%">
+  <stop offset="0%" style="stop-color:rgb(155, 186, 184);stop-opacity:1" />
+</linearGradient>
+</clipPath>
+</defs>
+</svg>

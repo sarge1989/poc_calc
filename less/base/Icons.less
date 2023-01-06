@@ -1,0 +1,1199 @@
+@import (reference) "Colour.less";
+
+@icon-font-hash-of-ttf: "2e02b564";
+
+// For normal import in html, use this path
+@icon-font-root-url: "../Icons/Icomoon/fonts";
+@icon-illustrative-url: "../Icons/illustrative.svg";
+// @icon-illustrative-pictogram: "../Icons/Pictogram/";
+
+// For bundling, use this path
+// @icon-font-root-url: "../../Icons/Icomoon/fonts";
+// @icon-illustrative-url: "../../Icons/illustrative.svg";
+// @icon-illustrative-pictogram: "../../Icons/Pictogram/";
+
+@font-face {
+  font-family: "icomoon";
+  src: url("@{icon-font-root-url}/icomoon.eot?@{icon-font-hash-of-ttf}");
+  src: url("@{icon-font-root-url}/icomoon.eot?@{icon-font-hash-of-ttf}#iefix") format("embedded-opentype"),
+  url("@{icon-font-root-url}/icomoon.ttf?@{icon-font-hash-of-ttf}") format("truetype"),
+  url("@{icon-font-root-url}/icomoon.woff?@{icon-font-hash-of-ttf}") format("woff"),
+  url("@{icon-font-root-url}/icomoon.svg?@{icon-font-hash-of-ttf}#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+/*------------ Illustrative icons --------------*/
+
+.icon-illustrative {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(@icon-illustrative-url);
+    background-repeat: no-repeat;
+  }
+}
+
+.icon-x-mixin(@icon-size: 48px, @zoom-size: 1) {
+  @icon-total: 60;
+
+  &:before {
+    background-size: calc((@icon-size * @zoom-size) * @icon-total ); // icon image size * number of icons
+  }
+
+  &.icon {
+
+    &-retirement-default:before,
+    &-housing-default:before,
+    &-education-default:before,
+    &-healthcare-default:before,
+    &-investment-default:before,
+    &-employer-default:before,
+    &-selfemployed-default:before,
+    &-growingsavings-default:before,
+    &-accountservices-default:before,
+    &-self-employed-default:before,
+    &-growing-savings-default:before,
+    &-account-services-default:before,
+    &-overview-default:before {
+      background-position-x: calc(@zoom-size * @icon-size * 0);
+    }
+
+    &-housing,
+    &-retirement,
+    &-education,
+    &-healthcare,
+    &-investment,
+    &-employer,
+    &-selfemployed,
+    &-growingsavings,
+    &-accountservices,
+    &-self-employed,
+    &-growing-savings,
+    &-account-services,
+    &-overview,
+    & {
+      &-percentage:before {
+        background-position-x: calc(@zoom-size * @icon-size * -1);
+      }
+
+      &-wages:before {
+        background-position-x: calc(@zoom-size * @icon-size * -2);
+      }
+
+      &-overtime:before {
+        background-position-x: calc(@zoom-size * @icon-size * -3);
+      }
+
+      &-performance:before {
+        background-position-x: calc(@zoom-size * @icon-size * -4);
+      }
+
+      &-allowances:before {
+        background-position-x: calc(@zoom-size * @icon-size * -5);
+      }
+
+      &-money-bag:before {
+        background-position-x: calc(@zoom-size * @icon-size * -6);
+      }
+
+      &-agreement:before {
+        background-position-x: calc(@zoom-size * @icon-size * -7);
+      }
+
+      &-handling-money:before {
+        background-position-x: calc(@zoom-size * @icon-size * -8);
+      }
+
+      &-contribution:before {
+        background-position-x: calc(@zoom-size * @icon-size * -9);
+      }
+
+      &-payment:before {
+        background-position-x: calc(@zoom-size * @icon-size * -10);
+      }
+
+      &-regulation:before {
+        background-position-x: calc(@zoom-size * @icon-size * -11);
+      }
+
+      &-people:before {
+        background-position-x: calc(@zoom-size * @icon-size * -12);
+      }
+
+      &-deposit:before {
+        background-position-x: calc(@zoom-size * @icon-size * -13);
+      }
+
+      &-payout:before {
+        background-position-x: calc(@zoom-size * @icon-size * -14);
+      }
+
+      &-chart:before {
+        background-position-x: calc(@zoom-size * @icon-size * -15);
+      }
+
+      &-withdrawal:before {
+        background-position-x: calc(@zoom-size * @icon-size * -16);
+      }
+
+      &-care:before {
+        background-position-x: calc(@zoom-size * @icon-size * -17);
+      }
+
+      &-protection:before {
+        background-position-x: calc(@zoom-size * @icon-size * -18);
+      }
+
+      &-checklist:before {
+        background-position-x: calc(@zoom-size * @icon-size * -19);
+      }
+
+      &-recurring-treatment:before {
+        background-position-x: calc(@zoom-size * @icon-size * -20);
+      }
+
+      &-hospitalisation:before {
+        background-position-x: calc(@zoom-size * @icon-size * -21);
+      }
+
+      &-business:before {
+        background-position-x: calc(@zoom-size * @icon-size * -22);
+      }
+    }
+
+    &-accountservices,
+    & {
+      &-eligibility:before {
+        background-position-x: calc(@zoom-size * @icon-size * -23);
+      }
+
+      &-choose-nominee:before {
+        background-position-x: calc(@zoom-size * @icon-size * -24);
+      }
+
+      &-process:before {
+        background-position-x: calc(@zoom-size * @icon-size * -25);
+      }
+
+      &-free-nomination:before {
+        background-position-x: calc(@zoom-size * @icon-size * -26);
+      }
+    }
+
+    &-healthcare,
+    & {
+      &-insurance:before {
+        background-position-x: calc(@zoom-size * @icon-size * -23);
+      }
+
+      &-cash:before {
+        background-position-x: calc(@zoom-size * @icon-size * -24);
+      }
+
+      &-benefits:before {
+        background-position-x: calc(@zoom-size * @icon-size * -25);
+      }
+
+      &-subsidies:before {
+        background-position-x: calc(@zoom-size * @icon-size * -26);
+      }
+
+      &-calendar:before {
+        background-position-x: calc(@zoom-size * @icon-size * -27);
+      }
+
+      &-incentives:before {
+        background-position-x: calc(@zoom-size * @icon-size * -28);
+      }
+
+      &-global:before {
+        background-position-x: calc(@zoom-size * @icon-size * -29);
+      }
+    }
+
+    &-retirement,
+    & {
+      &-basic:before {
+        background-position-x: calc(@zoom-size * @icon-size * -23);
+      }
+
+      &-standard:before {
+        background-position-x: calc(@zoom-size * @icon-size * -24);
+      }
+
+      &-escalating:before {
+        background-position-x: calc(@zoom-size * @icon-size * -25);
+      }
+    }
+
+    &-general,
+    & {
+      &-article:before {
+        background-position-x: calc(@zoom-size * @icon-size * 0);
+      }
+
+      &-podcast:before {
+        background-position-x: calc(@zoom-size * @icon-size * -1);
+      }
+
+      &-video:before {
+        background-position-x: calc(@zoom-size * @icon-size * -2);
+      }
+
+      &-external-link:before {
+        background-position-x: calc(@zoom-size * @icon-size * -3);
+      }
+
+      &-calendar-due:before {
+        background-position-x: calc(@zoom-size * @icon-size * -4);
+      }
+
+      &-calendar-default:before {
+        background-position-x: calc(@zoom-size * @icon-size * -5);
+      }
+
+      &-calculator:before {
+        background-position-x: calc(@zoom-size * @icon-size * -6);
+      }
+
+      &-brochure:before {
+        background-position-x: calc(@zoom-size * @icon-size * -7);
+      }
+
+      &-general:before {
+        background-position-x: calc(@zoom-size * @icon-size * -8);
+      }
+
+      &-fyi:before {
+        background-position-x: calc(@zoom-size * @icon-size * -9);
+      }
+
+      &-next-action:before {
+        background-position-x: calc(@zoom-size * @icon-size * -10);
+      }
+
+      &-cpf-tips:before {
+        background-position-x: calc(@zoom-size * @icon-size * -11);
+      }
+
+      &-announcements:before {
+        background-position-x: calc(@zoom-size * @icon-size * -12);
+      }
+
+      &-infohub:before {
+        background-position-x: calc(@zoom-size * @icon-size * -13);
+      }
+
+      &-resources:before {
+        background-position-x: calc(@zoom-size * @icon-size * -14);
+      }
+
+      &-news:before {
+        background-position-x: calc(@zoom-size * @icon-size * -15);
+      }
+
+      &-transfer:before {
+        background-position-x: calc(@zoom-size * @icon-size * -16);
+      }
+
+      &-message:before {
+        background-position-x: calc(@zoom-size * @icon-size * -17);
+      }
+
+      &-warning:before {
+        background-position-x: calc(@zoom-size * @icon-size * -18);
+      }
+
+      &-account:before {
+        background-position-x: calc(@zoom-size * @icon-size * -19);
+      }
+
+      &-planner:before {
+        background-position-x: calc(@zoom-size * @icon-size * -20);
+      }
+
+      &-application:before {
+        background-position-x: calc(@zoom-size * @icon-size * -21);
+      }
+
+      &-settings:before {
+        background-position-x: calc(@zoom-size * @icon-size * -22);
+      }
+
+      &-empty:before {
+        background-position-x: calc(@zoom-size * @icon-size * -23);
+      }
+
+      &-dashboard:before {
+        background-position-x: calc(@zoom-size * @icon-size * -24);
+      }
+
+      &-business:before {
+        background-position-x: calc(@zoom-size * @icon-size * -25);
+      }
+
+      &-important-message:before {
+        background-position-x: calc(@zoom-size * @icon-size * -26);
+      }
+
+      &-percentage:before {
+        background-position-x: calc(@zoom-size * @icon-size * -27);
+      }
+
+      &-wages:before {
+        background-position-x: calc(@zoom-size * @icon-size * -28);
+      }
+
+      &-overtime:before {
+        background-position-x: calc(@zoom-size * @icon-size * -29);
+      }
+
+      &-performance:before {
+        background-position-x: calc(@zoom-size * @icon-size * -30);
+      }
+
+      &-allowances:before {
+        background-position-x: calc(@zoom-size * @icon-size * -31);
+      }
+
+      &-money-bag:before {
+        background-position-x: calc(@zoom-size * @icon-size * -32);
+      }
+
+      &-agreement:before {
+        background-position-x: calc(@zoom-size * @icon-size * -33);
+      }
+
+      &-handling-money:before {
+        background-position-x: calc(@zoom-size * @icon-size * -34);
+      }
+
+      &-contribution:before {
+        background-position-x: calc(@zoom-size * @icon-size * -35);
+      }
+
+      &-payment:before {
+        background-position-x: calc(@zoom-size * @icon-size * -36);
+      }
+
+      &-regulation:before {
+        background-position-x: calc(@zoom-size * @icon-size * -37);
+      }
+
+      &-people:before {
+        background-position-x: calc(@zoom-size * @icon-size * -38);
+      }
+
+      &-deposit:before {
+        background-position-x: calc(@zoom-size * @icon-size * -39);
+      }
+
+      &-payout:before {
+        background-position-x: calc(@zoom-size * @icon-size * -40);
+      }
+
+      &-chart:before {
+        background-position-x: calc(@zoom-size * @icon-size * -41);
+      }
+
+      &-withdrawal:before {
+        background-position-x: calc(@zoom-size * @icon-size * -42);
+      }
+
+      &-care:before {
+        background-position-x: calc(@zoom-size * @icon-size * -43);
+      }
+
+      &-protection:before {
+        background-position-x: calc(@zoom-size * @icon-size * -44);
+      }
+
+      &-checklist:before {
+        background-position-x: calc(@zoom-size * @icon-size * -45);
+      }
+
+      &-recurring-treatment:before {
+        background-position-x: calc(@zoom-size * @icon-size * -46);
+      }
+
+      &-hospitalisation:before {
+        background-position-x: calc(@zoom-size * @icon-size * -47);
+      }
+
+      &-schemes:before {
+        background-position-x: calc(@zoom-size * @icon-size * -48);
+      }
+
+      &-success:before {
+        background-position-x: calc(@zoom-size * @icon-size * -49);
+      }
+
+      &-child:before {
+        background-position-x: calc(@zoom-size * @icon-size * -50);
+      }
+
+      &-mycpf:before {
+        background-position-x: calc(@zoom-size * @icon-size * -51);
+      }
+
+      &-morning:before {
+        background-position-x: calc(@zoom-size * @icon-size * -52);
+      }
+
+      &-afternoon:before {
+        background-position-x: calc(@zoom-size * @icon-size * -53);
+      }
+
+      &-evening:before {
+        background-position-x: calc(@zoom-size * @icon-size * -54);
+      }
+
+      &-upload:before {
+        background-position-x: calc(@zoom-size * @icon-size * -55);
+      }
+
+      &-add-card:before {
+        background-position-x: calc(@zoom-size * @icon-size * -56);
+      }
+
+      &-lifestyle:before {
+        background-position-x: calc(@zoom-size * @icon-size * -57);
+      }
+
+      &-wellness:before {
+        background-position-x: calc(@zoom-size * @icon-size * -58);
+      }
+
+      &-EZPay:before {
+        background-position-x: calc(@zoom-size * @icon-size * -59);
+      }
+    }
+
+    &--inverse {
+      &.icon {
+        &-housing-default:before {
+          background-position-x: calc(@zoom-size * @icon-size * 0);
+        }
+
+        &-retirement-default:before {
+          background-position-x: calc(@zoom-size * @icon-size * -23);
+        }
+
+        &-education-default:before {
+          background-position-x: calc(@zoom-size * @icon-size * -24);
+        }
+
+        &-healthcare-default:before {
+          background-position-x: calc(@zoom-size * @icon-size * -25);
+        }
+
+        &-investment-default:before {
+          background-position-x: calc(@zoom-size * @icon-size * -26);
+        }
+
+        &-employer-default:before {
+          background-position-x: calc(@zoom-size * @icon-size * -27);
+        }
+
+        &-selfemployed-default:before,
+        &-self-employed-default:before {
+          background-position-x: calc(@zoom-size * @icon-size * -28);
+        }
+
+        &-growingsavings-default:before,
+        &-growing-savings-default:before {
+          background-position-x: calc(@zoom-size * @icon-size * -29);
+        }
+
+        &-accountservices-default:before,
+        &-account-services-default:before {
+          background-position-x: calc(@zoom-size * @icon-size * -30);
+        }
+
+        &-overview-default:before {
+          background-position-x: calc(@zoom-size * @icon-size * -31);
+        }
+
+        &-healthcare-insurance:before {
+          background-position-x: calc(@zoom-size * @icon-size * -32);
+        }
+
+        &-healthcare-cash:before {
+          background-position-x: calc(@zoom-size * @icon-size * -33);
+        }
+
+        &-healthcare-benefits:before {
+          background-position-x: calc(@zoom-size * @icon-size * -34);
+        }
+
+        &-healthcare-subsidies:before {
+          background-position-x: calc(@zoom-size * @icon-size * -35);
+        }
+
+        &-healthcare-calendar:before {
+          background-position-x: calc(@zoom-size * @icon-size * -36);
+        }
+
+        &-healthcare-incentives:before {
+          background-position-x: calc(@zoom-size * @icon-size * -37);
+        }
+
+        &-healthcare-global:before {
+          background-position-x: calc(@zoom-size * @icon-size * -38);
+        }
+
+        &-accountservices-eligibility:before {
+          background-position-x: calc(@zoom-size * @icon-size * -39);
+        }
+
+        &-accountservices-choose-nominee:before {
+          background-position-x: calc(@zoom-size * @icon-size * -40);
+        }
+
+        &-accountservices-process:before {
+          background-position-x: calc(@zoom-size * @icon-size * -41);
+        }
+
+        &-accountservices-free-nomination:before {
+          background-position-x: calc(@zoom-size * @icon-size * -42);
+        }
+
+        &-retirement-basic:before {
+          background-position-x: calc(@zoom-size * @icon-size * -43);
+        }
+
+        &-retirement-standard:before {
+          background-position-x: calc(@zoom-size * @icon-size * -44);
+        }
+
+        &-retirement-escalating:before {
+          background-position-x: calc(@zoom-size * @icon-size * -45);
+        }
+      }
+
+      &[class^="icon-"] {
+        &:before {
+          background-position-y: calc(@zoom-size * @icon-size * -10);
+        }
+      }
+
+      &[class*="icon-general"] {
+        &:before {
+          background-position-y: calc(@zoom-size * @icon-size * -12);
+        }
+      }
+
+      &[class*="icon-overview-default"] {
+        &:before {
+          background-position-x: calc(@zoom-size * @icon-size * -31);
+        }
+      }
+    }
+  }
+}
+
+.icon-y-mixin(@icon-size: 48px, @zoom-size: 1) {
+  &.icon {
+    &-housing-group:before {
+      background-position-y: calc(@zoom-size * @icon-size * 0);
+    }
+
+    &-retirement-group:before {
+      background-position-y: calc(@zoom-size * @icon-size * -1);
+    }
+
+    &-education-group:before {
+      background-position-y: calc(@zoom-size * @icon-size * -2);
+    }
+
+    &-healthcare-group:before {
+      background-position-y: calc(@zoom-size * @icon-size * -3);
+    }
+
+    &-investment-group:before {
+      background-position-y: calc(@zoom-size * @icon-size * -4);
+    }
+
+    &-employer-group:before {
+      background-position-y: calc(@zoom-size * @icon-size * -5);
+    }
+
+    &-self-employed-group:before {
+      background-position-y: calc(@zoom-size * @icon-size * -6);
+    }
+
+    &-growing-savings-group:before {
+      background-position-y: calc(@zoom-size * @icon-size * -7);
+    }
+
+    &-account-services-group:before {
+      background-position-y: calc(@zoom-size * @icon-size * -8);
+    }
+
+    &-general-group:before {
+      background-position-y: calc(@zoom-size * @icon-size * -10);
+    }
+
+    &-overview-group:before {
+      background-position-y: calc(@zoom-size * @icon-size * -11);
+    }
+  }
+
+  &[class*="icon-housing"]:before {
+    background-position-y: calc(@zoom-size * @icon-size * 0);
+  }
+
+  &[class*="icon-retirement"]:before {
+    background-position-y: calc(@zoom-size * @icon-size * -1);
+  }
+
+  &[class*="icon-education"]:before {
+    background-position-y: calc(@zoom-size * @icon-size * -2);
+  }
+
+  &[class*="icon-healthcare"]:before {
+    background-position-y: calc(@zoom-size * @icon-size * -3);
+  }
+
+  &[class*="icon-investment"]:before {
+    background-position-y: calc(@zoom-size * @icon-size * -4);
+  }
+
+  &[class*="icon-employer"]:before {
+    background-position-y: calc(@zoom-size * @icon-size * -5);
+  }
+
+  &[class*="icon-selfemployed"]:before {
+    background-position-y: calc(@zoom-size * @icon-size * -6);
+  }
+
+  &[class*="icon-growingsavings"]:before {
+    background-position-y: calc(@zoom-size * @icon-size * -7);
+  }
+
+  &[class*="icon-accountservices"]:before {
+    background-position-y: calc(@zoom-size * @icon-size * -8);
+  }
+
+  &[class*="icon-overview"]:before {
+    background-position-y: calc(@zoom-size * @icon-size * -9);
+  }
+
+  &[class*="icon-general"]:before {
+    background-position-y: calc(@zoom-size * @icon-size * -11);
+  }
+}
+
+.icon-illustrative {
+  @zoom-size: 1;
+  @icon-size: 48px;
+  .icon-x-mixin(@icon-size, @zoom-size);
+  .icon-y-mixin(@icon-size, @zoom-size);
+}
+
+.icon-illustrative.icon--48 {
+  @zoom-size: 1.19;
+  @icon-size: 48px;
+  width: @icon-size;
+  height: @icon-size;
+  .icon-x-mixin(@icon-size, @zoom-size);
+  .icon-y-mixin(@icon-size, @zoom-size);
+}
+
+.icon-illustrative.icon--56 {
+  width: 56px;
+  height: 56px;
+  @zoom-size: 1.13;
+  @icon-size: 56px;
+  .icon-x-mixin(@icon-size, @zoom-size);
+  .icon-y-mixin(@icon-size, @zoom-size);
+}
+
+.icon-illustrative.icon--large,
+.icon-illustrative.icon--64 {
+  width: 64px;
+  height: 64px;
+  @zoom-size: 1.18;
+  @icon-size: 64px;
+  .icon-x-mixin(@icon-size, @zoom-size);
+  .icon-y-mixin(@icon-size, @zoom-size);
+}
+
+/*------------ System icons --------------*/
+
+[class^="icon-"],
+[class*=" icon-"],
+[class^="icon-dls"],
+[class*=" icon-dls"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon", sans-serif !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  color: inherit;
+
+  &:before {
+    color: inherit;
+  }
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button,
+a {
+
+  [class^="icon-"],
+  [class*=" icon-"],
+  [class^="icon-dls"],
+  [class*=" icon-dls"] {
+    &:before {
+      font-family: "icomoon", sans-serif !important;
+    }
+  }
+}
+
+.ico-color-solid {
+  color: @pinegreen1;
+
+  .ico-description {
+    color: @carbonblack;
+  }
+}
+
+.dark-background {
+  .ico-description {
+    color: @purewhite;
+  }
+
+  .ico-box-title {
+    color: @purewhite;
+  }
+}
+
+.icon--S {
+  font-size: 32px;
+}
+
+.icon-dls-written-by:before {
+  content: "\e900";
+}
+
+.icon-dls-expand:before {
+  content: "\e901";
+}
+
+.icon-dls-star-filled:before {
+  content: "\e903";
+}
+
+.icon-dls-star-outline:before {
+  content: "\e904";
+}
+
+.icon-dls-reply-all:before {
+  content: "\e905";
+}
+
+.icon-dls-reply:before {
+  content: "\e906";
+}
+
+.icon-dls-attachments:before {
+  content: "\e907";
+}
+
+.icon-dls-notification:before {
+  content: "\e909";
+}
+
+.icon-dls-notification:after {
+  content: "\e90a";
+  color: @errorlava;
+  margin-left: -1em;
+}
+
+.icon-dls-email:before {
+  content: "\e3915";
+}
+
+.icon-dls-retry:before {
+  content: "\e90c";
+}
+
+.icon-dls-right-solid:before {
+  content: "\e902";
+}
+
+.icon-dls-left-solid:before {
+  content: "\e9321";
+}
+
+.icon-dls-up-solid:before {
+  content: "\e92e";
+}
+
+.icon-dls-down-solid:before {
+  content: "\e945";
+}
+
+.icon-dls-right:before,
+.icon-dls-arrow-right:before {
+  content: "\e946";
+}
+
+.icon-dls-left:before,
+.icon-dls-arrow-left:before {
+  content: "\e947";
+}
+
+.icon-dls-up:before,
+.icon-dls-arrow-up:before {
+  content: "\e948";
+}
+
+.icon-dls-down:before,
+.icon-dls-arrow-down:before {
+  content: "\e949";
+}
+
+.icon-dls-video:before {
+  content: "\e915";
+}
+
+.icon-dls-podcast:before {
+  content: "\e916";
+}
+
+.icon-dls-pdf:before {
+  content: "\e917";
+}
+
+.icon-dls-print:before,
+.icon-dls-printer:before {
+  content: "\e918";
+}
+
+.icon-dls-image:before {
+  content: "\e919";
+}
+
+.icon-dls-archive:before {
+  content: "\e91a";
+}
+
+.icon-dls-upload:before {
+  content: "\e91b";
+}
+
+.icon-dls-download:before {
+  content: "\e91c";
+}
+
+.icon-dls-download-document:before {
+  content: "\e91d";
+}
+
+.icon-dls-upload-document:before {
+  content: "\e91e";
+}
+
+.icon-dls-documents:before {
+  content: "\e91f";
+}
+
+.icon-dls-forms:before {
+  content: "\e920";
+}
+
+.icon-dls-articles:before {
+  content: "\e921";
+}
+
+.icon-dls-logout:before {
+  content: "\e922";
+}
+
+.icon-dls-user:before {
+  content: "\e923";
+}
+
+.icon-dls-filter:before {
+  content: "\e925";
+}
+
+.icon-dls-external-link:before {
+  content: "\e926";
+}
+
+.icon-dls-dot-indicator:before {
+  content: "\e927";
+}
+
+.icon-dls-info-solid:before {
+  content: "\e928";
+}
+
+.icon-dls-info-outline:before {
+  content: "\e929";
+}
+
+.icon-dls-warning-solid:before {
+  content: "\e92a";
+}
+
+.icon-dls-warning-outline:before {
+  content: "\e92b";
+}
+
+.icon-dls-more:before {
+  content: "\e92c";
+}
+
+.icon-dls-hamburger-menu:before,
+.icon-dls-menu:before {
+  content: "\e92d";
+}
+
+.icon-dls-subtract-solid:before {
+  content: "\e92f";
+}
+
+.icon-dls-add-solid:before {
+  content: "\e930";
+}
+
+.icon-dls-tick-solid:before {
+  content: "\e931";
+}
+
+.icon-dls-close-solid:before {
+  content: "\e932";
+}
+
+.icon-dls-subtract-outline:before {
+  content: "\e933";
+}
+
+.icon-dls-add-outline:before {
+  content: "\e934";
+}
+
+.icon-dls-tick-outline:before {
+  content: "\e935";
+}
+
+.icon-dls-close-outline:before,
+.icon-dls-close:before {
+  content: "\e936";
+}
+
+.icon-dls-asterisk:before {
+  content: "\e937";
+}
+
+.icon-dls-delete:before {
+  content: "\e938";
+}
+
+.icon-dls-bookmark:before {
+  content: "\e939";
+}
+
+.icon-dls-link:before {
+  content: "\e93a";
+}
+
+.icon-dls-edit:before {
+  content: "\e93b";
+}
+
+.icon-dls-font-adjuster:before {
+  content: "\e93c";
+}
+
+.icon-dls-response-time:before {
+  content: "\e93d";
+}
+
+.icon-dls-location:before {
+  content: "\e93e";
+}
+
+.icon-dls-schemes:before {
+  content: "\e93f";
+}
+
+.icon-dls-tutorials:before {
+  content: "\e940";
+}
+
+.icon-dls-faqs:before {
+  content: "\e941";
+}
+
+.icon-dls-calendar:before {
+  content: "\e942";
+}
+
+.icon-dls-number:before {
+  content: "\e943";
+}
+
+.icon-dls-cloud:before {
+  content: "\e944";
+}
+
+.icon-dls-guide:before {
+  content: "\e950";
+}
+
+.icon-dls-dislike:before {
+  content: "\e951";
+}
+
+.icon-dls-like:before {
+  content: "\e952";
+}
+
+.icon-dls-clock:before {
+  content: "\e953";
+}
+
+.icon-dls-alert:before {
+  content: "\e954";
+}
+
+.icon-dls-home:before {
+  content: "\e955";
+}
+
+.icon-dls-language:before {
+  content: "\e956";
+}
+
+.icon-dls-search:before {
+  content: "\e957";
+}
+
+.icon-dls-linkedin:before {
+  content: "\e94a";
+}
+
+.icon-dls-telegram:before {
+  content: "\e94b";
+}
+
+.icon-dls-share:before {
+  content: "\e94c";
+}
+
+.icon-dls-instagram:before {
+  content: "\e95b";
+}
+
+.icon-dls-youtube:before {
+  content: "\e95c";
+}
+
+.icon-dls-whatsapp:before {
+  content: "\e94d";
+}
+
+.icon-dls-twitter:before {
+  content: "\e94f";
+}
+
+.icon-dls-facebook:before {
+  content: "\e94e";
+}
+
+.icon-dls-link1:before {
+  content: "\e924";
+}
+
+.icon-dls-contribution-statement:before {
+  content: "\e9121";
+}
+
+.icon-dls-pay:before {
+  content: "\e962";
+}
+
+.icon-dls-call:before {
+  content: "\e963";
+}
+
+.icon-dls-survey:before {
+  content: "\e970";
+}
+
+.icon-dls-line-indicator:before {
+  content: "\e971";
+}
+
+.icon-dls-line-settings:before {
+  content: "\e972";
+}
+
+.icon-dls-calculator:before {
+  content: "\e965";
+}
+
+.icon-dls-news:before {
+  content: "\e964";
+}
+
+.icon-dls-transaction-statement:before {
+  content: "\e9131";
+}
+
+.icon-dls-yearly-statement:before {
+  content: "\e967";
+}
+
+.icon-dls-login:before {
+  content: "\e968";
+}
+
+.icon-dls-password-hide:before {
+  content: "\e908";
+}
+
+.icon-dls-password-show:before {
+  content: "\e90b";
+}
+
+.icon-dls-line-settings,
+.icon-dls-notification {
+  position: relative;
+}
+
+.icon-dls-video-call:before {
+  content: "\e90d";
+}
+
+/*------------ Animated icons --------------*/
+
+.icon-animated {
+  position: relative;
+  width: 96px;
+  height: 96px;
+}

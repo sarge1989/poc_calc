@@ -1,0 +1,91 @@
+@import (once) "Colour.less";
+@import (once) "Grid.less";
+@import (once) "Layout.less";
+@import (once) "Spacing.less";
+@import (once) "Elevation.less";
+@import (once) "Typography.less";
+@import (once) "Icons.less";
+@import (once) "Variable.less";
+@import (once) "Compliance.less";
+
+// Tooltip styles
+.tooltip-icon {
+  position: relative;
+  overflow: visible !important;
+
+  &:before {
+    color: @pinegreen1;
+    position: absolute;
+    top: 0;
+  }
+
+  .tooltip-group {
+    visibility: hidden;
+    position: absolute;
+    z-index: 2;
+    width: 286px;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 1;
+    display: none;
+    margin-bottom: 16px;
+    color: #262626;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.25px;
+  }
+
+  &:hover {
+    .tooltip-group {
+      visibility: visible;
+      display: block;
+
+      .cmp-form-list {
+        padding: 0;
+
+        .tooltip {
+          @media only screen and (max-width: 1024px) {
+            display: unset !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Scrollbar styles
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #757575;
+  border-radius: 8px;
+}
+
+/* Genral styling */
+div {
+  box-sizing: border-box;
+}
+
+/* Body default */
+body {
+  color: #262626;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.25px;
+  margin: 0;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: none;
+}

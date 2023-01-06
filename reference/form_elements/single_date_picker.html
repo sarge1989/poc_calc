@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Single date picker</title>
+
+    <link rel="stylesheet/less" type="text/css" href="../../less/references.less" />
+
+    <!-- Only 1 js is included -> All imports done in this file -->
+    <script src="../../js/references/r_single_date_picker.js" type="module"></script>
+</head>
+
+<body class="webf-page--content">
+    <div class="root container responsivegrid">
+        <!-- Main content section -->
+        <div class="container responsivegrid">
+            <div class="aem-Grid aem-Grid--default--12">
+                <!-- Test insert and render using js -->
+                <h4 class="title__text title__text--semibold" style="margin-bottom: 16px;">Single date picker</h4>
+                <h5 class="title__text title__text--regular">You can include the following attributes when using the
+                    component. Note that those marked with * are compulsory:
+                </h5>
+                <ul class="cmp-list">
+                    <li><b>data-include*:</b> Name of html file of component</li>
+                    <li><b>data-id*:</b> ID of component when inserting to html</li>
+                    <li><b>data-render:</b> Set value to "true" if the component requires rendering. Most component
+                        requires rendering to set the class. </li>
+                    <li><b>data-field-id*:</b> ID of input field (note: this is different from data-id)</li>
+                    <li><b>data-input-label*:</b> Input field label</li>
+                    <li><b>data-tooltip-content:</b> Tooltip content. Exclude this attribute if tooltip is not required.
+                    </li>
+                    <li><b>data-caption*:</b> Caption for displaying help text or error messages</li>
+                    <li><b>data-datepicker-type*:</b> Can be "day", "month" or "year"</li>
+                    <li><b>data-default:</b> Default date. Set value to "today" to use today's date as default. Leave
+                        empty if no default date is required. </li>
+                    <li><b>data-check-age:</b> Set value to "true" if requirement is to check for age. </li>
+                    <li><b>data-min-age:</b> Minimum age. </li>
+                    <li><b>data-max-age:</b> Minimum age. </li>
+                    <li><b>data-min-date:</b> Minimum date. Applicable only when not checking for age. </li>
+                    <li><b>data-max-date:</b> Minimum date. Applicable only when not checking for age. </li>
+                </ul>
+                <div data-include="horizontal_separator" data-comp-root="../../" data-id="hs_l3_1" data-render="true"
+                    data-class="cmp-separator--solid--light"></div>
+
+                <h5 style="margin-bottom: 8px; margin-top: 16px;"> JS</h5>
+                <p>Include the <b>codes in bold</b> in <b>index.js</b> when using this component. </p>
+                <pre style="margin-top: 8px; margin-bottom: 32px; border: 1px solid darkgray; padding: 12px; ">
+<b>import "../components/datepicker/datepicker-lib.js"; // mandatory import for any type of datepicker</b>
+import "../components/datepicker/datepicker-day.js"; <b>// import only if needed</b>
+import "../components/datepicker/datepicker-month.js"; <b>// import only if needed</b>
+import "../components/datepicker/datepicker-year.js"; <b>// import only if needed</b>
+
+// Example
+const init = function () {
+    $.fn.globalHeader();
+    $.fn.DropDownMenu();
+
+    // For Day picker - Add this line in init() if required
+    <b>$(".sb-datepicker-container.cmp-inputs.sb-datepicker-container--day").DatepickerDate();</b>
+
+    // For Month picker - Add this line in init() if required
+    <b>$(".sb-datepicker-container.cmp-inputs.sb-datepicker-container--month").DatepickerMonth();</b>
+
+    // For Year picker - Add this line in init() if required
+    <b>$(".sb-datepicker-container.cmp-inputs.sb-datepicker-container--year").DatepickerYear(); </b>
+};</pre>
+
+                <div data-include="horizontal_separator" data-comp-root="../../" data-id="hs_l3_2" data-render="true"
+                    data-class="cmp-separator--solid--light"></div>
+
+                <h5 style="margin-bottom: 8px; margin-top: 16px;"> Examples:</h5>
+
+                <!-- Single day picker -->
+                <p style="margin-bottom: 8px;">&lt;!-- Single day picker --&gt;</p>
+                <div data-include="single_date_picker" data-comp-root="../../" data-id="sdp_1" data-render="true"
+                    data-field-id="single_date_picker_1" data-input-label="Single day picker"
+                    data-tooltip-content="Some sample content in the tooltip for single day picker."
+                    data-caption="This is a help text for single day picker." data-datepicker-type="day"
+                    data-default="5 Jun 2022">
+                </div>
+                <p style="margin-top: 8px; margin-bottom: 32px; border: 1px solid darkgray; padding: 12px; ">
+                    &lt;div data-include="single_date_picker" data-id="sdp_1" data-render="true"
+                    data-field-id="single_date_picker_1" data-input-label="Single day picker"
+                    data-tooltip-content="Some sample content in the tooltip for single day picker."
+                    data-caption="This is a help text for single day picker."
+                    data-datepicker-type="day" data-default="5 Jun 2022"&gt;
+                    &lt;/div&gt;
+                </p>
+
+                <!-- Single day picker - no default date -->
+                <p style="margin-bottom: 8px;">&lt;!-- Single day picker - no default date --&gt;</p>
+                <div data-include="single_date_picker" data-comp-root="../../" data-id="sdp_4" data-render="true"
+                    data-field-id="single_date_picker_4" data-input-label="Single day picker"
+                    data-tooltip-content="Some sample content in the tooltip for single day picker."
+                    data-caption="This is a help text for single day picker." data-datepicker-type="day">
+                </div>
+                <p style="margin-top: 8px; margin-bottom: 32px; border: 1px solid darkgray; padding: 12px; ">
+                    &lt;div data-include="single_date_picker" data-id="sdp_1" data-render="true"
+                    data-field-id="single_date_picker_1" data-input-label="Single day picker"
+                    data-tooltip-content="Some sample content in the tooltip for single day picker."
+                    data-caption="This is a help text for single day picker."
+                    data-datepicker-type="day" &gt;
+                    &lt;/div&gt;
+                </p>
+
+                <!-- Single day picker - default date == today -->
+                <p style="margin-bottom: 8px;">&lt;!-- Single day picker - default date == today --&gt;</p>
+                <div data-include="single_date_picker" data-comp-root="../../" data-id="sdp_5" data-render="true"
+                    data-field-id="single_date_picker_5" data-input-label="Single day picker"
+                    data-tooltip-content="Some sample content in the tooltip for single day picker."
+                    data-caption="This is a help text for single day picker." data-datepicker-type="day"
+                    data-default="today">
+                </div>
+                <p style="margin-top: 8px; margin-bottom: 32px; border: 1px solid darkgray; padding: 12px; ">
+                    &lt;div data-include="single_date_picker" data-id="sdp_1" data-render="true"
+                    data-field-id="single_date_picker_1" data-input-label="Single day picker"
+                    data-tooltip-content="Some sample content in the tooltip for single day picker."
+                    data-caption="This is a help text for single day picker."
+                    data-datepicker-type="day" data-default="today"&gt;
+                    &lt;/div&gt;
+                </p>
+
+                <!-- Single day picker - check age -->
+                <p style="margin-bottom: 8px;">&lt;!-- Single day picker - check age --&gt;</p>
+                <div data-include="single_date_picker" data-comp-root="../../" data-id="sdp_10" data-render="true"
+                    data-field-id="single_date_picker_10" data-input-label="Single day picker"
+                    data-tooltip-content="Some sample content in the tooltip for single day picker."
+                    data-caption="This is a help text for single day picker." data-datepicker-type="day"
+                    data-check-age="true" data-min-age="21" data-max-age="65">
+                </div>
+                <p style="margin-top: 8px; margin-bottom: 32px; border: 1px solid darkgray; padding: 12px; ">
+                    &lt;div data-include="single_date_picker" data-id="sdp_1" data-render="true"
+                    data-field-id="single_date_picker_1" data-input-label="Single day picker"
+                    data-tooltip-content="Some sample content in the tooltip for single day picker."
+                    data-caption="This is a help text for single day picker."
+                    data-datepicker-type="day" data-check-age="true" data-min-age="21" data-max-age="65" &gt;
+                    &lt;/div&gt;
+                </p>
+
+                <!-- Single day picker - min and max date -->
+                <p style="margin-bottom: 8px;">&lt;!-- Single day picker - min and max date --&gt;</p>
+                <div data-include="single_date_picker" data-comp-root="../../" data-id="sdp_11" data-render="true"
+                    data-field-id="single_date_picker_11" data-input-label="Single day picker"
+                    data-tooltip-content="Some sample content in the tooltip for single day picker."
+                    data-caption="This is a help text for single day picker." data-datepicker-type="day"
+                    data-min-date="1 Jan 2021" data-max-date="31 Dec 2030">
+                </div>
+                <p style="margin-top: 8px; margin-bottom: 32px; border: 1px solid darkgray; padding: 12px; ">
+                    &lt;div data-include="single_date_picker" data-id="sdp_11" data-render="true"
+                    data-field-id="single_date_picker_11" data-input-label="Single day picker"
+                    data-tooltip-content="Some sample content in the tooltip for single day picker."
+                    data-caption="This is a help text for single day picker." data-datepicker-type="day"
+                    data-min-date="1 Jan 2021" data-max-date="31 Dec 2030"&gt;
+                    &lt;/div&gt;
+                </p>
+
+                <!-- Single month picker -->
+                <p style="margin-bottom: 8px;">&lt;!-- Single month picker --&gt;</p>
+                <div data-include="single_date_picker" data-comp-root="../../" data-id="sdp_2" data-render="true"
+                    data-field-id="single_date_picker_2" data-input-label="Single month picker"
+                    data-tooltip-content="Some sample content in the tooltip for single month picker."
+                    data-caption="This is a help text for single month picker." data-datepicker-type="month"
+                    data-default="Jun 2022">
+                </div>
+                <p style="margin-top: 8px; margin-bottom: 32px; border: 1px solid darkgray; padding: 12px; ">
+                    &lt;div data-include="single_date_picker" data-id="sdp_2" data-render="true"
+                    data-field-id="single_date_picker_2" data-input-label="Single month picker"
+                    data-tooltip-content="Some sample content in the tooltip for single month picker."
+                    data-caption="This is a help text for single month picker." data-datepicker-type="month"
+                    data-default="Jun 2022"&gt;
+                    &lt;/div&gt;
+                </p>
+
+                <!-- Single month picker -- no default date -->
+                <p style="margin-bottom: 8px;">&lt;!-- Single month picker - no default date --&gt;</p>
+                <div data-include="single_date_picker" data-comp-root="../../" data-id="sdp_6" data-render="true"
+                    data-field-id="single_date_picker_6" data-input-label="Single month picker"
+                    data-tooltip-content="Some sample content in the tooltip for single month picker."
+                    data-caption="This is a help text for single month picker." data-datepicker-type="month">
+                </div>
+                <p style="margin-top: 8px; margin-bottom: 32px; border: 1px solid darkgray; padding: 12px; ">
+                    &lt;div data-include="single_date_picker" data-id="sdp_2" data-render="true"
+                    data-field-id="single_date_picker_2" data-input-label="Single month picker"
+                    data-tooltip-content="Some sample content in the tooltip for single month picker."
+                    data-caption="This is a help text for single month picker." data-datepicker-type="month"&gt;
+                    &lt;/div&gt;
+                </p>
+
+                <!-- Single month picker -- default date == today -->
+                <p style="margin-bottom: 8px;">&lt;!-- Single month picker - default date == today --&gt;</p>
+                <div data-include="single_date_picker" data-comp-root="../../" data-id="sdp_7" data-render="true"
+                    data-field-id="single_date_picker_7" data-input-label="Single month picker"
+                    data-tooltip-content="Some sample content in the tooltip for single month picker."
+                    data-caption="This is a help text for single month picker." data-datepicker-type="month"
+                    data-default="today">
+                </div>
+                <p style="margin-top: 8px; margin-bottom: 32px; border: 1px solid darkgray; padding: 12px; ">
+                    &lt;div data-include="single_date_picker" data-id="sdp_2" data-render="true"
+                    data-field-id="single_date_picker_2" data-input-label="Single month picker"
+                    data-tooltip-content="Some sample content in the tooltip for single month picker."
+                    data-caption="This is a help text for single month picker." data-datepicker-type="month"
+                    data-default="today"&gt;
+                    &lt;/div&gt;
+                </p>
+
+                <!-- Single year picker -->
+                <p style="margin-bottom: 8px;">&lt;!-- Single year picker --&gt;</p>
+                <div data-include="single_date_picker" data-comp-root="../../" data-id="sdp_3" data-render="true"
+                    data-field-id="single_date_picker_3" data-input-label="Single year picker"
+                    data-tooltip-content="Some sample content in the tooltip for single year picker."
+                    data-caption="This is a help text for single year picker." data-datepicker-type="year"
+                    data-default="2020">
+                </div>
+                <p style="margin-top: 8px; margin-bottom: 32px; border: 1px solid darkgray; padding: 12px; ">
+                    &lt;div data-include="single_date_picker" data-id="sdp_2" data-render="true"
+                    data-field-id="single_date_picker_2" data-input-label="Single year picker"
+                    data-tooltip-content="Some sample content in the tooltip for single year picker."
+                    data-caption="This is a help text for single year picker." data-datepicker-type="year"
+                    data-default="2020"&gt;
+                    &lt;/div&gt;
+                </p>
+
+                <!-- Single year picker -- no default date-->
+                <p style="margin-bottom: 8px;">&lt;!-- Single year picker - no default date --&gt;</p>
+                <div data-include="single_date_picker" data-comp-root="../../" data-id="sdp_8" data-render="true"
+                    data-field-id="single_date_picker_8" data-input-label="Single year picker"
+                    data-tooltip-content="Some sample content in the tooltip for single year picker."
+                    data-caption="This is a help text for single year picker." data-datepicker-type="year">
+                </div>
+                <p style="margin-top: 8px; margin-bottom: 32px; border: 1px solid darkgray; padding: 12px; ">
+                    &lt;div data-include="single_date_picker" data-id="sdp_2" data-render="true"
+                    data-field-id="single_date_picker_2" data-input-label="Single year picker"
+                    data-tooltip-content="Some sample content in the tooltip for single year picker."
+                    data-caption="This is a help text for single year picker." data-datepicker-type="year"&gt;
+                    &lt;/div&gt;
+                </p>
+
+                <!-- Single year picker -->
+                <p style="margin-bottom: 8px;">&lt;!-- Single year picker - default date == today --&gt;</p>
+                <div data-include="single_date_picker" data-comp-root="../../" data-id="sdp_9" data-render="true"
+                    data-field-id="single_date_picker_9" data-input-label="Single year picker"
+                    data-tooltip-content="Some sample content in the tooltip for single year picker."
+                    data-caption="This is a help text for single year picker." data-datepicker-type="year"
+                    data-default="today">
+                </div>
+                <p style="margin-top: 8px; margin-bottom: 32px; border: 1px solid darkgray; padding: 12px; ">
+                    &lt;div data-include="single_date_picker" data-id="sdp_2" data-render="true"
+                    data-field-id="single_date_picker_2" data-input-label="Single year picker"
+                    data-tooltip-content="Some sample content in the tooltip for single year picker."
+                    data-caption="This is a help text for single year picker." data-datepicker-type="year"
+                    data-default="today"&gt;
+                    &lt;/div&gt;
+                </p>
+                <!-- ====== -->
+            </div>
+            <div class="aem-Grid aem-Grid--default--12">
+                <div data-include="standard_button" data-comp-root="../../" data-class="cmp-button--secondary cmp-button--medium"
+                    data-btntext="Back to reference list" data-id="back_btn" data-render="true"
+                    data-href="/reference/index.html"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

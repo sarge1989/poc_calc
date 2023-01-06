@@ -1,0 +1,39 @@
+.fluid-container{
+  max-width: 100% !important;
+  width: 100% !important;
+}
+.grid-child{
+  padding: 0;
+  margin:-12px;
+  width:~"calc(100% + 24px)";
+}
+.grid-list{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  & > div{
+    flex: 0 0 50%;
+    height: auto;
+  } 
+}
+
+/* Medium & Small breakpoint */
+@media only screen and (max-width: 991px)  {
+  .img-flex{
+    flex: none !important;
+    width: 100% !important;
+  }
+}
+
+/* Small breakpoint */
+@media only screen and (max-width: 767px)  { 
+  .grid-list{ 
+    & > div{
+      flex: 1 0 100%;
+    } 
+  }
+}
+
+.cmp-hidden{
+  display: none;
+}

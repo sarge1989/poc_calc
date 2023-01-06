@@ -1,0 +1,70 @@
+@import (reference) "../base/Foundation.less";
+
+.state--outer-container {
+    height: 100%;
+    width: 100%;
+    max-width: 1140px;
+    margin: auto;
+
+    .state-container {
+        height: 100%;
+        width: 100%;
+        padding: 16px 24px;
+        border: 2px dashed @pinegreen6;
+        box-sizing: border-box;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .icon-illustrative {
+            width: 40px;
+            height: 40px;
+
+            @media only screen and (min-width: 992px) {
+                width: 56px;
+                height: 56px;
+                overflow: hidden;
+                @zoom-size: 1.14;
+                @icon-size: 58px;
+                .icon-x-mixin(@icon-size, @zoom-size);
+                .icon-y-mixin(@icon-size, @zoom-size);
+            }
+        }
+
+        .text {
+            padding-top: 16px;
+            text-align: center;
+
+            @media only screen and (min-width: 992px) {
+                max-width: 741px;
+            }
+        }
+
+        .para--title {
+            margin-bottom: 4px;
+        }
+
+        @media only screen and (min-width: 992px) {
+            padding: 80px 24px;
+            min-height: 280px;
+        }
+    }
+
+    &.dark-mode {
+        // background-color: @pinegreen;
+
+        .state-container {
+            color: @purewhite;
+
+            a.cmp-text__link {
+                color: @purewhite;
+
+                &:hover {
+                    color: @pinegreen8;
+                }
+            }
+        }
+    }
+}

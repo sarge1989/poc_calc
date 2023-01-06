@@ -1,0 +1,122 @@
+.information-snippet {
+  padding: 8px 8px 8px 0px;
+  min-width: 188px;
+  max-width: 741px;
+  box-sizing: border-box;
+
+  &--border-left {
+    border-left: 1px solid @pinegreen6;
+  }
+
+  .title__text {
+    .cmp-tooltip-wrapper {
+      margin-left: 4px;
+    }
+
+    &.title__text--semi-bold {
+      color: @slategrey;
+    }
+  }
+
+  > *:not(:last-child) {
+    margin-bottom: 2px;
+  }
+
+  &--dark-theme {
+    color: @purewhite;
+    background: @pinegreen1;
+    .title__text.title__text--semi-bold {
+      color: @purewhite;
+    }
+    .cmp-text__link {
+      color: @purewhite;
+      &:hover {
+        color: @pinegreen8;
+      }
+    }
+    .cmp-tooltip {
+      .cmp-tooltip-wrapper {
+        i {
+          color: @purewhite;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 991px) {
+    border-left: none;
+    margin-right: 0;
+
+    &--align-center {
+      text-align: center;
+      .title__text {
+        justify-content: center;
+      }
+    }
+  }
+}
+
+.information-snippet-row {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 24px 0;
+
+  &--dark-theme {
+    background: @pinegreen1;
+  }
+
+  .information-snippet {
+    width: 25%;
+    max-width: 25%;
+    padding-left: 24px;
+
+    &:last-child {
+      padding-right: 8px;
+    }
+
+    // adjust padding for every 1st, 3rd, 5th,... info snippet
+    &:nth-child(4n + 1) {
+      padding-left: 0;
+      border-left: none;
+      width: ~"calc(25% - 24px)";
+      @media only screen and (max-width: 991px) {
+        width: 100%;
+      }
+    }
+
+    // Update settings for information snippet that has the vertical divider
+    &--border-left {
+      width: ~"calc(25% - 18px)";
+      margin-left: 24px;
+
+      // adjust padding for every 1st, 3rd, 5th,... info snippet
+      &:nth-child(4n + 1) {
+        margin-left: 0;
+        width: ~"calc(25% - 42px)";
+        @media only screen and (max-width: 991px) {
+          width: 100%;
+        }
+      }
+
+      @media only screen and (max-width: 991px) {
+        width: 100%;
+        margin-left: 0;
+      }
+    }
+
+    @media only screen and (max-width: 991px) {
+      width: 100%;
+      max-width: 100%;
+      padding-left: 0;
+    }
+  }
+
+  @media only screen and (max-width: 991px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px 0;
+  }
+}

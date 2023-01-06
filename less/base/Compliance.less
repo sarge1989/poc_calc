@@ -1,0 +1,27 @@
+// Global Remote links with optional .external-link modifier
+// needs exclusion on article-card
+a {
+  &:not([data-component="article-card"]):not(.cmp-button):not(.remove-global-external-icon):not([href*="cpf.gov.sg"]) {
+    &[href^="http://"],  
+    &[href^="https://"], 
+    &[href^="//"]
+    {
+      white-space: nowrap;
+      &::after {
+        display: inline-block;
+        content: "\e926";
+        font-family: "icomoon", sans-serif !important;
+        padding-left: 4px;
+      }
+    }
+  }
+  &.external-link {
+    white-space: nowrap;
+    &::after {
+      display: inline-block;
+      content: "\e926";
+      font-family: "icomoon", sans-serif !important;
+      padding-left: 4px;
+    }
+  }
+}

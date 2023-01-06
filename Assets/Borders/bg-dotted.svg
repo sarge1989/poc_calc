@@ -1,0 +1,13 @@
+<svg width="7" height="2" viewBox="0 0 7 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0)">
+<path d="M-35.9 1L372.136 0.99996" stroke="url(#linear)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1.5 6" />
+</g>
+<defs>
+<clipPath id="clip0">
+<rect width="7" height="2" fill="white"/>
+<linearGradient id="linear" x1="0%" y1="0%" x2="40%" y2="0%">
+  <stop offset="0%" style="stop-color:rgb(155, 186, 184);stop-opacity:1" />
+</linearGradient>
+</clipPath>
+</defs>
+</svg>

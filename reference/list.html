@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lists</title>
+
+    <link rel="stylesheet/less" type="text/css" href="../less/references.less" />
+
+    <!-- Only 1 js is included -> All imports done in this file -->
+    <script src="../js/references/references.js" type="module"></script>
+</head>
+
+<body class="webf-page--content">
+    <div class="root container responsivegrid">
+        <!-- Main content section -->
+        <div class="container responsivegrid">
+            <div class="aem-Grid aem-Grid--default--12">
+                <!-- Test insert and render using js -->
+                <h4 class="title__text title__text--semibold" style="margin-bottom: 16px;">Lists</h4>
+                <h5 class="title__text title__text--regular" style="margin-bottom: 16px">Lists typically have longer
+                    text and unknown number of
+                    items. Hence, this component needs to be added directly to the HTML.
+                </h5>
+
+                <div data-include="horizontal_separator" data-comp-root="../" data-id="hs_l3_1" data-render="true"
+                    data-class="cmp-separator--solid--light"></div>
+
+                <!-- Numeric-Numeric -->
+                <h5 style="margin-bottom: 8px; margin-top: 16px">Numeric-Numeric</h5>
+                <ol class="cmp-list">
+                    <li>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua.
+                        <ol class="cmp-list cmp-list__numeric">
+                            <li>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </li>
+                            <li>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit
+                        amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.
+                    </li>
+                </ol>
+                <pre
+                    style="margin-top: 8px; margin-bottom: 16px; border: 1px solid darkgray; padding: 12px; white-space: pre-wrap;">
+&lt;ol class="cmp-list"&gt;
+    &lt;li&gt;
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+        &lt;ol class="cmp-list cmp-list__numeric"&gt;
+            &lt;li&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            &lt;/li&gt;
+            &lt;li&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            &lt;/li&gt;
+        &lt;/ol&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit
+        amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore et dolore magna aliqua.
+    &lt;/li&gt;
+&lt;/ol&gt;</pre>
+                <div data-include="horizontal_separator" data-comp-root="../" data-id="hs_l3_2" data-render="true"
+                    data-class="cmp-separator--solid--light"></div>
+
+                <!-- Numeric-Alphabet list -->
+                <h5 style="margin-bottom: 8px; margin-top: 24px;">Numeric-Alphabet list</h5>
+                <ol class="cmp-list cmp-list__numeric">
+                    <li>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua.
+                        <ol class="cmp-list cmp-list__alphabet">
+                            <li>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </li>
+                            <li>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit
+                        amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.
+                    </li>
+                </ol>
+
+                <pre
+                    style="margin-top: 8px; margin-bottom: 16px; border: 1px solid darkgray; padding: 12px; white-space: pre-wrap;">
+    &lt;ol class="cmp-list cmp-list__numeric"&gt;
+        &lt;li&gt;
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.
+            &lt;ol class="cmp-list cmp-list__alphabet"&gt;
+                &lt;li&gt;
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                &lt;/li&gt;
+                &lt;li&gt;
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                &lt;/li&gt;
+            &lt;/ol&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit
+            amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua.
+        &lt;/li&gt;
+    &lt;/ol&gt;</pre>
+                <div data-include="horizontal_separator" data-comp-root="../" data-id="hs_l3_3" data-render="true"
+                    data-class="cmp-separator--solid--light"></div>
+
+                <!-- Numeric-Roman list -->
+                <h5 style="margin-bottom: 8px; margin-top: 24px;">Numeric-Roman list</h5>
+                <ol class="cmp-list cmp-list__numeric">
+                    <li>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua.
+                        <ol class="cmp-list cmp-list__roman">
+                            <li>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </li>
+                            <li>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit
+                        amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.
+                    </li>
+                </ol>
+
+                <pre
+                    style="margin-top: 8px; margin-bottom: 16px; border: 1px solid darkgray; padding: 12px; white-space: pre-wrap;">
+    &lt;ol class="cmp-list cmp-list__numeric"&gt;
+        &lt;li&gt;
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.
+            &lt;ol class="cmp-list cmp-list__roman"&gt;
+                &lt;li&gt;
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                &lt;/li&gt;
+                &lt;li&gt;
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                &lt;/li&gt;
+            &lt;/ol&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit
+            amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua.
+        &lt;/li&gt;
+    &lt;/ol&gt;</pre>
+                <div data-include="horizontal_separator" data-comp-root="../" data-id="hs_l3_4" data-render="true"
+                    data-class="cmp-separator--solid--light"></div>
+
+                <!-- Alphabet-Roman list -->
+                <h5 style="margin-bottom: 8px; margin-top: 24px;">Alphabet-Roman list</h5>
+                <ol class="cmp-list cmp-list__alphabet">
+                    <li>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua.
+                        <ol class="cmp-list cmp-list__roman">
+                            <li>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </li>
+                            <li>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit
+                        amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.
+                    </li>
+                </ol>
+
+                <pre
+                    style="margin-top: 8px; margin-bottom: 16px; border: 1px solid darkgray; padding: 12px; white-space: pre-wrap;">
+    &lt;ol class="cmp-list cmp-list__alphabet"&gt;
+        &lt;li&gt;
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.
+            &lt;ol class="cmp-list cmp-list__roman"&gt;
+                &lt;li&gt;
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                &lt;/li&gt;
+                &lt;li&gt;
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                &lt;/li&gt;
+            &lt;/ol&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit
+            amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua.
+        &lt;/li&gt;
+    &lt;/ol&gt;</pre>
+                <div data-include="horizontal_separator" data-comp-root="../" data-id="hs_l3_5" data-render="true"
+                    data-class="cmp-separator--solid--light"></div>
+
+                <!-- Roman list -->
+                <h5 style="margin-bottom: 8px; margin-top: 24px;">Roman list</h5>
+                <ol class="cmp-list cmp-list__roman">
+                    <li>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit
+                        amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.
+                    </li>
+                </ol>
+
+                <pre
+                    style="margin-top: 8px; margin-bottom: 16px; border: 1px solid darkgray; padding: 12px; white-space: pre-wrap;">
+    &lt;ol class="cmp-list cmp-list__roman"&gt;
+        &lt;li&gt;
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit
+            amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua.
+        &lt;/li&gt;
+    &lt;/ol&gt;</pre>
+                <div data-include="horizontal_separator" data-comp-root="../" data-id="hs_l2_1" data-render="true"
+                    data-class="cmp-separator--dotted"></div>
+                <!-- ====== -->
+
+                <!-- Bulleted list - Light -->
+                <h5 style="margin-bottom: 8px; margin-top: 24px;">Bulleted list - Light</h5>
+                <ul class="cmp-list">
+                    <li>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua.
+                    </li>
+                    <li>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua.
+                    </li>
+                </ul>
+                <pre
+                    style="margin-top: 8px; margin-bottom: 16px; border: 1px solid darkgray; padding: 12px; white-space: pre-wrap;">
+    &lt;ul class="cmp-list"&gt;
+        &lt;li&gt;
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.
+        &lt;/li&gt;
+        &lt;li&gt;
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.
+        &lt;/li&gt;
+    &lt;/ul&gt;</pre>
+                <div data-include="horizontal_separator" data-comp-root="../" data-id="hs_l3_6" data-render="true"
+                    data-class="cmp-separator--solid--light"></div>
+
+                <!-- Bulleted list - Dark -->
+                <h5 style="margin-bottom: 8px; margin-top: 24px;">Bulleted list - Dark</h5>
+                <div style="background-color:#0a6160">
+                    <div class="list dark-mode">
+                        <ul class="cmp-list">
+                            <li>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua.
+                            </li>
+                            <li>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <pre
+                    style="margin-top: 8px; margin-bottom: 16px; border: 1px solid darkgray; padding: 12px; white-space: pre-wrap;">
+    &lt;div class="list dark-mode"&gt;
+        &lt;ul class="cmp-list"&gt;
+            &lt;li&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua.
+            &lt;/li&gt;
+            &lt;li&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua.
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;</pre>
+                <div data-include="horizontal_separator" data-comp-root="../" data-id="hs_l3_7" data-render="true"
+                    data-class="cmp-separator--solid--light"></div>
+
+                <!-- System icon list -->
+                <h5 style="margin-bottom: 8px; margin-top: 24px;">System icon list</h5>
+                <ul class="cmp-list cmp-list__icon">
+                    <li>
+                        <i class="icons_space icon-dls-clock"></i>
+                        <div class="cmp-list__icon-content">
+                            <h5 class="cmp-list__icon-headline">Headline</h5>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="icons_space icon-dls-calendar"></i>
+                        <div class="cmp-list__icon-content">
+                            <h5 class="cmp-list__icon-headline">Headline</h5>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+                <pre
+                    style="margin-top: 8px; margin-bottom: 16px; border: 1px solid darkgray; padding: 12px; white-space: pre-wrap;">
+    &lt;ul class="cmp-list cmp-list__icon"&gt;
+        &lt;li&gt;
+            &lt;i class="icons_space icon-dls-clock"&gt;&lt;/i&gt;
+            &lt;div class="cmp-list__icon-content"&gt;
+                &lt;h5 class="cmp-list__icon-headline"&gt;Headline&lt;/h5&gt;
+                &lt;p&gt;
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                &lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;i class="icons_space icon-dls-calendar"&gt;&lt;/i&gt;
+            &lt;div class="cmp-list__icon-content"&gt;
+                &lt;h5 class="cmp-list__icon-headline"&gt;Headline&lt;/h5&gt;
+                &lt;p&gt;
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                &lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;</pre>
+                <div data-include="horizontal_separator" data-comp-root="../" data-id="hs_l3_8" data-render="true"
+                    data-class="cmp-separator--solid--light"></div>
+
+                <!-- Illustrative icon list -->
+                <h5 style="margin-bottom: 8px; margin-top: 24px;">Illustrative icon list</h5>
+                <ul class="cmp-list cmp-list__icon">
+                    <li>
+                        <i class="icon-illustrative icon--48 icon-general-next-action"></i>
+                        <div class="cmp-list__icon-content">
+                            <h5 class="cmp-list__icon-headline">Headline</h5>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="icon-illustrative icon--48 icon-general-general"></i>
+                        <div class="cmp-list__icon-content">
+                            <h5 class="cmp-list__icon-headline">Headline</h5>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+                <pre
+                    style="margin-top: 8px; margin-bottom: 16px; border: 1px solid darkgray; padding: 12px; white-space: pre-wrap;">
+    &lt;ul class="cmp-list cmp-list__icon"&gt;
+        &lt;li&gt;
+            &lt;i class="icon-illustrative icon--48 icon-general-next-action"&gt;&lt;/i&gt;
+            &lt;div class="cmp-list__icon-content"&gt;
+                &lt;h5 class="cmp-list__icon-headline"&gt;Headline&lt;/h5&gt;
+                &lt;p&gt;
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                &lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;i class="icon-illustrative icon--48 icon-general-general"&gt;&lt;/i&gt;
+            &lt;div class="cmp-list__icon-content"&gt;
+                &lt;h5 class="cmp-list__icon-headline"&gt;Headline&lt;/h5&gt;
+                &lt;p&gt;
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                &lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;</pre>
+
+                <!-- ====== -->
+            </div>
+            <div class="aem-Grid aem-Grid--default--12">
+                <div data-include="standard_button" data-comp-root="../" data-class="cmp-button--secondary cmp-button--medium"
+                    data-btntext="Back to reference list" data-id="back_btn" data-render="true"
+                    data-href="/reference/index.html"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

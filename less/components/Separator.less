@@ -1,0 +1,190 @@
+.border-gradient-dotted {
+    background: linear-gradient(to right, @pinegreen6 40%, rgba(0, 0, 0, 0) 0%);
+    background-position: center center;
+}
+
+.border-gradient-dashed {
+    background: linear-gradient(to right, @pinegreen6 40%, rgba(0, 0, 0, 0) 0%);
+    background-position: center center;
+}
+
+.border-dashed {
+    .border-gradient-dashed;
+    background-size: 16px 2px;
+}
+
+.border-dotted {
+    .border-gradient-dotted;
+    background-size: 7px 1.5px;
+    height: 2px;
+}
+
+.border-vertical-dashed {
+    background: linear-gradient(to bottom, @pinegreen1 40%, rgba(0, 0, 0, 0) 0%);
+    background-position: center center;
+    background-size: 2px 13px;
+    height: 64px;
+    width: 2px;
+}
+
+.border-vertical-dotted {
+    background: linear-gradient(to bottom, @pinegreen6 40%, rgba(0, 0, 0, 0) 0%);
+    background-position: center center;
+    background-size: 1.5px 7px;
+    width: 2px;
+}
+
+.border-vertical-solid {
+    border-right: 1px solid @pinegreen6;
+}
+
+.cmp-separator__horizontal-rule {
+    margin: 0;
+    border: 0;
+    background: transparent;
+
+    &.cmp-separator {
+        border: 0;
+
+        &--solid {
+            &--light {
+                border-bottom: 1px solid @metalgrey;
+            }
+        }
+
+        &--dashed {
+            // For normal import in html, use this path
+            background: url(../Assets/Borders/bg-dashed.svg) repeat-x;
+
+            // For bundling, use this path
+            // background: url(../../Assets/Borders/bg-dashed.svg) repeat-x;
+            height: 2px;
+        }
+
+        &--dotted {
+            // For normal import in html, use this path
+            background: url(../Assets/Borders/bg-dotted.svg) repeat-x;
+
+            // For bundling, use this path
+            // background: url(../../Assets/Borders/bg-dotted.svg) repeat-x;
+            height: 2px;
+
+            &--text {
+                .border-dotted;
+                width: 64px;
+            }
+        }
+
+        &--section {
+            height: 64px;
+            position: relative;
+            background: linear-gradient(90deg,
+                    rgba(155, 186, 184, 0) ~"calc(50% - 1px)",
+                    rgba(155, 186, 184, 1) ~"calc(50% - 1px)",
+                    rgba(155, 186, 184, 0) ~"calc(50% + 1px)"
+                );
+            background-position: center center;
+            background-size: 100% 2px;
+
+            &:before,
+            &:after {
+                box-sizing: content-box;
+                position: absolute;
+                content: "";
+                height: 1px;
+                margin-top: 33px;
+                width: ~"calc(50% - 24px)";
+                background: @pinegreen6;
+            }
+
+            &:before {
+                left: 0;
+            }
+
+            &:after {
+                right: 0;
+            }
+        }
+    }
+}
+
+.cmp-separator-vertical {
+    height: 100%;
+    max-width: 2px;
+    width: 2px;
+    box-sizing: border-box;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    &--solid {
+        .border-vertical-solid;
+    }
+
+    &--dotted {
+        //.border-vertical-dotted;
+        // For normal import in html, use this path
+        background: url(../Assets/Borders/bg-dotted-vertical.svg) repeat-y;
+
+        // For bundling, use this path
+        // background: url(../../Assets/Borders/bg-dotted-vertical.svg) repeat-y;
+    }
+
+    &--dashed {
+        // For normal import in html, use this path
+        background: url(../Assets/Borders/bg-dashed-vertical.svg) repeat-y;
+
+        // For bundling, use this path
+        // background: url(../../Assets/Borders/bg-dashed-vertical.svg) repeat-y;
+    }
+}
+
+.cmp-border {
+    &--medium {
+        border: 2px solid @pinegreen1;
+    }
+
+    &--thin {
+        border: 1px solid @pinegreen1;
+    }
+}
+
+.cmp-spacer,
+.cmp-spacer-16 {
+    width: 100%;
+    height: 16px;
+
+    @media (max-width: 767px) {
+        display: none;
+    }
+}
+
+.cmp-spacer-40 {
+    width: 100%;
+    height: 40px;
+
+    @media (max-width: 767px) {
+        display: none;
+    }
+}
+
+.aem-GridColumn {
+
+    &+.separator,
+    &+.cmp-separator {
+        width: 100%;
+        padding: 12px;
+        position: relative;
+        box-sizing: border-box;
+    }
+
+    &+.separator>.cmp-separator {
+        padding: 0;
+    }
+}
+
+.seperator-mobile {
+    @media screen and (max-width: 767px) {
+        display: none !important;
+    }
+}

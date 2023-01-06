@@ -1,0 +1,100 @@
+.cmp-results-summary {
+    max-width: 1140px;
+    margin: auto;
+    background-color: @pinegreen1;
+    padding-bottom: 40px;
+
+    // Overwrite social sharing bar styles
+    >.sharing-bar {
+        background-color: transparent;
+        margin-bottom: 24px;
+
+        .social-sharing-bar {
+            align-items: flex-end;
+
+            .icon-divider {
+                margin-left: 0px;
+                border: none;
+            }
+        }
+    }
+
+    // header sections
+    >.header-section {
+        text-align: center;
+        color: @purewhite;
+        margin: auto;
+        margin-bottom: 24px;
+        max-width: 741px;
+
+        // M and below
+        @media only screen and (max-width: 991px) {
+            max-width: 100%;
+        }
+
+        >*:not(:last-child) {
+            margin-bottom: 16px;
+        }
+    }
+
+    // Overwrite summary row
+    .cmp-summaryRow {
+        padding: 24px 0px;
+        margin-bottom: 24px;
+
+        // M and below
+        @media only screen and (max-width: 991px) {
+            padding: 0px;
+        }
+    }
+
+    // Body text content
+    >.body-content {
+        color: @purewhite;
+        text-align: center;
+        margin: auto;
+        max-width: 741px;
+
+        >*:not(:last-child) {
+            margin-bottom: 24px;
+        }
+
+        // M and below
+        @media only screen and (max-width: 991px) {
+            max-width: 100%;
+        }
+
+        .action-buttons {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            margin-bottom: 24px;
+            flex-direction: row;
+
+            .cmp-button {
+                margin: 0 12px;
+            }
+
+            // M and below
+            @media only screen and (max-width: 991px) {
+                flex-direction: column;
+                margin-bottom: 0;
+
+                .cmp-button {
+                    width: 100%;
+                    margin: 0 0 24px 0;
+                }
+            }
+        }
+    }
+
+    // Separator
+    .separator {
+        margin-top: 24px;
+        margin-bottom: 24px;
+    }
+
+    @media only screen and (max-width: 991px) {
+        padding-bottom: 0;
+    }
+}

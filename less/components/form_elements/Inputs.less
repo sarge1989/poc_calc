@@ -1,0 +1,354 @@
+@lineheight: 24px;
+
+.cmp-inputs {
+    width: 100%;
+    display: block;
+    position: relative;
+
+    &>* {
+        padding-bottom: 4px;
+
+        &:last-child {
+            padding-bottom: 0px;
+        }
+    }
+
+    &>.cmp-input-label {
+        align-items: flex-end;
+        display: flex;
+        justify-content: space-between;
+
+        & .cmp-input-char {
+            color: @steelgrey;
+        }
+
+        & .cmp-tooltip {
+            overflow-wrap: break-word;
+        }
+    }
+
+    &>.cmp-input-caption {
+        color: @steelgrey;
+        font-style: italic;
+        position: relative;
+
+        &>a.cmp-text__link {
+            font-style: normal;
+        }
+
+        &.error {
+            color: @errorlava;
+
+            &:before {
+                content: "\e92b";
+            }
+        }
+
+        &.error,
+        &.success {
+            padding-left: 28px;
+
+            &:before {
+                background: transparent;
+                font-family: "icomoon";
+                font-size: 24px;
+                font-style: normal;
+                left: 0px;
+                max-height: 24px;
+                min-width: 24px;
+                position: absolute;
+                top: 0;
+            }
+        }
+
+        &.success {
+            color: @successlava;
+
+            &:before {
+                content: "\e935";
+            }
+        }
+    }
+
+    .input-group--container {
+        display: flex;
+
+        .cmp-button {
+            margin-left: 8px;
+        }
+    }
+
+    & .input-group {
+
+        &.input-form-field,
+        &.input-form-number {
+            display: flex;
+            position: relative;
+            width: 100%;
+            align-items: flex-end;
+            background-color: @purewhite;
+        }
+
+        &.input-form-password {
+            .input-form-password--icon-container {
+                cursor: pointer;
+                position: absolute;
+                right: 0;
+                top: 0;
+                display: flex;
+                align-items: center;
+                padding-right: 16px;
+                padding-left: 4px;
+                height: 48px;
+
+                i {
+                    color: @pinegreen1;
+                    font-size: 24px;
+                    width: 24px;
+                    height: 24px;
+                }
+
+                &.no-click {
+                    cursor: not-allowed;
+                }
+            }
+        }
+
+        &.input-form-field {
+            &>.form-control {
+
+                &.form-control-input,
+                &.form-control-textarea {
+                    background-color: @purewhite;
+                    background-image: none;
+                    border: 1px solid @pinegreen6;
+                    border-radius: 8px;
+                    box-sizing: border-box;
+                    color: @carbonblack;
+                    display: block;
+                    font-family: "Montserrat", sans-serif;
+                    font-size: 16px;
+                    font-weight: 600;
+                    line-height: @lineheight;
+                    outline: none;
+                    padding: 12px 16px;
+                    transition: border-color ease-in-out 0.15s;
+                    width: 100%;
+
+                    &::placeholder {
+                        font-weight: 400;
+                    }
+
+                    &:disabled {
+                        color: @steelgrey;
+                        cursor: not-allowed;
+                    }
+
+                    &:disabled,
+                    &.readonly {
+                        background: @smokegrey;
+                        border: 1px solid @stonegrey;
+
+                        &+.input-form-password--icon-container {
+                            i {
+                                color: @steelgrey;
+                            }
+                        }
+                    }
+
+                    &:focus:not(.readonly),
+                    &.success:focus {
+                        border: 1px solid @pinegreen;
+                    }
+
+                    &:hover:not(:disabled):not(.readonly):not(.error),
+                    &.success:hover {
+                        border: 1px solid @pinegreen2;
+                    }
+
+                    &.error {
+                        border: 1px solid @errorlava;
+                    }
+
+                    &.success {
+                        border: 1px solid @successlava;
+                    }
+                }
+
+                &.form-control-input {
+                    height: 48px;
+                }
+
+                &.form-control-textarea {
+                    resize: none;
+                    max-height: 314px;
+                }
+
+                &.password-control-input {
+                    padding-right: 44px;
+
+                    &::-ms-reveal,
+                    &::-ms-clear {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        &.input-form-number {
+            align-items: center;
+            border: 1px solid @pinegreen6;
+            border-radius: 8px;
+            overflow: hidden;
+            padding-bottom: 0;
+            box-sizing: border-box;
+            height: 48px;
+
+            &>* {
+                padding: 12px 0;
+            }
+
+            &.disabled,
+            &.readonly {
+                border: 1px solid @stonegrey;
+
+                &>* {
+                    background-color: @smokegrey;
+                }
+            }
+
+            &:focus-within,
+            &.success:focus-within {
+                border: 1px solid @pinegreen;
+            }
+
+            &:hover:not(.disabled):not(.readonly):not(.error),
+            &.success:hover {
+                border: 1px solid @pinegreen2;
+            }
+
+            &>.prefix,
+            &>.suffix {
+                color: @slategrey;
+                flex-shrink: 0;
+            }
+
+            &.error {
+                border: 1px solid @errorlava;
+            }
+
+            &.success {
+                border: 1px solid @successlava;
+            }
+
+            &>.form-control.form-control-number {
+                -moz-appearance: textfield;
+                background-color: @purewhite;
+                background-image: none;
+                border: none;
+                box-sizing: border-box;
+                color: @carbonblack;
+                display: block;
+                font-family: "Montserrat", sans-serif;
+                font-size: 16px;
+                font-weight: 600;
+                line-height: @lineheight;
+                padding-left: 16px;
+                outline: none;
+                transition: border-color ease-in-out 0.15s;
+                width: 100%;
+
+                &:last-child {
+                    padding-right: 16px;
+                }
+
+                &::-webkit-inner-spin-button,
+                &::-webkit-outer-spin-button {
+                    -webkit-appearance: none;
+                    margin: 0;
+                }
+
+                &::-webkit-input-placeholder {
+                    line-height: @lineheight;
+                }
+
+                &::placeholder {
+                    font-weight: 400;
+                }
+
+                &:disabled,
+                &.readonly {
+                    background-color: @smokegrey;
+                }
+            }
+
+            &>.prefix {
+                padding-left: 16px;
+            }
+
+            &>.suffix {
+                text-align: right;
+
+                &:last-child {
+                    padding-right: 16px;
+                }
+            }
+        }
+    }
+
+    //To remove datalist dropdown arrow
+    [list]::-webkit-calendar-picker-indicator {
+        opacity: 0;
+    }
+
+    datalist {
+        box-sizing: border-box;
+        position: absolute;
+        background-color: @purewhite;
+        border: 1px solid @pinegreen6;
+        box-shadow: 0px 4px 8px rgba(155, 155, 155, 0.16);
+        border-radius: 8px;
+        width: 100%;
+        max-height: 216px;
+        overflow-y: auto;
+        z-index: 1; //to block any elements that might overlay with the suggestion box
+    }
+
+    option {
+        font-family: "Montserrat";
+        padding: 12px 16px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.25px;
+        color: #262626;
+        display: none;
+    }
+
+    option:after {
+        content: "";
+        display: block;
+        /* This will put the pseudo element on its own line. */
+        border-bottom: 1px solid #e9e9e9;
+        width: calc(100% - 32px);
+        position: absolute;
+        padding-top: 10px;
+    }
+
+    option:first-child {
+        padding-top: 12px;
+    }
+
+    .changed:after {
+        display: none;
+    }
+
+    /* option active styles */
+    option:hover,
+    option:focus,
+    .active {
+        background: @pinegreen9;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reference list</title>
+
+    <link rel="stylesheet/less" type="text/css" href="../less/references.less" />
+
+    <!-- Only 1 js is included -> All imports done in this file -->
+    <script src="../js/references/references.js" type="module"></script>
+</head>
+
+<body class="webf-page--content">
+    <div class="root container responsivegrid" style="padding-top: 24px; padding-bottom: 40px;">
+        <!-- Main content section -->
+        <div class="container responsivegrid">
+            <div class="aem-Grid aem-Grid--default--12">
+                <!-- Test insert and render using js -->
+                <h4 class="title__text title__text--semibold" style="margin-bottom: 16px;"><u>Reference list</u></h4>
+                <p style="margin-bottom: 32px;">You can view the code snippets for each component here. For those that
+                    are not available, please
+                    refer to the DLS. </p>
+
+                <p style="margin-bottom: 32px;"><b>"data-include"</b>, <b>"data-id"</b> and <b>"data-render"</b> are
+                    <u>mandatory attribute</u> for all components. Note that <b>"data-id"</b> must be unique within the
+                    same html page as this is used for rendering the components. </p>
+            </div>
+            <div class="aem-Grid aemGrid--default--12">
+                <div class="aem-GridColumn aem-GridColumn--default--6" style="padding: 0">
+                    <h5 style="margin-bottom: 16px;">Foundation</h5>
+                    <div style="display: flex; flex-direction: column; row-gap: 10px;">
+                        <div data-include="text_link" data-comp-root="../" data-id="typography" data-render="true" data-linktext="Typography"
+                            data-href="./typography.html"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="aem-Grid aem-Grid--default--12" style="margin-top: 32px;">
+                <div class="aem-GridColumn aem-GridColumn--default--6" style="padding: 0">
+                    <h5 style="margin-bottom: 16px;">Atoms</h5>
+                    <div style="display: flex; flex-direction: column; row-gap: 10px;">
+                        <div data-include="text_link" data-comp-root="../" data-id="standard_button" data-render="true"
+                            data-linktext="Standard button" data-href="./buttons_and_links/standard_button.html"></div>
+                        <div data-include="text_link" data-comp-root="../" data-id="text_link" data-render="true" data-linktext="Text link"
+                            data-href="./buttons_and_links/text_link.html"></div>
+                        <div data-include="text_link" data-comp-root="../" data-id="dropdown_button" data-render="true"
+                            data-linktext="Dropdown button" data-href="./buttons_and_links/dropdown_button.html"></div>
+                        <div data-include="text_link" data-comp-root="../" data-id="separator" data-render="true" data-linktext="Separators"
+                            data-href="./separator.html"></div>
+                        <div data-include="text_link" data-comp-root="../" data-id="list" data-render="true" data-linktext="Lists"
+                            data-href="./list.html"></div>
+                        <div data-include="text_link" data-comp-root="../" data-id="single_checkbox" data-render="true"
+                            data-linktext="Single Checkbox" data-href="./single_checkbox.html"></div>
+                    </div>
+                </div>
+                <div class="aem-GridColumn aem-GridColumn--default--6" style="padding: 0">
+                    <h5 style="margin-bottom: 16px;">Atoms to be added in the future</h5>
+                    <div style="display: flex; flex-direction: column; row-gap: 10px;">
+                        <div data-include="text_link" data-comp-root="../" data-id="tooltip" data-render="true" data-linktext="Tooltip"
+                            data-href="#"></div>
+                        <div data-include="text_link" data-comp-root="../" data-id="page_loader" data-render="true"
+                            data-linktext="Page loader" data-href="#"></div>
+                        <div data-include="text_link" data-comp-root="../" data-id="notice" data-render="true" data-linktext="Notice"
+                            data-href="#"></div>
+                        <div data-include="text_link" data-comp-root="../" data-id="dropdown_menu" data-render="true"
+                            data-linktext="Dropdown menu" data-href="#"></div>
+                        <div data-include="text_link" data-comp-root="../" data-id="states" data-render="true" data-linktext="States"
+                            data-href="#"></div>
+
+                    </div>
+                </div>
+                <!-- ====== -->
+            </div>
+
+            <div class="aem-Grid aem-Grid--default--12" style="margin-top: 32px">
+                <div class="aem-GridColumn aem-GridColumn--default--6" style="padding: 0">
+                    <h5 style="margin-bottom: 16px;">Molecules</h5>
+                    <div style="display: flex; flex-direction: column; row-gap: 10px;">
+                        <div data-include="text_link" data-comp-root="../" data-id="radio_button" data-render="true"
+                            data-linktext="Radio button" data-href="./form_elements/radio_button.html"></div>
+                        <div data-include="text_link" data-comp-root="../" data-id="numerical_input" data-render="true"
+                            data-linktext="Numerical input" data-href="./form_elements/numerical_input.html"></div>
+                        <div data-include="text_link" data-comp-root="../" data-id="dropdown_selector_basic" data-render="true"
+                            data-linktext="Dropdown selector - basic"
+                            data-href="./form_elements/dropdown_selector_basic.html"></div>
+                        <div data-include="text_link" data-comp-root="../" data-id="single_date_picker" data-render="true"
+                            data-linktext="Single date picker" data-href="./form_elements/single_date_picker.html">
+                        </div>
+                        <div data-include="text_link" data-comp-root="../" data-id="section_header" data-render="true"
+                            data-linktext="Section header" data-href="./section_header.html"></div>
+                        <div data-include="text_link" data-comp-root="../" data-id="individual_summary_row" data-render="true"
+                            data-linktext="Individual summary row" data-href="#"></div>
+                        <div data-include="text_link" data-comp-root="../" data-id="section_breakdown" data-render="true"
+                            data-linktext="Dashboard card elements - Section breakdown" data-href="#"></div>
+                        <div data-include="text_link" data-comp-root="../" data-id="content_card" data-render="true"
+                            data-linktext="Content card" data-href="#"></div>
+                        <div data-include="text_link" data-comp-root="../" data-id="breadcrumb" data-render="true" data-linktext="Breadcrumb"
+                            data-href="#"></div>
+                    </div>
+                </div>
+                <div class="aem-GridColumn aem-GridColumn--default--6" style="padding: 0;">
+                    <h5 style="margin-bottom: 16px;">Atoms to be added in the future</h5>
+                    <div style="display: flex; flex-direction: column; row-gap: 10px;">
+                        <div data-include="text_link" data-comp-root="../" data-id="checkbox_field" data-render="true"
+                            data-linktext="Checkbox field" data-href="#"></div>
+                        <div data-include="text_link" data-comp-root="../" data-id="single_line_input" data-render="true"
+                            data-linktext="Single line input" data-href="#"></div>
+                        <div data-include="text_link" data-comp-root="../" data-id="dropdown_selector_with_input" data-render="true"
+                            data-linktext="Dropdown selector - with single line input" data-href="#"></div>
+                        <div data-include="text_link" data-comp-root="../" data-id="form_card" data-render="true" data-linktext="Form card"
+                            data-href="#"></div>
+                        <div data-include="text_link" data-comp-root="../" data-id="range_date_picker" data-render="true"
+                            data-linktext="Range date picker" data-href="#"></div>
+                        <div data-include="text_link" data-comp-root="../" data-id="single_info_snippet" data-render="true"
+                            data-linktext="Single info snippet" data-href="#"></div>
+                        <div data-include="text_link" data-comp-root="../" data-id="grouped_info_snippet" data-render="true"
+                            data-linktext="Grouped info snippet" data-href="#"></div>
+                        <div data-include="text_link" data-comp-root="../" data-id="alerts" data-render="true" data-linktext="Alert"
+                            data-href="#"></div>
+                    </div>
+                </div>
+                <!-- ====== -->
+            </div>
+
+            <div class="aem-Grid aem-Grid--default--12" style="margin-top: 32px">
+                <div class="aem-GridColumn aem-GridColumn--default--6" style="padding: 0">
+                    <h5 style="margin-bottom: 16px;">Organisms</h5>
+                    <div style="display: flex; flex-direction: column; row-gap: 10px;">
+                        <div data-include="text_link" data-comp-root="../" data-id="results_summary" data-render="true"
+                            data-linktext="Results summary" data-href="#"></div>
+                        <div data-include="text_link" data-comp-root="../" data-id="form_resources" data-render="true"
+                            data-linktext="Form resources" data-href="#"></div>
+                        <div data-include="text_link" data-comp-root="../" data-id="modals" data-render="true" data-linktext="Modals"
+                            data-href="#"></div>
+                    </div>
+                </div>
+                <!-- ====== -->
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

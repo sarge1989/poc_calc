@@ -1,0 +1,103 @@
+@icon-width: 22px;
+@alert-width: 100%;
+
+.alerts {
+    border-width: 1px 1px 1px 8px;
+    border-style: solid;
+    box-sizing: border-box;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    width: @alert-width;
+
+    &-icon {
+        flex-direction: column;
+
+        span {
+            width: 56px;
+            display: block;
+
+            &::before {
+                font-size: 32px;
+                position: absolute;
+                padding: 12px;
+            }
+        }
+
+        img {
+            width: @icon-width;
+        }
+    }
+
+    &-body {
+
+        padding: 16px 16px 16px 0;
+        flex-direction: column;
+        font-weight: 400;
+
+        &-title {
+            font-weight: 600;
+            line-height: @spacing-5;
+        }
+
+        &-content {
+
+            font-weight: 400;
+            font-style: italic;
+            color: @steelgrey;
+
+            ol {
+                list-style: none;
+                counter-reset: my-awesome-counter;
+                padding: 0;
+                margin: 0;
+
+                li {
+                    counter-increment: my-awesome-counter;
+                    display: flex;
+
+                    .li-content {
+                        width: ~"calc(100% - 24px)";
+                        padding-left: 4px;
+                    }
+
+                    &::before {
+                        content: counter(my-awesome-counter);
+                        position: relative;
+                        display: block;
+                        text-align: center;
+                        width: 24px;
+                        height: 24px;
+                        font-weight: 600;
+                        font-style: normal;
+                    }
+
+                }
+            }
+        }
+    }
+
+    &-error {
+        border-color: @errorlava;
+
+        .alerts-icon {
+            color: @errorlava;
+        }
+    }
+
+    &-warning {
+        border-color: @warningginger;
+
+        .alerts-icon {
+            color: @warningginger;
+        }
+    }
+
+    &-info {
+        border-color: @neutralocean;
+
+        .alerts-icon {
+            color: @neutralocean;
+        }
+    }
+}

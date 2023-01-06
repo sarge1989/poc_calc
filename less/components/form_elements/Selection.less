@@ -1,0 +1,209 @@
+input[type="radio"][class^="cmp-"],
+input[type="checkbox"][class^="cmp-"] {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    appearance: none;
+    border: 1px solid @pinegreen1;
+    background: @purewhite;
+    float: left;
+    margin: 0 8px 0 0;
+
+    &:hover {
+        border: 1px solid @pinegreen2;
+    }
+
+    &:checked {
+        background: @pinegreen;
+        border: 1px solid @pinegreen;
+
+        &:before {
+            align-self: center;
+        }
+
+        &:disabled {
+            background: @stonegrey;
+            border-color: @stonegrey;
+        }
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+        border-color: @stonegrey;
+        pointer-events: none;
+        background: @smokegrey;
+    }
+}
+
+input[type="checkbox"][class^="cmp-"] {
+    &.cmp-form-options__field {
+        border-radius: 4px;
+    }
+
+    &:checked {
+        &:before {
+            font-family: "icomoon";
+            content: "\e935";
+            color: @purewhite;
+            font-size: 24px;
+        }
+    }
+}
+
+input[type="radio"][class^="cmp-"] {
+    &.cmp-form-options__field {
+        border-radius: 50%;
+    }
+
+    &:checked {
+        &:before {
+            width: 10px;
+            height: 10px;
+            background: @purewhite;
+            border-radius: 50%;
+            content: "";
+        }
+    }
+}
+
+
+.cmp-form-options {
+    padding: 0;
+    border: 0;
+    display: inline-block;
+}
+
+.cmp-form-options__legend {
+    padding: 0 0 4px;
+
+    &+.cmp-input-caption {
+        display: flex;
+        margin-top: -4px;
+        padding-bottom: 16px;
+    }
+
+    .tooltip-icon {
+        margin-left: 4px;
+    }
+}
+
+.cmp-form-options {
+    &.is-horizontal-stack {
+        display: flex;
+        column-gap: 16px;
+
+        @media (max-width: 991px) {
+            flex-direction: column;
+        }
+
+        .cmp-form-options__field-label {
+            flex: 1;
+        }
+    }
+
+    .cmp-form-options__field-label {
+        cursor: pointer;
+        position: relative;
+        display: block;
+        border-radius: 8px;
+        border: 1px solid @pinegreen6;
+        padding: 16px;
+        margin: 0 0 8px;
+        width: auto;
+        text-align: left;
+
+        >.cmp-form-options__field-description {
+            display: flex;
+            flex: 1;
+
+            .ico-box-font {
+                margin-left: 4px;
+                color: @pinegreen1;
+            }
+        }
+
+        .caption {
+            flex: 0 0 100%;
+            padding-left: 32px;
+            padding-top: 8px;
+        }
+
+        &.selected {
+            background: @pinegreen9;
+            border: 1px solid @pinegreen2;
+
+            .caption {
+                color: @slategrey;
+            }
+        }
+
+        &.disabled {
+            background: @smokegrey;
+            border: 1px solid @stonegrey;
+            pointer-events: none;
+            cursor: pointer;
+
+            .ico-box-font,
+            .cmp-form-options__field-description,
+            .caption {
+                color: @steelgrey;
+            }
+
+            .tooltip-icon:before {
+                color: @steelgrey;
+            }
+        }
+
+        &:hover {
+            background: @pinegreen9;
+            border: 1px solid @pinegreen2;
+
+            .caption {
+                color: @slategrey;
+            }
+        }
+    }
+}
+
+.cmp-form-field {
+
+    &--success,
+    &--error {
+        .cmp-input-caption {
+            &:before {
+                font-family: "icomoon" !important;
+                font-style: normal;
+                margin-right: 4px;
+                font-size: 24px;
+                max-width: 24px;
+                max-height: 24px;
+                overflow: hidden;
+                box-sizing: border-box;
+            }
+        }
+    }
+
+    &--success {
+        .cmp-input-caption {
+            color: #008344;
+
+            &:before {
+                content: "\e935";
+            }
+        }
+    }
+
+    &--error {
+        .cmp-input-caption {
+            color: #e20808;
+
+            &:before {
+                content: "\e92b";
+            }
+        }
+    }
+}
