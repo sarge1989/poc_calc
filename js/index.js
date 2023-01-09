@@ -260,14 +260,14 @@ $(function () {
         const loanAmount = parseFloat(data.loanAmount.replaceAll(",", ""));
         const sumAssured = Math.round(coverage * loanAmount * 100) / 100 //rounded to 2 dp
         const premiumRate = lookupTable[gender][relevantRate][age][loanTerm];
-        const premiumPayable = Math.round(sumAssured * premiumRate / 10000 * 100) / 100 //rounded to 2 dp
+        const premiumPayable = (Math.round(sumAssured * premiumRate / 10000 * 100) / 100).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) //rounded to 2 dp
 
         $("#term_of_loan_result").text("For a " + data.termOfLoan + " years loan");
         $("#result_loan_amount").text("$" + data.loanAmount);
         $("#result_interest_rate").text(data.interestRate.text);
         $("#result_coverage").text(data.coverage + "%");
         $("#premium_payment_term").text(`${loanTerm} Years`)
-        $("#premium_payable").text(`$${premiumPayable.toFixed(2)}`)
+        $("#premium_payable").text(`$${premiumPayable}`)
 
         // Always end with this callback
         callback();
