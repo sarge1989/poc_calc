@@ -105,7 +105,7 @@ export const renderComponent = {
         var isHorizontalStack = cmpWrapper.data('isHorizontalStack');
 
         setTooltipAndLabel(cmp, '.cmp-selection-tooltip', cmpWrapper.data('inputLabel'), cmpWrapper.data('tooltipContent'));
-        setEleText(cmp, '.cmp-input-caption', cmpWrapper.data('caption'));
+        setCaptionText(cmp, '.cmp-input-caption', cmpWrapper.data('caption'));
 
         if (isHorizontalStack) {
             setCmpClass(cmp.find("fieldset"), "is-horizontal-stack");
@@ -138,7 +138,7 @@ export const renderComponent = {
         setFieldName(cmp, 'input', cmpWrapper.data('name'));
 
         setTooltipAndLabel(cmp, '.cmp-input-label', cmpWrapper.data('inputLabel'), cmpWrapper.data('tooltipContent'));
-        setEleText(cmp, '.cmp-input-caption', cmpWrapper.data('caption'));
+        setCaptionText(cmp, '.cmp-input-caption', cmpWrapper.data('caption'));
         setPlaceholder(cmp, 'input', cmpWrapper.data('placeholder'));
 
         inputField.attr('value', cmpWrapper.data('defaultValue'));
@@ -176,7 +176,7 @@ export const renderComponent = {
 
         setFieldName(cmp, 'input', cmpWrapper.data('name'));
         setTooltipAndLabel(cmp, '.cmp-input-label', cmpWrapper.data('inputLabel'), cmpWrapper.data('tooltipContent'));
-        setEleText(cmp, '.cmp-input-caption', cmpWrapper.data('caption'));
+        setCaptionText(cmp, '.cmp-input-caption', cmpWrapper.data('caption'));
         inputField.attr('id', cmpWrapper.data('fieldId'));
 
         if (cmpWrapper.data('placeholder') != undefined) {
@@ -216,7 +216,7 @@ export const renderComponent = {
             cmp.find('.cmp-form-label').remove();
         }
 
-        setEleText(cmp, '.cmp-input-caption', cmpWrapper.data('caption'));
+        setCaptionText(cmp, '.cmp-input-caption', cmpWrapper.data('caption'));
 
         if (cmpWrapper.data('default') != undefined) {
             inputField.attr('data-default-date', cmpWrapper.data('default'));
@@ -228,7 +228,7 @@ export const renderComponent = {
             let today = new Date();
             let minDate = today.getDate() + " " + monthsArr[today.getMonth()] + " " + (today.getFullYear() - cmpWrapper.data('maxAge'));
             let maxDate = today.getDate() + " " + monthsArr[today.getMonth()] + " " + (today.getFullYear() - cmpWrapper.data('minAge'));
-            
+
             inputField.attr('data-min-date', minDate);
             inputField.attr('data-max-date', maxDate);
         } else {
@@ -349,6 +349,14 @@ const setEleText = function (cmp, ele, value) {
         cmp.find(ele).remove();
     } else {
         cmp.find(ele).text(value);
+    }
+}
+
+const setCaptionText = function (cmp, ele, value) {
+    if (value != undefined) {
+        cmp.find(ele).text(value);
+    } else {
+        cmp.find(ele).text("");
     }
 }
 

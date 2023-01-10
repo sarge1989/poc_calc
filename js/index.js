@@ -192,7 +192,17 @@ $(function () {
         });
 
         $(loanAmountInput).on("focusout", (e) => {
-            checkEmptyFields();
+            $("#loan_amount_wrapper .cmp-input-caption").removeClass("error").text("");
+            $("#loan_amount_wrapper .input-group.input-form-number").removeClass("error");
+            let loanAmount = $(loanAmountInput).val();
+            loanAmount = loanAmount.replaceAll(',', ''); // replace commas with ''
+
+            if (loanAmount <= 0 || loanAmount >= 10000000) {
+                $("#loan_amount_wrapper .cmp-input-caption").addClass("error").text("Key in a valid loan amount.");
+                $("#loan_amount_wrapper .input-group.input-form-number").addClass("error");
+            } else {
+                checkEmptyFields();
+            }
         });
 
         $(interestRateInput).on("change", (e) => {
@@ -200,10 +210,31 @@ $(function () {
         });
 
         $(termOfLoanInput).on("focusout", (e) => {
-            checkEmptyFields();
+            $("#tol_wrapper .cmp-input-caption").removeClass("error").text("");
+            $("#tol_wrapper .input-group.input-form-number").removeClass("error");
+
+            if ($(termOfLoanInput).val() > 40) {
+                $("#tol_wrapper .cmp-input-caption").addClass("error").text("Term of loan cannot be more than 40 years.");
+                $("#tol_wrapper .input-group.input-form-number").addClass("error");
+            } else if ($(termOfLoanInput).val() == 0 || $(termOfLoanInput).val() == "") {
+                $("#tol_wrapper .cmp-input-caption").addClass("error").text("Key in a valid term of loan.");
+                $("#tol_wrapper .input-group.input-form-number").addClass("error");
+            } else {
+                checkEmptyFields();
+            }
         });
 
         $(coverageInput).on("focusout", (e) => {
+            $("#coverage_wrapper .cmp-input-caption").removeClass("error").text("");
+            $("#coverage_wrapper .input-group.input-form-number").removeClass("error");
+
+            if ($(coverageInput).val() < 1 || $(coverageInput).val() > 100 || $(coverageInput).val() == "") {
+                $("#coverage_wrapper .cmp-input-caption").addClass("error").text("Key in a valid percentage share of cover (default 100%).");
+                $("#coverage_wrapper .input-group.input-form-number").addClass("error");
+            } else {
+                checkEmptyFields();
+            }
+
             checkEmptyFields();
         });
 
@@ -255,12 +286,12 @@ $(function () {
         const gender = data.gender.value.toUpperCase();
         const relevantRate = data.interestRate.value === "concessionary" ? "0.03" : "0.04"
         const age = getAge(data.dob);
-        const loanTerm = data.termOfLoan;
+        const loanTerm = data.termOfLoan; // TODO：Re-calculate term of loan
         const coverage = parseFloat(data.coverage) / 100;
         const loanAmount = parseFloat(data.loanAmount.replaceAll(",", ""));
         const sumAssured = Math.round(coverage * loanAmount * 100) / 100 //rounded to 2 dp
         const premiumRate = lookupTable[gender][relevantRate][age][loanTerm];
-        const premiumPayable = (Math.round(sumAssured * premiumRate / 10000 * 100) / 100).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) //rounded to 2 dp
+        const premiumPayable = (Math.round(sumAssured * premiumRate / 10000 * 100) / 100).toLocaleString('en', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) //rounded to 2 dp
 
         $("#term_of_loan_result").text("For a " + data.termOfLoan + " years loan");
         $("#result_loan_amount").text("$" + data.loanAmount);
