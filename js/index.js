@@ -224,11 +224,20 @@ $(function () {
             }
         });
 
+        $(termOfLoanInput).on("keypress", (e) => {
+            if (e.target.value.length == 2) {
+                e.preventDefault();
+            }
+        }); 
+
         $(coverageInput).on("focusout", (e) => {
             $("#coverage_wrapper .cmp-input-caption").removeClass("error").text("");
             $("#coverage_wrapper .input-group.input-form-number").removeClass("error");
 
-            if ($(coverageInput).val() < 1 || $(coverageInput).val() > 100 || $(coverageInput).val() == "") {
+            let coverage = $(coverageInput).val();
+            coverage = coverage.replaceAll(',', ''); // replace commas with ''
+
+            if (coverage < 1 || coverage > 100 || coverage == "") {
                 $("#coverage_wrapper .cmp-input-caption").addClass("error").text("Key in a valid percentage share of cover (default 100%).");
                 $("#coverage_wrapper .input-group.input-form-number").addClass("error");
             } else {
@@ -237,6 +246,12 @@ $(function () {
 
             checkEmptyFields();
         });
+
+        $(coverageInput).on("keypress", (e) => {
+            if (e.target.value.length == 3) {
+                e.preventDefault();
+            }
+        }); 
 
         $(editBtn).on("click", (e) => {
             window.scrollTo({ top: $("#mainPanel").position().top });
