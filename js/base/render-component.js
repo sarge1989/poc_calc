@@ -366,7 +366,8 @@ const setCaptionText = function (cmp, ele, value) {
 const setTooltipAndLabel = function (cmp, labelWrapper, label, tooltipContent) {
     if (tooltipContent != undefined) {
         setEleText(cmp, '.cmp-tooltip-demo-wrapper .cmp-input-label--text', label);
-        setEleText(cmp, '.cmp-tooltip-demo-wrapper .cmp-tooltip--content', tooltipContent);
+        cmp.find('.cmp-tooltip-demo-wrapper .cmp-tooltip--content').html(tooltipContent);
+
         cmp.find(labelWrapper + ' > .cmp-input-label--text').remove();
     } else {
         setEleText(cmp, labelWrapper + ' > .cmp-input-label--text', label);
