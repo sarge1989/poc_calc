@@ -285,7 +285,6 @@ $(function () {
 
     // Do the data processing here... you can create more functions if required
     const processData = function (data, callback) {
-        // Add logic
 
         const getAge = function (dobStr) {
             const today = new Date()
@@ -298,22 +297,32 @@ $(function () {
             return age;
         }
 
+        const getPaymentTerm = function(age, loanTerm) { 
+            let coverPeriod = 65 - age + 1; 
+            
+            if (coverPeriod >= loanTerm) {
+                return 0.9 * loanTerm;
+            } else { 
+                return 0.9 * coverPeriod;
+            }
+        }
+
         const gender = data.gender.value.toUpperCase();
         const relevantRate = data.interestRate.value === "concessionary" ? "0.03" : "0.04"
         const age = getAge(data.dob);
-        const loanTerm = data.termOfLoan; // TODO：Re-calculate term of loan
+        const paymentTerm = Math.ceil(getPaymentTerm(age, data.termOfLoan)); 
         const coverage = parseFloat(data.coverage) / 100;
         const loanAmount = parseFloat(data.loanAmount.replaceAll(",", ""));
-        const sumAssured = Math.round(coverage * loanAmount * 100) / 100 //rounded to 2 dp
-        const premiumRate = lookupTable[gender][relevantRate][age][loanTerm];
-        const premiumPayable = (Math.round(sumAssured * premiumRate / 10000 * 100) / 100).toLocaleString('en', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) //rounded to 2 dp
+        const sumAssured = Math.round(coverage * loanAmount * 100) / 100; //rounded to 2 dp
+        const premiumRate = lookupTable[gender][relevantRate][age][data.termOfLoan];
+        const premiumPayable = (Math.round(sumAssured * premiumRate / 10000 * 100) / 100).toLocaleString('en', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); //rounded to 2 dp
 
         $("#term_of_loan_result").text("For a " + data.termOfLoan + " years loan");
         $("#result_loan_amount").text("$" + data.loanAmount);
         $("#result_interest_rate").text(data.interestRate.text);
         $("#result_coverage").text(data.coverage + "%");
-        $("#premium_payment_term").text(`${loanTerm} Years`)
-        $("#premium_payable").text(`$${premiumPayable}`)
+        $("#premium_payment_term").text(`${paymentTerm} Years`);
+        $("#premium_payable").text(`$${premiumPayable}`);
 
         // Always end with this callback
         callback();
