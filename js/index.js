@@ -78,10 +78,10 @@ $(function () {
         $(".sb-datepicker-container.cmp-inputs.sb-datepicker-container--day").DatepickerDate();
         $(".form-resources").RelatedResource();
 
-        $("#coverCheckbox").change(function () {
-            selectionChangeCheckboxDOM(this);
+        $("#coverCheckbox").on("change", (e)=> {
+            selectionChangeCheckboxDOM(e.target);
 
-            if (this.checked) {
+            if (e.target.checked) {
                 $("#coverStartBtn").removeAttr("disabled");
             } else {
                 $("#coverStartBtn").attr("disabled", "disabled");
@@ -159,28 +159,16 @@ $(function () {
             currStep += 1;
         });
 
-        // $(dobInput).on("keyup", (e) => {
-        //     // if empty, update error message. else, return to original message
-        //     // if ($("#dob").val().length == 0) {
-        //     //     $("#dob_wrapper #datePickerError").text("Please key in a valid date.").addClass("error");
-        //     // } else {
-        //     //     $("#dob_wrapper #datePickerError").removeClass("error");
-
-        //     //     console.log($("#dob").val());
-        //     // }
-        //     // checkEmptyFields();
-        // });
-
         $(dobInput).on("focusout", (e) => {
-            // let minDate = new Date($(dobInput).attr("data-min-date"));
-            // let maxDate = new Date($(dobInput).attr("data-max-date"));
-            // let selectedDate = new Date($("#dob").val());
-            // console.log("defocused");
+            let minDate = new Date($(dobInput).attr("data-min-date"));
+            let maxDate = new Date($(dobInput).attr("data-max-date"));
+            let selectedDate = new Date($(dobInput).val());
 
-            // if (minDate > selectedDate || maxDate < selectedDate) {
-            //     $("#dob_wrapper #datePickerError").text("Please key in a valid date.")
-            // }
-            checkEmptyFields();
+            if (selectedDate < minDate || selectedDate > maxDate) {
+                enableNext(false);
+            } else {
+                checkEmptyFields();
+            }
         });
 
         $(dobInput).on("changeDate", (e) => {
@@ -200,6 +188,7 @@ $(function () {
             if (loanAmount <= 0 || loanAmount >= 10000000) {
                 $("#loan_amount_wrapper .cmp-input-caption").addClass("error").text("Key in a valid loan amount.");
                 $("#loan_amount_wrapper .input-group.input-form-number").addClass("error");
+                enableNext(false);
             } else {
                 checkEmptyFields();
             }
@@ -216,9 +205,11 @@ $(function () {
             if ($(termOfLoanInput).val() > 40) {
                 $("#tol_wrapper .cmp-input-caption").addClass("error").text("Term of loan cannot be more than 40 years.");
                 $("#tol_wrapper .input-group.input-form-number").addClass("error");
+                enableNext(false);
             } else if ($(termOfLoanInput).val() == 0 || $(termOfLoanInput).val() == "") {
                 $("#tol_wrapper .cmp-input-caption").addClass("error").text("Key in a valid term of loan.");
                 $("#tol_wrapper .input-group.input-form-number").addClass("error");
+                enableNext(false);
             } else {
                 checkEmptyFields();
             }
@@ -228,7 +219,7 @@ $(function () {
             if (e.target.value.length == 2) {
                 e.preventDefault();
             }
-        }); 
+        });
 
         $(coverageInput).on("focusout", (e) => {
             $("#coverage_wrapper .cmp-input-caption").removeClass("error").text("");
@@ -240,6 +231,7 @@ $(function () {
             if (coverage < 1 || coverage > 100 || coverage == "") {
                 $("#coverage_wrapper .cmp-input-caption").addClass("error").text("Key in a valid percentage share of cover (default 100%).");
                 $("#coverage_wrapper .input-group.input-form-number").addClass("error");
+                enableNext(false);
             } else {
                 checkEmptyFields();
             }
@@ -251,7 +243,7 @@ $(function () {
             if (e.target.value.length == 3) {
                 e.preventDefault();
             }
-        }); 
+        });
 
         $(editBtn).on("click", (e) => {
             window.scrollTo({ top: $("#mainPanel").position().top });
@@ -277,9 +269,9 @@ $(function () {
             ($(interestRateInput + ":checked").val() != "" && $(interestRateInput + ":checked").val() != undefined) &&
             ($(termOfLoanInput).val() != "" && $(termOfLoanInput).val() != undefined) &&
             ($(coverageInput).val() != "" && $(coverageInput).val() != undefined)) {
-            $(nextBtn).removeAttr("disabled");
+            enableNext(true);
         } else {
-            $(nextBtn).attr("disabled", "disabled");
+            enableNext(false);
         }
     }
 
@@ -297,12 +289,12 @@ $(function () {
             return age;
         }
 
-        const getPaymentTerm = function(age, loanTerm) { 
-            let coverPeriod = 65 - age + 1; 
-            
+        const getPaymentTerm = function (age, loanTerm) {
+            let coverPeriod = 65 - age + 1;
+
             if (coverPeriod >= loanTerm) {
                 return 0.9 * loanTerm;
-            } else { 
+            } else {
                 return 0.9 * coverPeriod;
             }
         }
@@ -310,7 +302,7 @@ $(function () {
         const gender = data.gender.value.toUpperCase();
         const relevantRate = data.interestRate.value === "concessionary" ? "0.03" : "0.04"
         const age = getAge(data.dob);
-        const paymentTerm = Math.ceil(getPaymentTerm(age, data.termOfLoan)); 
+        const paymentTerm = Math.ceil(getPaymentTerm(age, data.termOfLoan));
         const coverage = parseFloat(data.coverage) / 100;
         const loanAmount = parseFloat(data.loanAmount.replaceAll(",", ""));
         const sumAssured = Math.round(coverage * loanAmount * 100) / 100; //rounded to 2 dp
@@ -327,6 +319,14 @@ $(function () {
         // Always end with this callback
         callback();
     };
+
+    const enableNext = function (enableBtn) {
+        if (enableBtn) {
+            $(nextBtn).removeAttr("disabled");
+        } else {
+            $(nextBtn).attr("disabled", "disabled");
+        }
+    }
 
     dataInclude((res) => {
         // ensure that the dataInclude has completed execution before calling the initialisation for all components
