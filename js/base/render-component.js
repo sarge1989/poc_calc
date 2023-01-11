@@ -226,10 +226,13 @@ export const renderComponent = {
         if (cmpWrapper.data('checkAge')) {
             // data-min-age="21" data-max-age="65"
             let today = new Date();
-            let minDate = today.getDate() + " " + monthsArr[today.getMonth()] + " " + (today.getFullYear() - cmpWrapper.data('maxAge'));
+            let tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+
+            let minDate = tomorrow.getDate() + " " + monthsArr[tomorrow.getMonth()] + " " + (tomorrow.getFullYear() - cmpWrapper.data('maxAge'));
             let maxDate = today.getDate() + " " + monthsArr[today.getMonth()] + " " + (today.getFullYear() - cmpWrapper.data('minAge'));
 
-            inputField.attr('data-min-date', minDate);
+            inputField.attr('data-min-date', minDate); // min date should not include today's date (should be +1 day)
             inputField.attr('data-max-date', maxDate);
         } else {
             if (cmpWrapper.data('minDate') != undefined && cmpWrapper.data('maxDate') != undefined) {
