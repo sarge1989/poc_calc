@@ -53,7 +53,7 @@
                                             <span class="icons_space icon-dls-arrow-right"></span>
                                         </li>
                                         <li class="cmp-breadcrumb__item cmp-breadcrumb__item--active">
-                                            <span>Home Protection Scheme premium Calculator</span>
+                                            <span>Home Protection Scheme premium calculator</span>
                                         </li>
                                     </ol>
                                     <ol class="cmp-breadcrumb__list breadcrumb--phone">
@@ -88,22 +88,20 @@
                                 <div class="aem-GridColumn aem-GridColumn--default--7 no-padding">
                                     <!-- Child container - Introduction title (!! Ensure only 1 component is inside) -->
                                     <div class="aem-GridColumn aem-GridColumn--default--12">
-                                        <h4 class="title__text--semi-bold">Calculate the premium for new insurance
-                                            covers under the Home Protection Scheme. </h4>
+                                        <h4 class="title__text--semi-bold">Use this tool to calculate the premium for
+                                            insurance under the Home Protection Scheme.</h4>
                                     </div>
                                     <!-- Child container - Paragraph -->
                                     <div class="aem-GridColumn aem-GridColumn--default--12">
-                                        <p>This calculator is for members who have applied to be insured under the Home
-                                            Protection Scheme (HPS) for their most recent flat purchase. It estimates
-                                            the premium they would have to pay in relation to their selected percentage
-                                            share of coverage.</p>
+                                        <p>The Home Protection Scheme (HPS) is a mortgage-reducing insurance that
+                                            protects members and their families against losing their HDB flat in the
+                                            event of death, terminal illness or total permanent disability.</p>
                                     </div>
                                     <!-- Child container - Paragraph -->
                                     <div class="aem-GridColumn aem-GridColumn--default--12">
                                         <p>
-                                            If you are adjusting your HPS cover, please <a rel="nofollow"
-                                                class="external-links" target="_blank"
-                                                href="https://www.cpf.gov.sg/writetous">write to us</a>.
+                                            Coverage under HPS is required when you use your CPF savings to buy a home.
+                                            Home buyers who use their CPF will be notified to sign up for HPS.</a>.
                                         </p>
                                     </div>
                                 </div>
@@ -114,16 +112,20 @@
                                         <h5>Important notes</h5>
                                         <ul class="cmp-list">
                                             <li>
-                                                HPS only covers members who are between the ages of 21 and 65.
-                                            </li>
-                                            <li>
                                                 All fields are mandatory unless otherwise indicated.
                                             </li>
+                                            <li>
+                                                This calculator only calculates premiums for new HPS applications. To
+                                                obtain a calculation for HPS cover adjustments, please <a rel="nofollow"
+                                                    class="external-links" target="_blank"
+                                                    href="https://www.cpf.gov.sg/writetous">write to us</a>.
+                                            </li>
                                         </ul>
-                                        <h5>Estimated time</h5>
+                                        <h5>To use this calculator, you will need:</h5>
                                         <ul class="cmp-list">
                                             <li>
-                                                5 min
+                                                Details of your home loan, such as the loan amount, loan term, and type
+                                                of interest rate.
                                             </li>
                                         </ul>
                                     </div>
@@ -197,7 +199,7 @@
                                             <span class="icons_space icon-dls-arrow-right"></span>
                                         </li>
                                         <li class="cmp-breadcrumb__item cmp-breadcrumb__item--active">
-                                            <span>Home Protection Scheme (HPS) Premium Calculator</span>
+                                            <span>Home Protection Scheme premium calculator</span>
                                         </li>
                                     </ol>
                                     <ol class="cmp-breadcrumb__list breadcrumb--phone">
@@ -233,7 +235,7 @@
                                 <!-- Child container wrapping one component -->
                                 <div data-include="single_date_picker" data-id="dob_wrapper" data-render="true"
                                     data-field-id="dob" data-input-label="Date of birth"
-                                    data-caption="HPS covers members who are between the ages of 21 and 65."
+                                    data-caption="Home Protection Scheme covers members aged between 21 and 65."
                                     data-datepicker-type="day" data-check-age="true" data-min-age="21"
                                     data-max-age="65"> </div>
                             </div>
@@ -251,8 +253,9 @@
                             <div class="aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--default--3">
                                 <!-- Child container wrapping one component -->
                                 <div data-include="numerical_input" data-id="loan_amount_wrapper" data-render="true"
-                                    data-name="loan_amount" data-input-label="Loan amount" data-field-id="loan_amount"
-                                    data-placeholder="0" data-step="0.01" data-prefix="$" data-is-decimal="true">
+                                    data-name="loan_amount" data-input-label="Home loan principal amount"
+                                    data-field-id="loan_amount" data-placeholder="00.00" data-step="0.01"
+                                    data-prefix="SGD" data-is-decimal="true">
                                 </div>
                             </div>
 
@@ -261,10 +264,7 @@
                                 <!-- Child container wrapping one component -->
                                 <div data-include="radio_button" data-id="lir_wrapper" data-render="true"
                                     data-name="interest_rate" data-input-label="Loan interest rate"
-                                    data-options='{"value":"concessionary","text":"Concessionary rate"}|{"value":"market","text":"Market rate"}'
-                                    data-is-horizontal-stack="true"
-                                    data-tooltip-content="HDB concessionary interest rate is pegged at 0.1 percentage point above the prevailing CPF interest rate. <br><br>
-HDB market interest rate is based on the average of the non-promotional HDB housing loan rates of the three local banks i.e. DBS (POSB), OCBC and UOB, subject to the floor rate of the HDB concessionary interest rate.">
+                                    data-options='{"value":"concessionary","text":"HDB Concessionary rate","caption":"Pegged at 0.1 percentage point above the prevailing CPF interest rate."}|{"value":"market","text":"Market rate","caption":"Uses the non-promotional average from POSB, DBS, OCBC and UOB, subject to the floor rate of the HDB concessionary rate."}'>
                                 </div>
                             </div>
 
@@ -272,8 +272,8 @@ HDB market interest rate is based on the average of the non-promotional HDB hous
                             <div class="aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--default--3">
                                 <!-- Child container wrapping one component -->
                                 <div data-include="numerical_input" data-id="tol_wrapper" data-render="true"
-                                    data-name="term_of_loan" data-input-label="Term of loan"
-                                    data-field-id="term_of_loan" data-placeholder="0" data-step="0" data-suffix="years">
+                                    data-name="term_of_loan" data-input-label="Loan term" data-field-id="term_of_loan"
+                                    data-placeholder="0" data-step="0" data-suffix="years">
                                 </div>
                             </div>
 
@@ -281,8 +281,9 @@ HDB market interest rate is based on the average of the non-promotional HDB hous
                             <div class="aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--default--3">
                                 <!-- Child container wrapping one component -->
                                 <div data-include="numerical_input" data-id="coverage_wrapper" data-render="true"
-                                    data-name="coverage" data-input-label="Coverage" data-field-id="coverage"
-                                    data-placeholder="10" data-default-value="100" data-step="0" data-suffix="%">
+                                    data-name="coverage" data-input-label="Your share of cover" data-field-id="coverage"
+                                    data-placeholder="10" data-default-value="100" data-step="0" data-suffix="%"
+                                    data-caption="The total share of cover per household must be at least 100%.">
                                 </div>
                             </div>
                         </div>
@@ -296,7 +297,7 @@ HDB market interest rate is based on the average of the non-promotional HDB hous
                                     <span class="cmp-button__text">Back</span>
                                 </button>
                                 <button class="cmp-button cmp-button--primary" title="Text" id="nextBtn" disabled>
-                                    <span class="cmp-button__text">Next</span>
+                                    <span class="cmp-button__text">Calculate</span>
                                     <span class="icons_space icon-dls-arrow-right"></span>
                                 </button>
                             </div>
@@ -345,7 +346,7 @@ HDB market interest rate is based on the average of the non-promotional HDB hous
                                             <span class="icons_space icon-dls-arrow-right"></span>
                                         </li>
                                         <li class="cmp-breadcrumb__item cmp-breadcrumb__item--active">
-                                            <span>Home Protection Scheme (HPS) Premium Calculator</span>
+                                            <span>Home Protection Scheme premium calculator</span>
                                         </li>
                                     </ol>
                                     <ol class="cmp-breadcrumb__list breadcrumb--phone">
@@ -379,6 +380,17 @@ HDB market interest rate is based on the average of the non-promotional HDB hous
                                                 <div class="cmp-tooltip-demo-wrapper">
                                                     <div class="cmp-tooltip">
                                                         Premium payment term
+                                                    </div>
+                                                </div>
+                                            </h1>
+                                            <h2 id="premium_payment_term">XX Years</h2>
+                                            <a class="cmp-text__link" href="#">How is this calculated?</a>
+                                        </article>
+                                        <article>
+                                            <h1 style="height: 24px;">
+                                                <div class="cmp-tooltip-demo-wrapper">
+                                                    <div class="cmp-tooltip">
+                                                        Annual premium payable
                                                         <div class="cmp-tooltip-overlay-bg"></div>
                                                         <div class="cmp-tooltip-wrapper">
                                                             <i class="icon-dls-info-outline"></i>
@@ -390,22 +402,10 @@ HDB market interest rate is based on the average of the non-promotional HDB hous
                                                                     <span
                                                                         class="icons_space icon-dls-close-outline"></span>
                                                                 </a>
-                                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                                Et
-                                                                neque sit amet in dolor mauris ante.
+                                                                This amount will be paid every year from your Ordinary
+                                                                Account as premium.
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                </div>
-                                            </h1>
-                                            <h2 id="premium_payment_term">XX Years</h2>
-                                            <p id="term_of_loan_result">For a X years term of loan</p>
-                                        </article>
-                                        <article>
-                                            <h1 style="height: 24px;">
-                                                <div class="cmp-tooltip-demo-wrapper">
-                                                    <div class="cmp-tooltip">
-                                                        Annual HPS premium payable
                                                     </div>
                                                 </div>
                                             </h1>
@@ -459,7 +459,9 @@ HDB market interest rate is based on the average of the non-promotional HDB hous
                                                     <div class="cmp-teaser__content">
                                                         <h4 class="cmp-teaser__title">Home Protection Scheme</h4>
                                                         <p>
-                                                            Protect yourself and your family from losing your HDB flat in the event of death, terminal illness or total permanent disability.​
+                                                            Protect yourself and your family from losing your HDB flat
+                                                            in the event of death, terminal illness or total permanent
+                                                            disability.​
                                                         </p>
                                                         <div class="separator">
                                                             <div class="cmp-separator">
