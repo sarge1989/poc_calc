@@ -78,7 +78,7 @@ $(function () {
         $(".sb-datepicker-container.cmp-inputs.sb-datepicker-container--day").DatepickerDate();
         $(".form-resources").RelatedResource();
 
-        $("#coverCheckbox").on("change", (e)=> {
+        $("#coverCheckbox").on("change", (e) => {
             selectionChangeCheckboxDOM(e.target);
 
             if (e.target.checked) {
@@ -302,14 +302,13 @@ $(function () {
         const gender = data.gender.value.toUpperCase();
         const relevantRate = data.interestRate.value === "concessionary" ? "0.03" : "0.04"
         const age = getAge(data.dob);
-        const paymentTerm = Math.ceil(getPaymentTerm(age, data.termOfLoan));
+        const paymentTerm = Math.floor(getPaymentTerm(age, data.termOfLoan));
         const coverage = parseFloat(data.coverage) / 100;
         const loanAmount = parseFloat(data.loanAmount.replaceAll(",", ""));
         const sumAssured = Math.round(coverage * loanAmount * 100) / 100; //rounded to 2 dp
         const premiumRate = lookupTable[gender][relevantRate][age][data.termOfLoan];
         const premiumPayable = (Math.round(sumAssured * premiumRate / 10000 * 100) / 100).toLocaleString('en', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); //rounded to 2 dp
 
-        $("#term_of_loan_result").text("For a " + data.termOfLoan + " years loan");
         $("#result_loan_amount").text("$" + data.loanAmount);
         $("#result_interest_rate").text(data.interestRate.text);
         $("#result_coverage").text(data.coverage + "%");
